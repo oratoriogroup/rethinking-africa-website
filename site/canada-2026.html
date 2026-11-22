@@ -46,14 +46,15 @@ are being edited and will be published here.</p>
 
 <!-- ===================================================================
      HOW TO ADD AN INTERVIEW
-     Uncomment and duplicate one card per guest. Add the YouTube embed
-     where the placeholder sits, using a click-to-play thumbnail.
+     Uncomment and duplicate one card per guest. Put the interview's
+     11-character YouTube video ID inside data-yt="". The video only
+     loads when the visitor presses play.
      =================================================================== -->
 <!--
 <div class="card" style="margin-top:1rem">
 <h3>Guest name</h3>
 <p class="note">Institution, research field</p>
-<div class="video-frame" style="margin:1rem 0"><div class="placeholder">Interview</div></div>
+<div class="video-frame" style="margin:1rem 0"><a class="yt-facade" data-yt="" data-title="Canada Conversations: Guest name" href="https://www.youtube.com/@DrDamola.Africa"><span class="yt-play" aria-hidden="true"></span><span class="yt-label">Interview: press play</span></a></div>
 <p style="font-family:'Fraunces',Georgia,serif;font-style:italic">"Central quotation."</p>
 </div>
 -->
@@ -86,5 +87,6 @@ are being edited and will be published here.</p>
     <p style="margin-top:.5rem">hello@rethinkingafrica.africa · © 2026 Rethinking Africa with Dr. Damola. All rights reserved.</p>
   </div>
 </footer>
+<script src="js/video.js" defer></script>
 </body>
 </html>

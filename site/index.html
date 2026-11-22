@@ -119,8 +119,13 @@
     <div class="wrap">
       <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> brings research, lived experience and African voices together to examine the systems shaping the continent, and to explore practical pathways towards African agency, excellence and renewal.</p>
       <div class="video-frame" style="margin-top:1.6rem">
-        <!-- DEVELOPER: click-to-play YouTube embed (thumbnail facade; loads player only on click). Never autoplay sound. -->
-        <div class="placeholder">Programme trailer: press play</div>
+        <!-- DEVELOPER: put the trailer's 11-character YouTube video ID inside data-yt="".
+             Example: for youtube.com/watch?v=AbCdEfGhIjK use data-yt="AbCdEfGhIjK".
+             Click-to-play facade: the player loads only when pressed. Never autoplays. -->
+        <a class="yt-facade" data-yt="" data-title="Rethinking Africa with Dr. Damola: programme trailer" href="https://www.youtube.com/@DrDamola.Africa">
+          <span class="yt-play" aria-hidden="true"></span>
+          <span class="yt-label">Programme trailer: press play</span>
+        </a>
       </div>
     </div>
   </section>
@@ -131,6 +136,13 @@
       <span class="eyebrow">Latest episode</span>
       <h2>Trained Away</h2>
       <p>Why African education often prepares young people to leave local opportunities rather than transform them, and what an education designed from African realities would do instead.</p>
+      <div class="video-frame" style="margin-top:1.4rem">
+        <!-- DEVELOPER: put the "Trained Away" episode's YouTube video ID inside data-yt="". -->
+        <a class="yt-facade" data-yt="" data-title="Trained Away: Rethinking Africa with Dr. Damola" href="https://www.youtube.com/@DrDamola.Africa">
+          <span class="yt-play" aria-hidden="true"></span>
+          <span class="yt-label">Trained Away: press play</span>
+        </a>
+      </div>
       <p style="margin-top:1.3rem"><a class="btn btn-solid" href="watch.html">Watch now</a></p>
     </div>
   </section>
@@ -373,5 +385,6 @@
   if(el){el.textContent=qs[Math.floor(Math.random()*qs.length)];}
 })();
 </script>
+<script src="js/video.js" defer></script>
 </body>
 </html>

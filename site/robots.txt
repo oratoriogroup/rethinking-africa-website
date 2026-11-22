@@ -1,0 +1,6 @@
+# Rethinking Africa with Dr. Damola
+User-agent: *
+Allow: /
+Disallow: /*.md$
+
+Sitemap: https://rethinkingafrica.africa/sitemap.xml

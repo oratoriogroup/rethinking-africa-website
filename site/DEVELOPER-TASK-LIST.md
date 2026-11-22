@@ -97,15 +97,18 @@ Also add the DNS records MailerLite provides for sending-domain verification.
 
 ## TASK 5 — Video embeds on the homepage
 
-Replace the trailer and featured-episode placeholders in `index.html` with the
-YouTube embeds, using a click-to-play thumbnail facade such as `lite-youtube-embed`
-so the player only loads when clicked. **Never autoplay with sound.**
+**Done (November 2026).** The click-to-play facade is built (`js/video.js`). The
+YouTube player loads only when a visitor presses play. Nothing autoplays.
+
+What remains is to add the video IDs. In `index.html`, find the two `data-yt=""`
+attributes (the trailer and "Trained Away") and put each video's 11-character
+YouTube ID between the quotes. Until an ID is added, the box links to the channel.
 
 ---
 
 ## TASK 6 — Search visibility
 
-1. Add `sitemap.xml` and `robots.txt`.
+1. ~~Add `sitemap.xml` and `robots.txt`.~~ Done. Add new pages to `sitemap.xml` when you create them.
 2. Verify the site in Google Search Console.
 3. Submit the sitemap, then request indexing for the homepage.
 
