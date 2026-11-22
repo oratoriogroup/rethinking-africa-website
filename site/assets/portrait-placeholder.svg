@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#1D2A57"/>
+  <circle cx="200" cy="185" r="75" fill="#F7F1E3" opacity="0.9"/>
+  <path d="M80,420 C80,330 140,290 200,290 C260,290 320,330 320,420 L320,500 L80,500 Z" fill="#F7F1E3" opacity="0.9"/>
+  <rect x="60" y="440" width="280" height="3" fill="#E8A11C"/>
+  <text x="200" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing="3" fill="#F7F1E3">DR. DAMOLA</text>
+</svg>

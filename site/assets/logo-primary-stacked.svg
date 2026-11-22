@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 530" width="720" height="530">
+  <!-- Primary stacked logo v3 — Africa silhouette redrawn from real coastal
+       geography (Tangier, Tunis, Nile delta, Red Sea, Horn at Cape Guardafui,
+       Mozambique curve, Cape Agulhas, Gulf of Guinea, Dakar bulge).
+       Sun rises behind the Red Sea / Gulf of Aden — the true east. -->
+  <rect width="720" height="530" fill="#F7F1E3"/>
+
+  <g transform="translate(193,15) scale(0.62)">
+    <g transform="translate(90,25)">
+      <!-- Horizon behind everything -->
+      <rect x="-80" y="88" width="520" height="4" fill="#E8A11C"/>
+      <!-- Sun behind the continent, over the Red Sea -->
+      <circle cx="300" cy="90" r="85" fill="#E8A11C"/>
+      <!-- Continent -->
+      <path d="M70,12
+               C95,2 130,-2 155,4
+               C170,10 175,38 195,35
+               C215,32 230,32 250,37
+               C258,38 260,40 263,45
+               C275,72 288,100 298,124
+               C303,132 310,137 317,140
+               C330,142 345,140 357,144
+               C350,162 337,182 327,198
+               C315,215 302,232 297,247
+               C300,262 300,274 296,285
+               C290,302 282,311 275,318
+               C268,335 260,362 255,374
+               C245,388 220,402 200,400
+               C190,396 182,377 173,352
+               C166,330 163,310 161,293
+               C159,275 160,257 161,242
+               C158,230 152,220 147,212
+               C148,200 149,192 148,187
+               C138,180 128,176 117,174
+               C105,177 90,180 80,180
+               C68,180 55,178 46,174
+               C40,169 36,166 34,162
+               C24,148 16,138 13,128
+               C14,120 17,114 20,110
+               C16,102 15,98 15,95
+               C22,80 28,68 35,57
+               C45,44 53,32 62,24
+               C65,20 68,15 70,12 Z"
+            fill="#1D2A57"/>
+      <!-- Madagascar -->
+      <ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#1D2A57"/>
+    </g>
+  </g>
+
+  <g text-anchor="middle" fill="#1D2A57">
+    <text x="360" y="345" font-family="Georgia, 'Times New Roman', serif"
+          font-size="26" letter-spacing="10" font-weight="400">RETHINKING</text>
+    <text x="360" y="413" font-family="Georgia, 'Times New Roman', serif"
+          font-size="72" letter-spacing="8" font-weight="700">AFRICA</text>
+    <rect x="252" y="435" width="216" height="3" fill="#E8A11C"/>
+    <text x="360" y="477" font-family="Georgia, 'Times New Roman', serif"
+          font-size="28" font-style="italic" font-weight="500" letter-spacing="1">with Dr. Damola</text>
+  </g>
+</svg>

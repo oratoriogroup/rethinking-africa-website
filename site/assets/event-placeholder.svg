@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#141D3D"/>
+  <circle cx="200" cy="120" r="45" fill="#E8A11C" opacity="0.85"/>
+  <rect x="40" y="150" width="320" height="3" fill="#E8A11C"/>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" letter-spacing="3" fill="#F7F1E3">EVENT PHOTO</text>
+</svg>

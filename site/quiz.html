@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 90-Second Africa Lens Quiz | Rethinking Africa with Dr. Damola</title>
+<meta name="description" content="Seven questions. Seven things you were never told about African knowledge, and why they stopped. Find out which African future-builder you are.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .quiz-shell{max-width:660px;margin:0 auto;padding:0 1.1rem}
+  .qcard{background:#FFFDF7;border:1px solid #E4DCC8;border-radius:6px;padding:1.5rem;margin-top:1.4rem}
+  .qnum{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .qtext{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--indigo);margin-bottom:1.1rem;line-height:1.3}
+  .opt{display:block;width:100%;text-align:left;background:#F7F1E3;border:2px solid #E4DCC8;border-radius:4px;
+       padding:.9rem 1rem;margin-bottom:.7rem;font-family:Georgia,serif;font-size:1rem;color:var(--ink);cursor:pointer}
+  .opt:hover{border-color:var(--gold);background:#FFF9EC}
+  .qbar{height:5px;background:#E4DCC8;border-radius:3px;margin-top:1.4rem;overflow:hidden}
+  .qbar span{display:block;height:100%;background:var(--gold);width:0;transition:width .35s ease}
+  .hidden{display:none}
+
+  .insight{background:var(--indigo);border-radius:6px;padding:1.3rem;margin-top:1rem;color:#E8E3D4;animation:rise .35s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .insight .tag{font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem}
+  .insight .pic{width:100%;max-width:100%;display:block;margin:0 auto 1.1rem;border-radius:5px;border:1px solid rgba(232,161,28,.35)}
+  .insight p{font-size:1.02rem;line-height:1.6;margin:0 0 .8rem}
+  .insight .why{background:rgba(232,161,28,.14);border-left:3px solid var(--gold);padding:.8rem 1rem;border-radius:3px;margin-top:.9rem}
+  .insight .why strong{color:var(--gold);display:block;font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
+  .insight .why p{margin:0;font-size:.98rem}
+
+  .profile-name{font-family:'Fraunces',Georgia,serif;font-size:2rem;color:var(--gold);line-height:1.15}
+  .rarity{display:inline-block;background:rgba(232,161,28,.18);border:1px solid var(--gold);color:var(--gold);
+          font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:20px;margin-bottom:1rem}
+  .sharebox{background:#F7F1E3;border-left:4px solid var(--gold);padding:1rem;border-radius:3px;text-align:left;color:var(--ink);margin-top:1.2rem;font-size:.95rem}
+  .tabs{display:flex;gap:.5rem;margin-bottom:1rem}
+  .tabs button{flex:1;padding:.6rem;border:2px solid #E4DCC8;background:#F7F1E3;border-radius:4px;
+               font-family:Arial,sans-serif;font-size:.85rem;cursor:pointer;color:var(--ink)}
+  .tabs button.on{border-color:var(--gold);background:#FFF3DC;font-weight:700}
+  @media (prefers-reduced-motion:reduce){.insight{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Rethinking Africa home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#1D2A57"/><g transform="translate(7,5) scale(0.135)"><circle cx="300" cy="90" r="100" fill="#E8A11C"/><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/></g></svg>
+      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.72rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="quiz.html" aria-current="page" style="color:#E8A11C">Take the Quiz</a>
+      <a href="watch.html">Watch</a>
+      <a href="ideas.html">Ideas</a>
+      <a href="publications.html">Publications</a>
+      <a href="african-voices.html">African Voices</a>
+      <a href="news.html">News &amp; Events</a>
+      <a href="contribute.html">Contribute</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero" style="padding:2.2rem 0">
+    <div class="wrap" style="text-align:center">
+      <h1 style="font-size:clamp(2rem,6.5vw,3.4rem);color:var(--ivory);max-width:16ch;margin:0 auto;line-height:1.05">The 90-Second<br><span style="color:var(--gold)">Africa Lens Quiz</span></h1>
+      <p style="font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,2.6vw,1.3rem);color:#D8D3C4;margin:1.1rem auto 0;max-width:30ch;font-style:italic">How were you taught to see Africa?</p>
+      <p class="lede" style="margin-top:.9rem;font-size:1rem">Seven questions. After each one, something Africa built, and the reason you never heard about it.</p>
+</div>
+  </div>
+  <hr class="horizon">
+
+  <section style="padding-top:.6rem">
+    <div class="quiz-shell">
+
+      <div id="q-intro" class="qcard" style="text-align:center">
+        <p class="qtext" style="margin-bottom:.6rem">There are no wrong answers here.</p>
+        <p style="margin-bottom:1.3rem">It takes about ninety seconds. You will learn seven things you were probably never taught.</p>
+        <button class="btn btn-solid" onclick="startQuiz()">Begin</button>
+        <p class="note" style="margin-top:.9rem">Free. No payment, ever.</p>
+      </div>
+
+      <div id="q-card" class="qcard hidden">
+        <div class="qnum" id="q-num"></div>
+        <div class="qtext" id="q-text"></div>
+        <div id="q-opts"></div>
+        <div class="qbar"><span id="q-bar"></span></div>
+      </div>
+
+      <div id="q-insight" class="insight hidden">
+        <span class="tag">What you were never told</span>
+        <div id="i-pic"></div>
+        <p id="i-text"></p>
+        <div class="why"><strong>So why did it stop?</strong><p id="i-why"></p></div>
+        <div style="margin-top:1.1rem"><button class="btn btn-solid" onclick="nextQuestion()" id="i-btn">Continue</button></div>
+      </div>
+
+      <div id="q-gate" class="qcard hidden">
+        <p class="qnum" style="text-align:center">Your profile is ready</p>
+        <p class="qtext" style="text-align:center">Where should we send it?</p>
+        <p style="margin-bottom:1.3rem;text-align:center">You will get your full profile and a short free guide, <em>Seven Things Africa Was Taught to Forget</em>.</p>
+
+        <div class="field"><label for="g-name">Your name</label><input id="g-name" type="text"></div>
+        <div class="field"><label for="g-email">Email address</label><input id="g-email" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="g-wa">WhatsApp number</label><input id="g-wa" type="tel" placeholder="+234 800 000 0000"></div>
+        <div class="field"><label for="g-country">Country</label><input id="g-country" type="text"></div>
+
+        <div class="field">
+          <label>Which do you prefer we use?</label>
+          <div class="tabs">
+            <button type="button" id="tab-email" class="on" onclick="pick('email')">Email</button>
+            <button type="button" id="tab-wa" onclick="pick('wa')">WhatsApp</button>
+          </div>
+        </div>
+
+        <p class="note" id="g-hint" style="margin-bottom:1rem">Give either one, or both. Both helps us reach you if one fails.</p>
+
+        <div style="text-align:center">
+          <button class="btn btn-solid" onclick="revealResult()">Show my profile</button>
+        </div>
+        <p class="note" style="margin-top:.8rem;text-align:center">We will never share your details. Leave any time.</p>
+      </div>
+
+      <div id="q-result" class="qcard hidden" style="text-align:center;background:var(--indigo);border-color:var(--indigo)">
+        <p class="qnum">Your African future-builder profile</p>
+        <span class="rarity" id="r-rarity"></span>
+        <p class="profile-name" id="r-name"></p>
+        <p id="r-desc" style="color:#E8E3D4;margin:1rem 0 1.2rem"></p>
+        <p id="r-strength" style="color:#F7F1E3;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.1rem;margin-bottom:1.5rem"></p>
+
+        <p style="color:#D8D3C4;margin-bottom:1rem">Everything else lives on the channel. New episodes come out regularly, and subscribing is how you get them.</p>
+        <a class="btn btn-solid" href="https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1">Subscribe on YouTube</a>
+        <a class="btn btn-ghost hidden" id="r-wa" href="#" style="margin-left:.5rem">Get it on WhatsApp</a>
+
+        <div class="sharebox">
+          <strong>One question to carry with you:</strong>
+          <p id="r-question" style="margin-top:.4rem"></p>
+        </div>
+
+        <p id="r-delivery" style="color:#A8AEC6;font-size:.85rem;margin-top:1.3rem"></p>
+        <p style="color:#A8AEC6;font-size:.85rem;margin-top:.4rem">Africa must not only be studied. Africa must speak, think, create and determine.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>An independent African-centred research, media and public-education initiative founded by Dr Oluwakemi Damola Adejumo-Ayibiowu.</p>
+    <p style="margin-top:.5rem">hello@rethinkingafrica.africa &middot; &copy; 2026 Rethinking Africa with Dr. Damola.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURATION - the developer fills in these three lines only.
+   Everything below works on plain static HTML. No server needed.
+   ============================================================ */
+const CONFIG = {
+  // Where form submissions are sent. Paste ONE endpoint URL.
+  // Works with Formspree, Web3Forms, Netlify Forms, Basin, Getform,
+  // or any provider that accepts a JSON POST.
+  SIGNUP_ENDPOINT: "",          // e.g. "https://formspree.io/f/xxxxxxx"
+
+  // The WhatsApp number that receives opt-in messages, digits only,
+  // including country code and no plus sign.
+  WHATSAPP_NUMBER: "",          // e.g. "2348012345678"
+
+  // Optional: a MailerLite / ConvertKit embedded form action URL.
+  // If set, the subscriber is also pushed straight into the mailing list.
+  MAILING_LIST_ACTION: ""
+};
+/* ============================================================ */
+
+/* Illustrations: simple inline SVG, brand colours, no network cost. */
+const PIC = {
+book:  '<img class="pic" src="assets/q1-knowledge.webp" alt="African signs and symbols shown as a living information system" loading="lazy">',
+school:'<img class="pic" src="assets/q2-classroom.webp" alt="A colonial-era classroom: children face a blackboard showing Europe, while through the window behind them a blacksmith, an indigo dyer and farmers work" loading="lazy">',
+pot:   '<img class="pic" src="assets/q3-claypot.webp" alt="A woman carrying a clay water pot" loading="lazy">',
+binary:'<img class="pic" src="assets/q4-ifa.webp" alt="The sixteen principal Odu of Ifa, each built from marks that are either present or absent" loading="lazy">',
+stone: '<img class="pic" src="assets/q5-stone.webp" alt="Stone architecture rising into a modern African city" loading="lazy">',
+money: '<img class="pic" src="assets/q6-diaspora.webp" alt="A woman sending money from a cold city at night, and the home it reaches at sunrise" loading="lazy">',
+sun:   '<img class="pic" src="assets/q7-evolution.webp" alt="The clay pot principle continued into a modern research laboratory" loading="lazy">'
+};
+
+const QUESTIONS = [
+{
+ q:"Growing up, were you taught that knowledge from Europe or America was better than knowledge from Africa?",
+ opts:[["Yes, clearly",{KR:2,ST:1}],["Nobody said it, but I felt it",{KR:1,ST:1}],["No, both were respected at home",{BB:1,SR:1}],["I never thought about it this way",{FM:1}]],
+ pic:'book',
+ text:"Six hundred years ago, Timbuktu in Mali was a city of scholars. Families kept libraries in their homes. Hundreds of thousands of handwritten books on medicine, astronomy, mathematics and law. Students came from far away to study there. It was a university city before many European ones existed.",
+ why:"In 1591 an invading army destroyed the scholarly community and its leading scholars were killed or taken away. Later, under French colonial rule, the schools that replaced it taught a different story, and many manuscripts were carried off to Europe. Families hid what was left in boxes and buried them. The books survived. The universities did not."
+},
+{
+ q:"Did your education bring you closer to your own community, or take you further away from it?",
+ opts:[["Much further away",{KR:2}],["A bit of both",{BB:2}],["Closer. I was lucky",{SR:1,KR:1}],["I was schooled far from home",{BB:1,FM:1}]],
+ pic:'school',
+ text:"Before colonial schooling, most African children learned a trade, a craft or a body of knowledge from the people around them. Farming, weaving, building, healing, trading. Learning happened inside the community and stayed there.",
+ why:"Colonial schools were built for a stated purpose: to produce clerks and messengers who could serve an administration, not builders, inventors or owners. Children were taught in a foreign language, about foreign places, and were punished for speaking their own. When independence came, the flags changed. In many countries the syllabus did not. If school made you feel your home had nothing to teach you, that was the design working, not you failing."
+},
+{
+ q:"You see a clay water pot in a village. What do you think?",
+ opts:[["Something traditional, worth keeping",{ST:2}],["Poverty, honestly. That is what I was taught",{KR:2}],["Technology nobody bothered to invest in",{FM:2,SR:1}],["I use one. I never thought about it",{BB:1,KR:1}]],
+ pic:'pot',
+ text:"A clay pot keeps water cold in extreme heat with no electricity at all. Water passes slowly through the clay wall, and as it evaporates on the outside it pulls heat away from the water inside. It is real science, worked out over generations by testing which clay, which thickness, which shape kept water coldest.",
+ why:"Nobody funded it. No laboratory studied it, no company improved it, no patent protected it, no university taught it. It was called craft instead of science, so it stayed the same size for centuries. Today engineers in Europe and the Gulf use exactly this cooling principle in modern buildings, and it is described as an innovation."
+},
+{
+ q:"An elder starts explaining traditional knowledge to you. What is your first instinct?",
+ opts:[["Record it before it disappears",{KR:2}],["Ask how we could test and prove it",{SR:2}],["Retell it so young people care",{ST:2}],["Introduce them to someone who could use it",{BB:2}]],
+ pic:'binary',
+ text:"Every computer and phone in the world runs on binary: everything reduced to two states, on or off, 1 or 0, and then combined to build anything. The Ifa system of the Yoruba works on exactly the same principle. Each mark is one of two states. Four marks make one figure. Sixteen figures combine into 256 outcomes, each attached to a body of memorised verses. It is a binary information system, held in trained human memory, over a thousand years old.",
+ why:"It was labelled superstition. Missionaries and colonial officials discouraged it, converts were told to abandon it, and it was never allowed into a single university mathematics department. So the same logic that became the computer in one part of the world was called witchcraft in another. Nobody in Africa was invited to the meeting where binary became a machine."
+},
+{
+ q:"What worries you most about Africa today?",
+ opts:[["Education, and knowledge being lost",{KR:2}],["Government and weak institutions",{SR:2}],["Identity, and the stories told about us",{ST:2}],["Technology, and being left behind again",{FM:2}]],
+ pic:'stone',
+ text:"Great Zimbabwe is a city of stone walls up to eleven metres high, built without any cement. The stones are cut so precisely that they hold each other in place, and have done for about eight hundred years. It was the centre of a wealthy trading kingdom connected to the Indian Ocean.",
+ why:"When Europeans found it, they refused to believe Africans had built it. Colonial authorities pushed the story that foreigners must have done it. Treasure hunters dug through the site for gold and threw away the very layers of soil that held the proof, destroying the evidence. Later archaeologists who said plainly that Africans built it were pressured to stay quiet. The building was African. So was the truth. Both were buried."
+},
+{
+ q:"Do you live in Africa, or outside it?",
+ opts:[["In Africa",{SR:1,KR:1}],["Outside Africa",{BB:2}],["Between the two",{BB:2,FM:1}],["Getting ready to leave",{BB:1,ST:1}]],
+ pic:'money',
+ text:"The money Africans abroad send home every year is now larger than all the foreign aid the continent receives. It arrives with no conditions, no consultants and no forms. It pays school fees, builds houses, buries parents and starts businesses.",
+ why:"Nothing stopped this one, and that is the point. It is the clearest proof that Africans already fund Africa. What is missing is not money or willingness. It is the institutions that would turn millions of small private acts into schools, factories and companies that outlive the person who paid for them."
+},
+{
+ q:"Finish this sentence. Africa's future will be built mainly by...",
+ opts:[["Recovering what was interrupted",{KR:2}],["Fixing the systems we live inside",{SR:2}],["Changing the stories we tell ourselves",{ST:2}],["Building what has never existed",{FM:2}]],
+ pic:'sun',
+ text:"Notice the pattern in everything you just read. None of it failed. None of it was disproved. Each one was interrupted: invaded, defunded, renamed, ridiculed or buried. And in every case the knowledge itself survived, in a pot, in a memory, in a wall, in a hidden box.",
+ why:"That is the whole argument of this platform. Africa is not empty of intelligence. Its intelligence was never recognised, protected, funded or passed on properly. That is not a tragedy you inherit. It is unfinished work, and unfinished work can be continued by whoever decides to pick it up."
+}
+];
+
+const PROFILES = {
+ KR:{name:"The Knowledge Recoverer", rarity:"About 1 in 4 people",
+  desc:"You feel the loss of what is disappearing. Your instinct is to find it, write it down and keep it, before the last person who remembers is gone.",
+  strength:"Your strength is saving memory before it closes.",
+  q:"What did your grandparents know that your generation did not learn?"},
+ BB:{name:"The Bridge Builder", rarity:"About 1 in 5 people",
+  desc:"You live between two worlds, and that is not confusion, it is an advantage. Your instinct is to connect people, money and ideas that would otherwise never meet.",
+  strength:"Your strength is standing in two places at once.",
+  q:"Who do you know on each side who has never met the other?"},
+ SR:{name:"The System Reformer", rarity:"About 1 in 5 people",
+  desc:"You know that good intentions are not enough, because systems decide what happens long before individuals do. Your instinct is rules, standards and institutions that work.",
+  strength:"Your strength is building what outlasts you.",
+  q:"Which broken system near you was designed by someone who never had to live inside it?"},
+ ST:{name:"The Story Restorer", rarity:"About 1 in 6 people",
+  desc:"You understand that people slowly become the story told about them. Your instinct is words, images and culture that give people back their confidence.",
+  strength:"Your strength is changing what people believe they are allowed to want.",
+  q:"Whose story about Africa are you still repeating without checking?"},
+ FM:{name:"The Future Maker", rarity:"About 1 in 8 people",
+  desc:"Recovering the past is not enough for you. You want to build things that have never existed anywhere, starting from African ground.",
+  strength:"Your strength is refusing the options you were given.",
+  q:"What would you build if you stopped waiting for permission?"}
+};
+
+let idx = 0, scores = {KR:0,BB:0,SR:0,ST:0,FM:0}, mode = 'email';
+const el = id => document.getElementById(id);
+
+function pick(m){
+  mode = m;
+  el('tab-email').classList.toggle('on', m==='email');
+  el('tab-wa').classList.toggle('on', m==='wa');
+}
+
+function startQuiz(){
+  el('q-intro').classList.add('hidden');
+  el('q-card').classList.remove('hidden');
+  render();
+}
+
+function render(){
+  const item = QUESTIONS[idx];
+  el('q-num').textContent = 'Question ' + (idx+1) + ' of ' + QUESTIONS.length;
+  el('q-text').textContent = item.q;
+  const box = el('q-opts'); box.innerHTML = '';
+  item.opts.forEach(function(o){
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = o[0];
+    b.onclick = function(){
+      for (const k in o[1]) scores[k] += o[1][k];
+      showInsight(item);
+    };
+    box.appendChild(b);
+  });
+  el('q-bar').style.width = (idx / QUESTIONS.length * 100) + '%';
+}
+
+function showInsight(item){
+  el('i-pic').innerHTML = PIC[item.pic];
+  el('i-text').textContent = item.text;
+  el('i-why').textContent = item.why;
+  el('i-btn').textContent = (idx === QUESTIONS.length - 1) ? 'See my profile' : 'Continue';
+  el('q-card').classList.add('hidden');
+  el('q-insight').classList.remove('hidden');
+  el('q-insight').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function nextQuestion(){
+  el('q-insight').classList.add('hidden');
+  idx++;
+  if (idx < QUESTIONS.length){ el('q-card').classList.remove('hidden'); render(); }
+  else { el('q-gate').classList.remove('hidden'); el('q-gate').scrollIntoView({behavior:'smooth', block:'center'}); }
+}
+
+function revealResult(){
+  const name = el('g-name').value.trim();
+  const email = el('g-email').value.trim();
+  const wa = el('g-wa').value.replace(/[^0-9+]/g,'');
+  const country = el('g-country').value.trim();
+  const hasEmail = email.indexOf('@') > 0;
+  const hasWa = wa.length >= 8;
+
+  if (!hasEmail && !hasWa){
+    el('g-hint').textContent = 'Please give an email address or a WhatsApp number so we can send your profile.';
+    el('g-hint').style.color = '#B03A2E';
+    (mode === 'wa' ? el('g-wa') : el('g-email')).focus();
+    return;
+  }
+
+  let best='KR', max=-1;
+  for (const k in scores){ if (scores[k] > max){ max = scores[k]; best = k; } }
+  const p = PROFILES[best];
+  window.quizProfile = best;
+
+  /* ---- SEND THE DATA (works on static hosting) ---- */
+  const payload = {
+    name: name,
+    email: email,
+    whatsapp: wa,
+    country: country,
+    preferred_channel: mode,
+    quiz_profile: best,
+    quiz_profile_name: p.name,
+    source: 'Africa Lens Quiz'
+  };
+
+  if (CONFIG.SIGNUP_ENDPOINT){
+    fetch(CONFIG.SIGNUP_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(payload)
+    }).catch(function(){ /* never block the result on a network error */ });
+  }
+
+  if (CONFIG.MAILING_LIST_ACTION && hasEmail){
+    const f = document.createElement('form');
+    f.action = CONFIG.MAILING_LIST_ACTION; f.method = 'post'; f.target = 'ml_sink';
+    [['fields[email]',email],['fields[name]',name],['fields[country]',country],
+     ['fields[profile]',p.name]].forEach(function(pair){
+      const i = document.createElement('input');
+      i.type='hidden'; i.name=pair[0]; i.value=pair[1]; f.appendChild(i);
+    });
+    const sink = document.createElement('iframe');
+    sink.name='ml_sink'; sink.style.display='none';
+    document.body.appendChild(sink); document.body.appendChild(f); f.submit();
+  }
+
+  /* ---- SHOW THE RESULT ---- */
+  el('r-rarity').textContent = p.rarity;
+  el('r-name').textContent = p.name;
+  el('r-desc').textContent = p.desc;
+  el('r-strength').textContent = p.strength;
+  el('r-question').textContent = p.q;
+
+  /* WhatsApp opt-in: the reader messages us, which is the compliant way
+     to start a WhatsApp conversation and cannot get the number blocked. */
+  const waBtn = el('r-wa');
+  if (CONFIG.WHATSAPP_NUMBER && (mode === 'wa' || hasWa)){
+    const msg = encodeURIComponent(
+      'Hello Dr Damola. I just took the Africa Lens Quiz. My profile is ' +
+      p.name + '. Please send me my guide.');
+    waBtn.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + msg;
+    waBtn.classList.remove('hidden');
+  }
+
+  el('r-delivery').textContent = hasEmail
+    ? 'Your guide is on its way to ' + email + '.'
+    : 'Tap the WhatsApp button above and we will send your guide straight away.';
+
+  el('q-gate').classList.add('hidden');
+  el('q-result').classList.remove('hidden');
+  el('q-result').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>
