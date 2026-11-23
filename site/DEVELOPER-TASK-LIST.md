@@ -32,6 +32,14 @@ Fill in all three.
 Dr Damola provides the MailerLite URL. She owns that account.
 The automation that sends the welcome email is built inside MailerLite, not in code.
 
+**Email comes first.** The quiz now requires an email address. The profile is only
+shown on screen after the answers have been sent successfully. If sending fails, the
+reader sees an error and can try again.
+
+In MailerLite, create two text fields: `profile` and `quiz_answers`. Put both into the
+welcome email of the automation, so the reader receives their profile and their seven
+answers. The same answers also go to `SIGNUP_ENDPOINT` as `quiz_answers`.
+
 **Done when:** completing the quiz with a real email produces an email within two
 minutes, and the subscriber appears in the MailerLite group "Africa Lens Quiz".
 

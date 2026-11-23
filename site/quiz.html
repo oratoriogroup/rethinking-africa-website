@@ -35,10 +35,6 @@
   .rarity{display:inline-block;background:rgba(232,161,28,.18);border:1px solid var(--gold);color:var(--gold);
           font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:20px;margin-bottom:1rem}
   .sharebox{background:#F7F1E3;border-left:4px solid var(--gold);padding:1rem;border-radius:3px;text-align:left;color:var(--ink);margin-top:1.2rem;font-size:.95rem}
-  .tabs{display:flex;gap:.5rem;margin-bottom:1rem}
-  .tabs button{flex:1;padding:.6rem;border:2px solid #E4DCC8;background:#F7F1E3;border-radius:4px;
-               font-family:Arial,sans-serif;font-size:.85rem;cursor:pointer;color:var(--ink)}
-  .tabs button.on{border-color:var(--gold);background:#FFF3DC;font-weight:700}
   @media (prefers-reduced-motion:reduce){.insight{animation:none}}
 </style>
 </head>
@@ -103,25 +99,17 @@
       <div id="q-gate" class="qcard hidden">
         <p class="qnum" style="text-align:center">Your profile is ready</p>
         <p class="qtext" style="text-align:center">Where should we send it?</p>
-        <p style="margin-bottom:1.3rem;text-align:center">You will get your full profile and a short free guide, <em>Seven Things Africa Was Taught to Forget</em>.</p>
+        <p style="margin-bottom:1.3rem;text-align:center">We will email you your answers and your full profile. You will also get a short free guide, <em>Seven Things Africa Was Taught to Forget</em>.</p>
 
-        <div class="field"><label for="g-name">Your name</label><input id="g-name" type="text"></div>
-        <div class="field"><label for="g-email">Email address</label><input id="g-email" type="email" placeholder="you@example.com"></div>
-        <div class="field"><label for="g-wa">WhatsApp number</label><input id="g-wa" type="tel" placeholder="+234 800 000 0000"></div>
-        <div class="field"><label for="g-country">Country</label><input id="g-country" type="text"></div>
+        <div class="field"><label for="g-name">Your name</label><input id="g-name" type="text" autocomplete="name"></div>
+        <div class="field"><label for="g-email">Email address (required)</label><input id="g-email" type="email" required autocomplete="email" placeholder="you@gmail.com"></div>
+        <div class="field"><label for="g-wa">WhatsApp number (optional)</label><input id="g-wa" type="tel" autocomplete="tel" placeholder="+234 800 000 0000"></div>
+        <div class="field"><label for="g-country">Country</label><input id="g-country" type="text" autocomplete="country-name"></div>
 
-        <div class="field">
-          <label>Which do you prefer we use?</label>
-          <div class="tabs">
-            <button type="button" id="tab-email" class="on" onclick="pick('email')">Email</button>
-            <button type="button" id="tab-wa" onclick="pick('wa')">WhatsApp</button>
-          </div>
-        </div>
-
-        <p class="note" id="g-hint" style="margin-bottom:1rem">Give either one, or both. Both helps us reach you if one fails.</p>
+        <p class="note" id="g-hint" style="margin-bottom:1rem">Your profile appears here once it has been sent to your email.</p>
 
         <div style="text-align:center">
-          <button class="btn btn-solid" onclick="revealResult()">Show my profile</button>
+          <button class="btn btn-solid" id="g-btn" onclick="revealResult()">Email me my profile</button>
         </div>
         <p class="note" style="margin-top:.8rem;text-align:center">We will never share your details. Leave any time.</p>
       </div>
@@ -264,13 +252,19 @@ const PROFILES = {
   q:"What would you build if you stopped waiting for permission?"}
 };
 
-let idx = 0, scores = {KR:0,BB:0,SR:0,ST:0,FM:0}, mode = 'email';
+let idx = 0, scores = {KR:0,BB:0,SR:0,ST:0,FM:0}, answers = [], sending = false;
 const el = id => document.getElementById(id);
 
-function pick(m){
-  mode = m;
-  el('tab-email').classList.toggle('on', m==='email');
-  el('tab-wa').classList.toggle('on', m==='wa');
+/* The reader's answers as plain text, one question per block, for the email. */
+function answersText(){
+  return answers.map(function(a, i){
+    return (i+1) + '. ' + a.question + '\nYour answer: ' + a.answer;
+  }).join('\n\n');
+}
+
+function gateMessage(text, isError){
+  el('g-hint').textContent = text;
+  el('g-hint').style.color = isError ? '#B03A2E' : '';
 }
 
 function startQuiz(){
@@ -289,6 +283,7 @@ function render(){
     b.className = 'opt'; b.textContent = o[0];
     b.onclick = function(){
       for (const k in o[1]) scores[k] += o[1][k];
+      answers[idx] = {question: item.q, answer: o[0]};
       showInsight(item);
     };
     box.appendChild(b);
@@ -318,54 +313,90 @@ function revealResult(){
   const email = el('g-email').value.trim();
   const wa = el('g-wa').value.replace(/[^0-9+]/g,'');
   const country = el('g-country').value.trim();
-  const hasEmail = email.indexOf('@') > 0;
   const hasWa = wa.length >= 8;
 
-  if (!hasEmail && !hasWa){
-    el('g-hint').textContent = 'Please give an email address or a WhatsApp number so we can send your profile.';
-    el('g-hint').style.color = '#B03A2E';
-    (mode === 'wa' ? el('g-wa') : el('g-email')).focus();
+  /* Email is required: the answers and profile are sent there first. */
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+    gateMessage('Please enter a valid email address so we can send you your answers and profile.', true);
+    el('g-email').focus();
     return;
   }
+  if (sending) return;
 
   let best='KR', max=-1;
   for (const k in scores){ if (scores[k] > max){ max = scores[k]; best = k; } }
   const p = PROFILES[best];
   window.quizProfile = best;
 
-  /* ---- SEND THE DATA (works on static hosting) ---- */
+  /* ---- SEND THE ANSWERS AND PROFILE FIRST (works on static hosting) ---- */
+  const answerText = answersText();
   const payload = {
     name: name,
     email: email,
     whatsapp: wa,
     country: country,
-    preferred_channel: mode,
     quiz_profile: best,
     quiz_profile_name: p.name,
+    quiz_answers: answerText,
+    subject: 'Your Africa Lens Quiz answers and profile: ' + p.name,
     source: 'Africa Lens Quiz'
   };
 
+  const jobs = [];
+
   if (CONFIG.SIGNUP_ENDPOINT){
-    fetch(CONFIG.SIGNUP_ENDPOINT, {
+    jobs.push(fetch(CONFIG.SIGNUP_ENDPOINT, {
       method: 'POST',
       headers: {'Content-Type':'application/json', 'Accept':'application/json'},
       body: JSON.stringify(payload)
-    }).catch(function(){ /* never block the result on a network error */ });
+    }).then(function(res){ if (!res.ok) throw new Error('Signup endpoint ' + res.status); }));
   }
 
-  if (CONFIG.MAILING_LIST_ACTION && hasEmail){
-    const f = document.createElement('form');
-    f.action = CONFIG.MAILING_LIST_ACTION; f.method = 'post'; f.target = 'ml_sink';
-    [['fields[email]',email],['fields[name]',name],['fields[country]',country],
-     ['fields[profile]',p.name]].forEach(function(pair){
-      const i = document.createElement('input');
-      i.type='hidden'; i.name=pair[0]; i.value=pair[1]; f.appendChild(i);
-    });
-    const sink = document.createElement('iframe');
-    sink.name='ml_sink'; sink.style.display='none';
-    document.body.appendChild(sink); document.body.appendChild(f); f.submit();
+  /* MailerLite sends the email itself. In MailerLite, create the text fields
+     "profile" and "quiz_answers" and put them in the welcome automation email. */
+  if (CONFIG.MAILING_LIST_ACTION){
+    jobs.push(new Promise(function(resolve, reject){
+      const f = document.createElement('form');
+      const sinkName = 'ml_sink_' + Date.now();
+      f.action = CONFIG.MAILING_LIST_ACTION; f.method = 'post'; f.target = sinkName;
+      [['fields[email]',email],['fields[name]',name],['fields[country]',country],
+       ['fields[profile]',p.name],['fields[quiz_answers]',answerText]].forEach(function(pair){
+        const i = document.createElement('input');
+        i.type='hidden'; i.name=pair[0]; i.value=pair[1]; f.appendChild(i);
+      });
+      const sink = document.createElement('iframe');
+      sink.name=sinkName; sink.style.display='none';
+      const timer = setTimeout(function(){ reject(new Error('Mailing list timed out')); }, 15000);
+      sink.onload = function(){ clearTimeout(timer); resolve(); };
+      document.body.appendChild(sink); document.body.appendChild(f); f.submit();
+    }));
   }
 
+  if (!jobs.length){
+    /* Nothing configured yet (local preview). Show the result so the page can be tested. */
+    console.warn('Quiz: no SIGNUP_ENDPOINT or MAILING_LIST_ACTION set, so nothing was emailed.');
+    showResult(p, email, wa, hasWa);
+    return;
+  }
+
+  sending = true;
+  el('g-btn').disabled = true;
+  el('g-btn').textContent = 'Sending to your email...';
+  gateMessage('Sending your answers and profile to ' + email + '. This takes a few seconds.', false);
+
+  Promise.all(jobs).then(function(){
+    showResult(p, email, wa, hasWa);
+  }).catch(function(){
+    gateMessage('We could not send your profile just now. Please check your connection and try again. ' +
+                'If it keeps failing, write to hello@rethinkingafrica.africa.', true);
+  }).finally(function(){
+    sending = false;
+    el('g-btn').disabled = false;
+    el('g-btn').textContent = 'Email me my profile';
+  });
+}
+
+function showResult(p, email, wa, hasWa){
   /* ---- SHOW THE RESULT ---- */
   el('r-rarity').textContent = p.rarity;
   el('r-name').textContent = p.name;
@@ -376,7 +407,7 @@ function revealResult(){
   /* WhatsApp opt-in: the reader messages us, which is the compliant way
      to start a WhatsApp conversation and cannot get the number blocked. */
   const waBtn = el('r-wa');
-  if (CONFIG.WHATSAPP_NUMBER && (mode === 'wa' || hasWa)){
+  if (CONFIG.WHATSAPP_NUMBER && hasWa){
     const msg = encodeURIComponent(
       'Hello Dr Damola. I just took the Africa Lens Quiz. My profile is ' +
       p.name + '. Please send me my guide.');
@@ -384,9 +415,8 @@ function revealResult(){
     waBtn.classList.remove('hidden');
   }
 
-  el('r-delivery').textContent = hasEmail
-    ? 'Your guide is on its way to ' + email + '.'
-    : 'Tap the WhatsApp button above and we will send your guide straight away.';
+  el('r-delivery').textContent = 'Your answers, your profile and your free guide have been sent to ' + email +
+    '. If you cannot see the email, check your Promotions or Spam folder.';
 
   el('q-gate').classList.add('hidden');
   el('q-result').classList.remove('hidden');
