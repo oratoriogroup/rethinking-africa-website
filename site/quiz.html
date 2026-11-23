@@ -162,7 +162,14 @@ const CONFIG = {
 
   // Optional: a MailerLite / ConvertKit embedded form action URL.
   // If set, the subscriber is also pushed straight into the mailing list.
-  MAILING_LIST_ACTION: ""
+  MAILING_LIST_ACTION: "",
+
+  // EmailJS: emails the reader their answers and profile straight away,
+  // before the profile appears on screen. Free plan: 200 emails a month.
+  // All three values come from emailjs.com (see EMAIL-QUIZ-RESULTS-SETUP.md).
+  EMAILJS_PUBLIC_KEY:  "",      // Account > General > Public Key
+  EMAILJS_SERVICE_ID:  "",      // Email Services, e.g. "service_ab12cd3"
+  EMAILJS_TEMPLATE_ID: ""       // Email Templates, e.g. "template_xy98zw7"
 };
 /* ============================================================ */
 
@@ -344,6 +351,31 @@ function revealResult(){
 
   const jobs = [];
 
+  /* EmailJS sends the reader's own email: their answers and profile. */
+  if (CONFIG.EMAILJS_PUBLIC_KEY && CONFIG.EMAILJS_SERVICE_ID && CONFIG.EMAILJS_TEMPLATE_ID){
+    jobs.push(fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        service_id:  CONFIG.EMAILJS_SERVICE_ID,
+        template_id: CONFIG.EMAILJS_TEMPLATE_ID,
+        user_id:     CONFIG.EMAILJS_PUBLIC_KEY,
+        template_params: {
+          to_email:         email,
+          to_name:          name || 'friend',
+          country:          country,
+          whatsapp:         wa,
+          profile_name:     p.name,
+          profile_rarity:   p.rarity,
+          profile_desc:     p.desc,
+          profile_strength: p.strength,
+          profile_question: p.q,
+          quiz_answers:     answerText
+        }
+      })
+    }).then(function(res){ if (!res.ok) throw new Error('EmailJS ' + res.status); }));
+  }
+
   if (CONFIG.SIGNUP_ENDPOINT){
     jobs.push(fetch(CONFIG.SIGNUP_ENDPOINT, {
       method: 'POST',
@@ -374,7 +406,7 @@ function revealResult(){
 
   if (!jobs.length){
     /* Nothing configured yet (local preview). Show the result so the page can be tested. */
-    console.warn('Quiz: no SIGNUP_ENDPOINT or MAILING_LIST_ACTION set, so nothing was emailed.');
+    console.warn('Quiz: no EmailJS, SIGNUP_ENDPOINT or MAILING_LIST_ACTION set, so nothing was emailed.');
     showResult(p, email, wa, hasWa);
     return;
   }
