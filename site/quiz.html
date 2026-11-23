@@ -167,9 +167,9 @@ const CONFIG = {
   // EmailJS: emails the reader their answers and profile straight away,
   // before the profile appears on screen. Free plan: 200 emails a month.
   // All three values come from emailjs.com (see EMAIL-QUIZ-RESULTS-SETUP.md).
-  EMAILJS_PUBLIC_KEY:  "",      // Account > General > Public Key
-  EMAILJS_SERVICE_ID:  "",      // Email Services, e.g. "service_ab12cd3"
-  EMAILJS_TEMPLATE_ID: ""       // Email Templates, e.g. "template_xy98zw7"
+  EMAILJS_PUBLIC_KEY:  "4JtkVqohEBEOOKXVX",   // Account > General > Public Key
+  EMAILJS_SERVICE_ID:  "service_h3w4sen",     // Email Services (Gmail)
+  EMAILJS_TEMPLATE_ID: "template_ao9pisu"     // Email Templates: "Africa Lens Quiz results"
 };
 /* ============================================================ */
 
@@ -447,7 +447,7 @@ function showResult(p, email, wa, hasWa){
     waBtn.classList.remove('hidden');
   }
 
-  el('r-delivery').textContent = 'Your answers, your profile and your free guide have been sent to ' + email +
+  el('r-delivery').textContent = 'Your answers and your profile have been sent to ' + email +
     '. If you cannot see the email, check your Promotions or Spam folder.';
 
   el('q-gate').classList.add('hidden');
