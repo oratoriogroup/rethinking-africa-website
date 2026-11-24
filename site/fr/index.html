@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=5">
+<link rel="stylesheet" href="../css/style.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,7 +122,7 @@
   <hr class="horizon">
 
   <!-- What the platform is + trailer (click-to-play, never autoplay) -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap">
       <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> réunit la recherche, l’expérience vécue et les voix africaines pour examiner les systèmes qui façonnent le continent, et explorer des voies concrètes vers l’autonomie, l’excellence et le renouveau africains.</p>
       <div class="video-frame" style="margin-top:1.6rem">
@@ -165,7 +165,7 @@
 
 
   <!-- INTERRUPTED SCIENCE - before / after -->
-  <section class="dark">
+  <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Ce n’est pas le passé. C’est une science interrompue.</h2>
       <p style="max-width:64ch">Le canari en argile n’est pas un symbole de pauvreté ; c’est un dispositif thermodynamique autonome, perfectionné par des générations d’expérimentation empirique. Grâce à l’imagerie spéculative par IA, nous montrons à quoi devraient ressembler aujourd’hui les sciences africaines si leur développement n’avait jamais été violemment interrompu.</p>
@@ -188,7 +188,7 @@
   <hr class="horizon">
 
   <!-- AFRICA IN PICTURES - visual story strip -->
-  <section class="dark">
+  <section class="tone-cloth pictures">
     <div class="wrap">
       <h2>L’histoire que nous repensons</h2>
       <!-- DEVELOPER: replace placeholders with licensed photographs (WebP, <=150 KB each).
@@ -196,16 +196,16 @@
            unsplash.com - choose images of African work, craft, learning and city life
            that show capability and dignity, never crisis cliches. -->
       <div class="gallery">
-        <figure><img src="../assets/claypot-evolution.webp" alt="L’évolution du canari : une science des matériaux autorafraîchissante et sans carbone pour les villes africaines de demain" loading="lazy"><figcaption>L’évolution du canari : sagesse traditionnelle, science moderne.</figcaption></figure>
-        <figure><img src="../assets/ifa-quantum.webp" alt="Le système binaire d’Ifá représenté comme le cœur d’un ordinateur quantique : 16 Odù, 256 états" loading="lazy"><figcaption>Le noyau binaire d’Ifá : un moteur algorithmique vieux de 1 000 ans.</figcaption></figure>
-        <figure><img src="../assets/smart-city.webp" alt="Une future ville intelligente africaine inspirée de l’ingénierie en pierre sèche du Grand Zimbabwe" loading="lazy"><figcaption>Du Grand Zimbabwe à la ville intelligente : bâti par l’Afrique, pour l’Afrique.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" alt="L’évolution du canari : une science des matériaux autorafraîchissante et sans carbone pour les villes africaines de demain" loading="lazy"></span><figcaption>L’évolution du canari : sagesse traditionnelle, science moderne.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" alt="Le système binaire d’Ifá représenté comme le cœur d’un ordinateur quantique : 16 Odù, 256 états" loading="lazy"></span><figcaption>Le noyau binaire d’Ifá : un moteur algorithmique vieux de 1 000 ans.</figcaption></figure>
+        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" alt="Une future ville intelligente africaine inspirée de l’ingénierie en pierre sèche du Grand Zimbabwe" loading="lazy"></span><figcaption>Du Grand Zimbabwe à la ville intelligente : bâti par l’Afrique, pour l’Afrique.</figcaption></figure>
       </div>
     </div>
   </section>
   <hr class="horizon">
 
   <!-- 4. MAJOR THEMES -->
-  <section class="dark">
+  <section class="dark themes">
     <div class="wrap">
       <h2>Six grands thèmes</h2>
       <div class="grid cols3">
@@ -221,7 +221,7 @@
   <hr class="horizon">
 
   <!-- 5. THE QUESTION AFRICA MUST ANSWER -->
-  <section>
+  <section class="big-question">
     <div class="wrap" style="text-align:center">
       <h2 id="rotating-question" style="max-width:26ch;margin:0 auto 1.2rem">Quels savoirs vos parents possédaient-ils que votre génération n’a pas su hériter ?</h2>
       <a class="btn btn-navy" href="contribute.html">Envoyer votre réponse</a>
@@ -230,7 +230,7 @@
   </section>
 
   <!-- 6. FEATURED AFRICAN VOICE -->
-  <section class="dark">
+  <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Plusieurs voix, une seule table</h2>
       <p style="max-width:60ch">Chercheurs, artisans, étudiants, entrepreneurs, aînés, décideurs
@@ -243,7 +243,7 @@
   <hr class="horizon">
 
   <!-- 7. LATEST WRITING & FROM THE FIELD -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap">
       <h2>Les écrits</h2>
       <p style="max-width:62ch">Articles, synthèses de recherche, listes de lecture et notes téléchargeables
@@ -290,7 +290,7 @@
   </section>
 
   <!-- 10. NEWSLETTER SUBSCRIPTION -->
-  <section class="dark" id="subscribe">
+  <section class="dark tone-indigo membership" id="subscribe">
     <div class="wrap" style="text-align:center">
       <h2>Rejoignez les 1 000 fondateurs</h2>
       <p style="max-width:56ch;margin:0 auto 1.4rem">Faites partie des mille premiers membres d’un mouvement pour retrouver l’intelligence et l’autonomie africaines. Découvrez des perspectives centrées sur l’Afrique et fondées sur la recherche, regardez des conversations avec des chercheurs et des praticiens, et recevez les nouveaux épisodes, articles et invitations, en commençant par la série gratuite <strong>7 jours pour repenser</strong>.</p>
@@ -339,7 +339,7 @@
   <hr class="horizon">
 
   <!-- 11. PARTNERS -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap" style="text-align:center">
       <h2>Devenez partenaire de Rethinking Africa</h2>
       <p style="max-width:56ch;margin:0 auto 1.4rem">Universités, centres de recherche, institutions culturelles, médias et organismes de développement sont invités à collaborer à des projets de recherche, de médias et d’engagement public.</p>

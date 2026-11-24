@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=5">
+<link rel="stylesheet" href="../css/style.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,7 +122,7 @@
   <hr class="horizon">
 
   <!-- What the platform is + trailer (click-to-play, never autoplay) -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap">
       <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> inaleta pamoja utafiti, uzoefu halisi na sauti za Kiafrika ili kuchunguza mifumo inayoliunda bara hili, na kutafuta njia za vitendo kuelekea uhuru wa kujiamulia, ubora na upya wa Afrika.</p>
       <div class="video-frame" style="margin-top:1.6rem">
@@ -165,7 +165,7 @@
 
 
   <!-- INTERRUPTED SCIENCE - before / after -->
-  <section class="dark">
+  <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Hii si historia ya zamani. Hii ni sayansi iliyokatizwa.</h2>
       <p style="max-width:64ch">Chungu cha udongo si alama ya umaskini; ni kifaa cha thermodinamiki kisichohitaji umeme, kilichoboreshwa kupitia vizazi vya majaribio. Kwa kutumia picha za kubuni za akili bandia (AI), tunaonyesha sayansi za Kiafrika zingekuwaje leo, kama maendeleo yake yasingekatizwa kwa nguvu.</p>
@@ -188,7 +188,7 @@
   <hr class="horizon">
 
   <!-- AFRICA IN PICTURES - visual story strip -->
-  <section class="dark">
+  <section class="tone-cloth pictures">
     <div class="wrap">
       <h2>Hadithi tunayoifikiria upya</h2>
       <!-- DEVELOPER: replace placeholders with licensed photographs (WebP, <=150 KB each).
@@ -196,16 +196,16 @@
            unsplash.com - choose images of African work, craft, learning and city life
            that show capability and dignity, never crisis cliches. -->
       <div class="gallery">
-        <figure><img src="../assets/claypot-evolution.webp" alt="Mageuzi ya chungu cha udongo: sayansi ya malighafi inayojipoza bila kaboni kwa miji ya Afrika ya baadaye" loading="lazy"><figcaption>Mageuzi ya Chungu cha Udongo: hekima ya jadi, sayansi ya kisasa.</figcaption></figure>
-        <figure><img src="../assets/ifa-quantum.webp" alt="Mfumo wa binari wa Ifá ukionyeshwa kama kiini cha kompyuta ya quantum: Odù 16, hali 256" loading="lazy"><figcaption>Kiini cha Mfumo wa Binari wa Ifá: injini ya kialgorithimu ya miaka 1,000.</figcaption></figure>
-        <figure><img src="../assets/smart-city.webp" alt="Jiji janja la Kiafrika la baadaye lililohamasishwa na uhandisi wa mawe bila saruji wa Great Zimbabwe" loading="lazy"><figcaption>Kutoka Great Zimbabwe hadi jiji janja: limejengwa na Afrika, kwa ajili ya Afrika.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" alt="Mageuzi ya chungu cha udongo: sayansi ya malighafi inayojipoza bila kaboni kwa miji ya Afrika ya baadaye" loading="lazy"></span><figcaption>Mageuzi ya Chungu cha Udongo: hekima ya jadi, sayansi ya kisasa.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" alt="Mfumo wa binari wa Ifá ukionyeshwa kama kiini cha kompyuta ya quantum: Odù 16, hali 256" loading="lazy"></span><figcaption>Kiini cha Mfumo wa Binari wa Ifá: injini ya kialgorithimu ya miaka 1,000.</figcaption></figure>
+        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" alt="Jiji janja la Kiafrika la baadaye lililohamasishwa na uhandisi wa mawe bila saruji wa Great Zimbabwe" loading="lazy"></span><figcaption>Kutoka Great Zimbabwe hadi jiji janja: limejengwa na Afrika, kwa ajili ya Afrika.</figcaption></figure>
       </div>
     </div>
   </section>
   <hr class="horizon">
 
   <!-- 4. MAJOR THEMES -->
-  <section class="dark">
+  <section class="dark themes">
     <div class="wrap">
       <h2>Mada sita kuu</h2>
       <div class="grid cols3">
@@ -221,7 +221,7 @@
   <hr class="horizon">
 
   <!-- 5. THE QUESTION AFRICA MUST ANSWER -->
-  <section>
+  <section class="big-question">
     <div class="wrap" style="text-align:center">
       <h2 id="rotating-question" style="max-width:26ch;margin:0 auto 1.2rem">Ni maarifa gani wazazi wako walikuwa nayo ambayo kizazi chako hakikuyarithi?</h2>
       <a class="btn btn-navy" href="contribute.html">Tuma jibu lako</a>
@@ -230,7 +230,7 @@
   </section>
 
   <!-- 6. FEATURED AFRICAN VOICE -->
-  <section class="dark">
+  <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Sauti nyingi, meza moja</h2>
       <p style="max-width:60ch">Wasomi, mafundi, wanafunzi, wajasiriamali, wazee, watunga sera
@@ -243,7 +243,7 @@
   <hr class="horizon">
 
   <!-- 7. LATEST WRITING & FROM THE FIELD -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap">
       <h2>Kazi zilizoandikwa</h2>
       <p style="max-width:62ch">Makala, muhtasari wa tafiti, orodha za kusoma na taarifa fupi za kupakua
@@ -290,7 +290,7 @@
   </section>
 
   <!-- 10. NEWSLETTER SUBSCRIPTION -->
-  <section class="dark" id="subscribe">
+  <section class="dark tone-indigo membership" id="subscribe">
     <div class="wrap" style="text-align:center">
       <h2>Jiunge na Waanzilishi 1,000</h2>
       <p style="max-width:56ch;margin:0 auto 1.4rem">Kuwa miongoni mwa wanachama elfu moja wa kwanza wa vuguvugu la kurejesha akili na uhuru wa Kiafrika. Gundua mitazamo inayoweka Afrika katikati iliyojikita katika utafiti, tazama mazungumzo na wasomi na wataalamu, na upokee vipindi vipya, makala na mialiko ya matukio, ukianza na mfululizo wa bure wa <strong>Siku 7 za Kufikiria Upya</strong>.</p>
@@ -339,7 +339,7 @@
   <hr class="horizon">
 
   <!-- 11. PARTNERS -->
-  <section>
+  <section class="tone-cloth">
     <div class="wrap" style="text-align:center">
       <h2>Shirikiana na Rethinking Africa</h2>
       <p style="max-width:56ch;margin:0 auto 1.4rem">Vyuo vikuu, vituo vya utafiti, taasisi za kitamaduni, vyombo vya habari na mashirika ya maendeleo yanakaribishwa kushirikiana katika miradi ya utafiti, vyombo vya habari na ushirikishaji wa umma.</p>

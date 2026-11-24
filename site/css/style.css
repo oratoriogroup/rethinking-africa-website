@@ -543,3 +543,117 @@ html[lang="ha"]{--sans:'Lato','Noto Sans','Segoe UI',Arial,sans-serif}
 /* Checker fixes, round 2 */
 .dark .pub .yr{color:var(--gold)}               /* bright gold on dark, deep gold on ivory */
 .hero-portrait figcaption{letter-spacing:.02em}
+
+
+/* =====================================================================
+   EDITORIAL UPGRADE
+   Pacing like a flagship publication, using only the brand's own tones:
+   indigo night (#141D3D), indigo (#1D2A57), ivory (#F7F1E3), cloth (#FBF7EE).
+   ===================================================================== */
+
+/* --- 1. Typography: one clear scale, readable body rhythm --- */
+:root{
+  --step-0:clamp(1.02rem,.98rem + .2vw,1.1rem);     /* body */
+  --step-1:clamp(1.25rem,1.1rem + .6vw,1.5rem);      /* h3 */
+  --step-2:clamp(1.9rem,1.5rem + 2vw,2.9rem);        /* h2 */
+  --step-3:clamp(2.2rem,1.6rem + 3.4vw,4rem);        /* h1 */
+}
+body{font-size:var(--step-0);line-height:1.65}
+h1{font-size:var(--step-3)}
+h2{font-size:var(--step-2);line-height:1.08}
+h3{font-size:var(--step-1)}
+p{max-width:65ch}
+.hero p.lede,.quiz-band p{margin-left:auto;margin-right:auto}
+@media (min-width:820px){.hero-grid p.lede{margin-left:0}}
+
+/* --- 2. Pacing: alternating surface tones; tone changes replace divider lines --- */
+.horizon{display:none}
+.hero{box-shadow:inset 0 -4px 0 var(--gold)}             /* one gold edge under the hero */
+.tone-cloth{background:var(--cloth)}
+.dark.tone-indigo{background:var(--indigo)}
+.dark.tone-indigo::before{opacity:.035}
+.dark::before{opacity:.03}                                 /* texture, never competing with text */
+section+section{border-top:1px solid transparent}
+.tone-cloth+section:not(.dark),section:not(.dark):not(.tone-cloth)+.tone-cloth{border-top-color:var(--line)}
+
+/* --- 3. Labels as refined pills (small, gold-edged, sentence-length) --- */
+.eyebrow.keep,.ba-label{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.38rem .85rem;border-radius:999px;margin-bottom:.9rem;line-height:1;
+}
+.eyebrow.keep{background:transparent;color:var(--gold);border:1px solid rgba(232,161,28,.65)}
+.eyebrow.keep::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(232,161,28,.25)}
+.ba-label.was{background:transparent;color:#E4DECF;border:1px solid rgba(247,241,227,.45)}
+.ba-label.is{background:var(--gold);color:var(--indigo-night);border:1px solid var(--gold)}
+
+/* --- 4. Media cards: one radius, equal heights, lift + soft gold glow on hover --- */
+.gallery,.ba-grid{align-items:stretch}
+.gallery figure,.ba-grid figure{
+  display:flex;flex-direction:column;margin:0;border-radius:14px;overflow:hidden;
+  background:#FFFDF8;border:1px solid var(--line);box-shadow:var(--shadow);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s;
+}
+.dark .ba-grid figure{background:rgba(247,241,227,.04);border-color:rgba(232,161,28,.25);box-shadow:none}
+.gallery figure:hover,.ba-grid figure:hover{
+  transform:translateY(-4px);border-color:rgba(232,161,28,.7);
+  box-shadow:0 18px 40px -18px rgba(20,29,61,.45),0 0 0 4px rgba(232,161,28,.14);
+}
+.gallery .frame{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--indigo-night)}
+.gallery .frame img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border-radius:0;display:block}
+/* The smart-city artwork has text sliced off inside the file itself; frame only its clean city scene */
+.gallery .crop-city .frame img{width:157.9%;height:auto;max-width:none;margin:-16.7% 0 0 -57.9%}
+.gallery figcaption,.ba-grid figcaption{padding:.9rem 1.1rem 1.1rem;margin:0;font-size:.95rem;line-height:1.5;color:var(--ink)}
+.ba-grid figure .ba-label{margin:1rem 1.1rem .7rem;align-self:flex-start}
+.ba-grid img{border-radius:0}
+.dark .ba-grid figcaption{color:#D5D7E2}
+@media (min-width:640px){.gallery{gap:1.3rem}}
+
+/* --- 5. Latest episode: a distinct feature band --- */
+.dark:has(.eyebrow.keep) h2{font-size:clamp(2.2rem,1.6rem + 3vw,3.6rem)}
+
+/* --- 6. Six major themes: bento grid with icon tiles --- */
+.themes .grid.cols3{gap:1rem}
+@media (min-width:640px){.themes .grid.cols3{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.themes .grid.cols3{grid-template-columns:repeat(3,1fr)}}
+.theme-card{display:flex;flex-direction:column;gap:.35rem;min-height:100%;padding:1.5rem 1.4rem 1.6rem;border-radius:16px}
+.theme-card svg{width:52px;height:52px;padding:6px;border-radius:12px;background:rgba(232,161,28,.1);border:1px solid rgba(232,161,28,.35);margin-bottom:.9rem}
+.theme-card:hover{box-shadow:0 0 0 4px rgba(232,161,28,.12),0 18px 40px -20px rgba(0,0,0,.6)}
+
+/* --- 7. The big question: an editorial pull-quote --- */
+.big-question h2{font-style:italic;font-weight:600;font-size:clamp(2rem,1.4rem + 3vw,3.4rem);max-width:24ch;margin-left:auto;margin-right:auto}
+
+/* --- 8. "Join the Founding 1,000": a high-trust membership card --- */
+.membership form{
+  max-width:520px;margin:0 auto;text-align:left;
+  background:var(--cloth);color:var(--ink);border-radius:18px;padding:1.6rem 1.3rem 1.4rem;
+  border:1px solid rgba(232,161,28,.6);box-shadow:0 30px 60px -30px rgba(0,0,0,.65),0 0 0 6px rgba(232,161,28,.08);
+}
+.membership form label{color:var(--indigo)}
+.membership form .btn-ghost{color:var(--indigo);border-color:var(--indigo)}
+.membership form .btn-ghost:hover{background:rgba(29,42,87,.06)}
+.membership form > div:last-child{display:flex;flex-direction:column;gap:.7rem}
+.membership form > div:last-child .btn{width:100%;margin:0 !important}
+select{appearance:none;-webkit-appearance:none;padding-right:2.6rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231D2A57' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center}
+[dir="rtl"] select{padding-right:.9rem;padding-left:2.6rem;background-position:left 1rem center}
+@media (min-width:640px){.membership form{padding:2.2rem 2.2rem 1.8rem}.membership form > div:last-child{flex-direction:row}}
+
+/* --- 9. Sticky navigation with a soft backdrop blur --- */
+header.site{position:sticky;top:0;z-index:50}
+header.site::before{background:rgba(29,42,87,.86);-webkit-backdrop-filter:blur(12px) saturate(140%);backdrop-filter:blur(12px) saturate(140%)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){header.site::before{background:rgba(29,42,87,.97)}}
+section[id],[id]{scroll-margin-top:130px}                  /* anchor links land below the sticky bar */
+@media (max-width:759px){
+  header.site{padding-top:.35rem}
+  .brand svg{width:40px;height:34px}
+  .brand span{font-size:1.08rem}
+  nav.main a{padding:.55rem 0;min-height:42px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gallery figure,.ba-grid figure{transition:none}
+  .gallery figure:hover,.ba-grid figure:hover{transform:none}
+}
+header.site{background:transparent}                        /* the blurred layer is the bar's surface */
