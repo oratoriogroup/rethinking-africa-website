@@ -37,6 +37,14 @@
   .sharebox{background:#F7F1E3;border-left:4px solid var(--gold);padding:1rem;border-radius:3px;text-align:left;color:var(--ink);margin-top:1.2rem;font-size:.95rem}
   @media (prefers-reduced-motion:reduce){.insight{animation:none}}
 </style>
+<!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/quiz.html">
+<link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/quiz.html">
+<link rel="alternate" hreflang="ha" href="https://rethinkingafrica.africa/ha/quiz.html">
+<link rel="alternate" hreflang="ar" href="https://rethinkingafrica.africa/ar/quiz.html">
+<link rel="alternate" hreflang="sw" href="https://rethinkingafrica.africa/sw/quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://rethinkingafrica.africa/quiz.html">
+<!--/i18n:alternates-->
 </head>
 <body>
 
@@ -173,6 +181,29 @@ const CONFIG = {
 };
 /* ============================================================ */
 
+/* On-screen messages. Kept together so translated copies of this page
+   (built by i18n/build.js) only swap the text, never the logic. */
+const LANG = document.documentElement.lang || "en";
+const UI = {
+  questionOf:  "Question {n} of {total}",
+  yourAnswer:  "Your answer:",
+  seeProfile:  "See my profile",
+  next:        "Continue",
+  badEmail:    "Please enter a valid email address so we can send you your answers and profile.",
+  sendBtn:     "Email me my profile",
+  sendingBtn:  "Sending to your email...",
+  sending:     "Sending your answers and profile to {email}. This takes a few seconds.",
+  failed:      "We could not send your profile just now. Please check your connection and try again. If it keeps failing, write to hello@rethinkingafrica.africa.",
+  friend:      "friend",
+  waMessage:   "Hello Dr Damola. I just took the Africa Lens Quiz. My profile is {profile}. Please send me my guide.",
+  delivered:   "Your answers and your profile have been sent to {email}. If you cannot see the email, check your Promotions or Spam folder."
+};
+function t(key, vars){
+  let s = UI[key];
+  for (const k in (vars || {})) s = s.split("{" + k + "}").join(vars[k]);
+  return s;
+}
+
 /* Illustrations: simple inline SVG, brand colours, no network cost. */
 const PIC = {
 book:  '<img class="pic" src="assets/q1-knowledge.webp" alt="African signs and symbols shown as a living information system" loading="lazy">',
@@ -265,7 +296,7 @@ const el = id => document.getElementById(id);
 /* The reader's answers as plain text, one question per block, for the email. */
 function answersText(){
   return answers.map(function(a, i){
-    return (i+1) + '. ' + a.question + '\nYour answer: ' + a.answer;
+    return (i+1) + '. ' + a.question + '\n' + t('yourAnswer') + ' ' + a.answer;
   }).join('\n\n');
 }
 
@@ -282,7 +313,7 @@ function startQuiz(){
 
 function render(){
   const item = QUESTIONS[idx];
-  el('q-num').textContent = 'Question ' + (idx+1) + ' of ' + QUESTIONS.length;
+  el('q-num').textContent = t('questionOf', {n: idx+1, total: QUESTIONS.length});
   el('q-text').textContent = item.q;
   const box = el('q-opts'); box.innerHTML = '';
   item.opts.forEach(function(o){
@@ -302,7 +333,7 @@ function showInsight(item){
   el('i-pic').innerHTML = PIC[item.pic];
   el('i-text').textContent = item.text;
   el('i-why').textContent = item.why;
-  el('i-btn').textContent = (idx === QUESTIONS.length - 1) ? 'See my profile' : 'Continue';
+  el('i-btn').textContent = (idx === QUESTIONS.length - 1) ? t('seeProfile') : t('next');
   el('q-card').classList.add('hidden');
   el('q-insight').classList.remove('hidden');
   el('q-insight').scrollIntoView({behavior:'smooth', block:'center'});
@@ -324,7 +355,7 @@ function revealResult(){
 
   /* Email is required: the answers and profile are sent there first. */
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
-    gateMessage('Please enter a valid email address so we can send you your answers and profile.', true);
+    gateMessage(t('badEmail'), true);
     el('g-email').focus();
     return;
   }
@@ -362,7 +393,8 @@ function revealResult(){
         user_id:     CONFIG.EMAILJS_PUBLIC_KEY,
         template_params: {
           to_email:         email,
-          to_name:          name || 'friend',
+          to_name:          name || t('friend'),
+          language:         LANG,
           country:          country,
           whatsapp:         wa,
           profile_name:     p.name,
@@ -413,18 +445,17 @@ function revealResult(){
 
   sending = true;
   el('g-btn').disabled = true;
-  el('g-btn').textContent = 'Sending to your email...';
-  gateMessage('Sending your answers and profile to ' + email + '. This takes a few seconds.', false);
+  el('g-btn').textContent = t('sendingBtn');
+  gateMessage(t('sending', {email: email}), false);
 
   Promise.all(jobs).then(function(){
     showResult(p, email, wa, hasWa);
   }).catch(function(){
-    gateMessage('We could not send your profile just now. Please check your connection and try again. ' +
-                'If it keeps failing, write to hello@rethinkingafrica.africa.', true);
+    gateMessage(t('failed'), true);
   }).finally(function(){
     sending = false;
     el('g-btn').disabled = false;
-    el('g-btn').textContent = 'Email me my profile';
+    el('g-btn').textContent = t('sendBtn');
   });
 }
 
@@ -440,20 +471,18 @@ function showResult(p, email, wa, hasWa){
      to start a WhatsApp conversation and cannot get the number blocked. */
   const waBtn = el('r-wa');
   if (CONFIG.WHATSAPP_NUMBER && hasWa){
-    const msg = encodeURIComponent(
-      'Hello Dr Damola. I just took the Africa Lens Quiz. My profile is ' +
-      p.name + '. Please send me my guide.');
+    const msg = encodeURIComponent(t('waMessage', {profile: p.name}));
     waBtn.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + msg;
     waBtn.classList.remove('hidden');
   }
 
-  el('r-delivery').textContent = 'Your answers and your profile have been sent to ' + email +
-    '. If you cannot see the email, check your Promotions or Spam folder.';
+  el('r-delivery').textContent = t('delivered', {email: email});
 
   el('q-gate').classList.add('hidden');
   el('q-result').classList.remove('hidden');
   el('q-result').scrollIntoView({behavior:'smooth', block:'start'});
 }
 </script>
+<script src="js/lang.js" defer></script>
 </body>
 </html>

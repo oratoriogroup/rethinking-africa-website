@@ -16,6 +16,17 @@ Plain HTML and one CSS file, by design. No framework, no build step.
 cd site && python3 -m http.server 8000
 ```
 
+## Languages
+
+The Home and Quiz pages are also published in French (`/fr/`), Hausa (`/ha/`), Arabic (`/ar/`, right to left) and Kiswahili (`/sw/`).
+A pop-up on the first visit (`site/js/lang.js`) lets visitors pick a language; the globe button in the header changes it later.
+
+The translated pages are generated, so do not edit `site/fr/` etc. by hand:
+
+- English text to translate is listed in `i18n/source.json`; translations are in `i18n/fr.json`, `ha.json`, `ar.json`, `sw.json`.
+- After changing an English page or a translation, run `node i18n/check.js` and then `node i18n/build.js`, and commit the result.
+- To translate another page, add it to `PAGES` in `i18n/build.js` and its text to the JSON files.
+
 ## Outstanding configuration
 
 Search the files for `DEVELOPER` to find every spot that still needs a form or mailing-list URL.
