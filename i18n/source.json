@@ -256,7 +256,16 @@
     "quiz.alt4": "alt=\"The sixteen principal Odu of Ifa, each built from marks that are either present or absent\"",
     "quiz.alt5": "alt=\"Stone architecture rising into a modern African city\"",
     "quiz.alt6": "alt=\"A woman sending money from a cold city at night, and the home it reaches at sunrise\"",
-    "quiz.alt7": "alt=\"The clay pot principle continued into a modern research laboratory\""
+    "quiz.alt7": "alt=\"The clay pot principle continued into a modern research laboratory\"",
+    "ui.mailSubject": "\"Your Africa Lens Quiz profile: {profile}\"",
+    "ui.mailGreeting": "\"Dear {name},\"",
+    "ui.mailThanks": "\"Thank you for taking the Africa Lens Quiz.\"",
+    "ui.mailProfile": "\"Your African future-builder profile\"",
+    "ui.mailQuestion": "\"One question to carry with you:\"",
+    "ui.mailAnswers": "\"Your answers\"",
+    "ui.mailChannel": "\"New episodes come out regularly on the channel. Subscribing is how you get them.\"",
+    "ui.mailSubscribe": "\"Subscribe on YouTube\"",
+    "ui.mailMotto": "\"Africa must not only be studied. Africa must speak, think, create and determine.\""
   },
   "about.html": {
     "about.001": ">Meet Dr Damola</h2>",

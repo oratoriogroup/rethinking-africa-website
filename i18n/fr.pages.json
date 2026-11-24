@@ -304,5 +304,14 @@
   "quiz.alt4": "alt=\"Les seize Odu principaux d’Ifá, chacun formé de marques présentes ou absentes\"",
   "quiz.alt5": "alt=\"Une architecture de pierre s’élevant vers une ville africaine moderne\"",
   "quiz.alt6": "alt=\"Une femme envoyant de l’argent depuis une ville froide, la nuit, et le foyer qu’il atteint au lever du soleil\"",
-  "quiz.alt7": "alt=\"Le principe du canari prolongé dans un laboratoire de recherche moderne\""
+  "quiz.alt7": "alt=\"Le principe du canari prolongé dans un laboratoire de recherche moderne\"",
+  "ui.mailSubject": "\"Votre profil du quiz Africa Lens : {profile}\"",
+  "ui.mailGreeting": "\"Cher/Chère {name},\"",
+  "ui.mailThanks": "\"Merci d’avoir fait le quiz Africa Lens.\"",
+  "ui.mailProfile": "\"Votre profil de bâtisseur de l’avenir africain\"",
+  "ui.mailQuestion": "\"Une question à garder avec vous :\"",
+  "ui.mailAnswers": "\"Vos réponses\"",
+  "ui.mailChannel": "\"De nouveaux épisodes sortent régulièrement sur la chaîne. L’abonnement vous permet de les recevoir.\"",
+  "ui.mailSubscribe": "\"S’abonner sur YouTube\"",
+  "ui.mailMotto": "\"L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.\""
 }

@@ -304,5 +304,14 @@
   "quiz.alt4": "alt=\"Odu kumi na sita kuu za Ifá, kila moja imeundwa kwa alama zilizopo au zisizokuwepo\"",
   "quiz.alt5": "alt=\"Usanifu wa mawe ukipanda kuwa jiji la kisasa la Kiafrika\"",
   "quiz.alt6": "alt=\"Mwanamke akituma fedha kutoka jiji lenye baridi usiku, na nyumbani zinapofika alfajiri\"",
-  "quiz.alt7": "alt=\"Kanuni ya chungu cha udongo ikiendelezwa katika maabara ya kisasa ya utafiti\""
+  "quiz.alt7": "alt=\"Kanuni ya chungu cha udongo ikiendelezwa katika maabara ya kisasa ya utafiti\"",
+  "ui.mailSubject": "\"Sifa yako ya Jaribio la Africa Lens: {profile}\"",
+  "ui.mailGreeting": "\"Mpendwa {name},\"",
+  "ui.mailThanks": "\"Asante kwa kufanya Jaribio la Africa Lens.\"",
+  "ui.mailProfile": "\"Sifa yako ya mjenzi wa mustakabali wa Afrika\"",
+  "ui.mailQuestion": "\"Swali moja la kubeba pamoja nawe:\"",
+  "ui.mailAnswers": "\"Majibu yako\"",
+  "ui.mailChannel": "\"Vipindi vipya hutoka mara kwa mara kwenye chaneli. Kujisajili ndiyo njia ya kuvipata.\"",
+  "ui.mailSubscribe": "\"Jisajili YouTube\"",
+  "ui.mailMotto": "\"Afrika haipaswi kusomwa tu. Afrika lazima izungumze, ifikiri, ibuni na iamue.\""
 }

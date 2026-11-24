@@ -197,7 +197,20 @@ const UI = {
   failed:      "Nous n’avons pas pu envoyer votre profil pour le moment. Vérifiez votre connexion et réessayez. Si le problème persiste, écrivez à hello@rethinkingafrica.africa.",
   friend:      "ami(e)",
   waMessage:   "Bonjour Dr Damola. Je viens de faire le quiz Africa Lens. Mon profil est {profile}. Merci de m’envoyer mon guide.",
-  delivered:   "Vos réponses et votre profil ont été envoyés à {email}. Si vous ne voyez pas l’e-mail, vérifiez vos dossiers Promotions ou Spam."
+  delivered:   "Vos réponses et votre profil ont été envoyés à {email}. Si vous ne voyez pas l’e-mail, vérifiez vos dossiers Promotions ou Spam.",
+
+  /* Wording of the results email. The EmailJS template has no fixed text of its
+     own: every sentence below is sent with the email, so it arrives in the
+     reader's language. */
+  mailSubject:   "Votre profil du quiz Africa Lens : {profile}",
+  mailGreeting:  "Cher/Chère {name},",
+  mailThanks:    "Merci d’avoir fait le quiz Africa Lens.",
+  mailProfile:   "Votre profil de bâtisseur de l’avenir africain",
+  mailQuestion:  "Une question à garder avec vous :",
+  mailAnswers:   "Vos réponses",
+  mailChannel:   "De nouveaux épisodes sortent régulièrement sur la chaîne. L’abonnement vous permet de les recevoir.",
+  mailSubscribe: "S’abonner sur YouTube",
+  mailMotto:     "L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider."
 };
 function t(key, vars){
   let s = UI[key];
@@ -396,6 +409,17 @@ function revealResult(){
           to_email:         email,
           to_name:          name || t('friend'),
           language:         LANG,
+          dir:              document.documentElement.dir || "ltr",
+          align:            document.documentElement.dir === "rtl" ? "right" : "left",
+          subject:          t('mailSubject', {profile: p.name}),
+          greeting:         t('mailGreeting', {name: name || t('friend')}),
+          thanks:           t('mailThanks'),
+          label_profile:    t('mailProfile'),
+          label_question:   t('mailQuestion'),
+          label_answers:    t('mailAnswers'),
+          channel_text:     t('mailChannel'),
+          subscribe_label:  t('mailSubscribe'),
+          motto:            t('mailMotto'),
           country:          country,
           whatsapp:         wa,
           profile_name:     p.name,

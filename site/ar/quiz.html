@@ -198,7 +198,20 @@ const UI = {
   failed:      "تعذّر إرسال ملفك الآن. يرجى التحقق من اتصالك والمحاولة مرة أخرى. إذا استمرت المشكلة، راسلنا على hello@rethinkingafrica.africa.",
   friend:      "صديقي",
   waMessage:   "مرحبًا دكتورة دامولا. لقد أكملت للتوّ اختبار Africa Lens. ملفي هو {profile}. أرجو أن ترسلي لي الدليل.",
-  delivered:   "تم إرسال إجاباتك وملفك إلى {email}. إذا لم تجد الرسالة، فتحقّق من مجلد Promotions أو Spam."
+  delivered:   "تم إرسال إجاباتك وملفك إلى {email}. إذا لم تجد الرسالة، فتحقّق من مجلد Promotions أو Spam.",
+
+  /* Wording of the results email. The EmailJS template has no fixed text of its
+     own: every sentence below is sent with the email, so it arrives in the
+     reader's language. */
+  mailSubject:   "ملفك في اختبار Africa Lens: {profile}",
+  mailGreeting:  "عزيزي/عزيزتي {name}،",
+  mailThanks:    "شكرًا لك على إجراء اختبار Africa Lens.",
+  mailProfile:   "ملفك كبانٍ لمستقبل أفريقيا",
+  mailQuestion:  "سؤال واحد تحمله معك:",
+  mailAnswers:   "إجاباتك",
+  mailChannel:   "تصدر حلقات جديدة بانتظام على القناة، والاشتراك هو طريقة الحصول عليها.",
+  mailSubscribe: "اشترك على يوتيوب",
+  mailMotto:     "لا ينبغي أن تُدرَس أفريقيا فحسب. يجب على أفريقيا أن تتكلّم وتفكّر وتبدع وتقرّر."
 };
 function t(key, vars){
   let s = UI[key];
@@ -397,6 +410,17 @@ function revealResult(){
           to_email:         email,
           to_name:          name || t('friend'),
           language:         LANG,
+          dir:              document.documentElement.dir || "ltr",
+          align:            document.documentElement.dir === "rtl" ? "right" : "left",
+          subject:          t('mailSubject', {profile: p.name}),
+          greeting:         t('mailGreeting', {name: name || t('friend')}),
+          thanks:           t('mailThanks'),
+          label_profile:    t('mailProfile'),
+          label_question:   t('mailQuestion'),
+          label_answers:    t('mailAnswers'),
+          channel_text:     t('mailChannel'),
+          subscribe_label:  t('mailSubscribe'),
+          motto:            t('mailMotto'),
           country:          country,
           whatsapp:         wa,
           profile_name:     p.name,
