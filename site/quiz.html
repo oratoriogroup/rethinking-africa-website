@@ -448,7 +448,8 @@ function revealResult(){
       const sinkName = 'ml_sink_' + Date.now();
       f.action = CONFIG.MAILING_LIST_ACTION; f.method = 'post'; f.target = sinkName;
       [['fields[email]',email],['fields[name]',name],['fields[country]',country],
-       ['fields[profile]',p.name],['fields[quiz_answers]',answerText]].forEach(function(pair){
+       ['fields[profile]',p.name],['fields[quiz_answers]',answerText],
+       ['fields[language]',LANG]].forEach(function(pair){ // en/fr/ha/ar/sw: picks the 7-day series language
         const i = document.createElement('input');
         i.type='hidden'; i.name=pair[0]; i.value=pair[1]; f.appendChild(i);
       });
