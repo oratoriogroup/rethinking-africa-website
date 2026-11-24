@@ -28,7 +28,11 @@ const LANGS = {
   ar: { dir: "rtl", fonts: "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" },
   sw: { dir: "ltr" }
 };
-const PAGES = ["index.html", "quiz.html"];
+const PAGES = [
+  "index.html", "quiz.html", "about.html", "watch.html", "ideas.html", "publications.html",
+  "african-voices.html", "news.html", "contribute.html", "community.html", "contact.html",
+  "canada-2026.html", "policies.html", "editorial.html"
+];
 
 const ALT_START = "<!--i18n:alternates-->";
 const ALT_END = "<!--/i18n:alternates-->";
@@ -77,11 +81,14 @@ for (const page of PAGES) {
 }
 
 const source = JSON.parse(fs.readFileSync(path.join(__dirname, "source.json"), "utf8"));
+// Ids listed in _keep stay in their original language on purpose (academic citations, paper titles, DOIs).
+const keep = new Set(source._keep || []);
 
 for (const [lang, cfg] of Object.entries(LANGS)) {
-  const dictFile = path.join(__dirname, `${lang}.json`);
-  if (!fs.existsSync(dictFile)) { console.warn(`skip ${lang}: no ${lang}.json`); continue; }
-  const dict = JSON.parse(fs.readFileSync(dictFile, "utf8"));
+  // <lang>.json plus any <lang>.<part>.json files, merged.
+  const files = fs.readdirSync(__dirname).filter((f) => new RegExp(`^${lang}(\\.[\\w-]+)?\\.json$`).test(f));
+  if (!files.length) { console.warn(`skip ${lang}: no ${lang}.json`); continue; }
+  const dict = Object.assign({}, ...files.map((f) => JSON.parse(fs.readFileSync(path.join(__dirname, f), "utf8"))));
   fs.mkdirSync(path.join(SITE, lang), { recursive: true });
 
   for (const page of PAGES) {
@@ -93,7 +100,7 @@ for (const [lang, cfg] of Object.entries(LANGS)) {
     const missing = [];
     for (const id of order) {
       const en = ids[id];
-      if (!(id in dict)) { console.warn(`${lang}: no translation for "${id}"`); continue; }
+      if (!(id in dict)) { if (!keep.has(id)) console.warn(`${lang}: no translation for "${id}"`); continue; }
       if (!html.includes(en)) { if (!(id in common)) missing.push(en); continue; }
       html = html.split(en).join(dict[id]);
     }
