@@ -1,5 +1,8 @@
 /* Language chooser for Rethinking Africa with Dr. Damola.
- * - First visit: a pop-up asks which language the visitor prefers.
+ * - Every time someone arrives on the site (opens a link, types the address,
+ *   opens a new tab) or refreshes the page, a pop-up asks which language they want.
+ * - Moving between pages of the site does not show it again; the chosen
+ *   language is kept from page to page.
  * - A language button in the header reopens it at any time.
  * - The choice is remembered on this device (localStorage).
  * - Translated versions of a page are found from its <link rel="alternate" hreflang> tags,
@@ -35,9 +38,21 @@
     else close(); // this page is not translated yet
   }
 
-  // Remembered choice: open the matching version of this page if there is one.
+  // Is this a fresh arrival (link from elsewhere, typed address, new tab) or a refresh,
+  // rather than a click from another page of this site?
+  function isArrival() {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "reload") return true;
+    var fromHere = false;
+    try { fromHere = document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+    return !fromHere;
+  }
+  var arrival = isArrival();
+
+  // Moving around the site: keep the remembered language, opening the matching
+  // version of this page if there is one. (On arrival the pop-up decides instead.)
   var pref = saved();
-  if (pref && pref !== current) {
+  if (!arrival && pref && pref !== current) {
     var target = versionFor(pref);
     if (target && target !== location.href) { location.replace(target); return; }
   }
@@ -102,5 +117,5 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   }
 
-  if (!pref) open();
+  if (arrival) open();
 })();
