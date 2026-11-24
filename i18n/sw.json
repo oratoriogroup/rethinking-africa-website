@@ -146,7 +146,7 @@
   "ui.sendBtn": "\"Nitumie sifa yangu kwa barua pepe\"",
   "ui.sendingBtn": "\"Inatuma kwenye barua pepe yako...\"",
   "ui.sending": "\"Tunatuma majibu yako na sifa yako kwa {email}. Itachukua sekunde chache.\"",
-  "ui.failed": "\"Hatukuweza kutuma sifa yako sasa hivi. Tafadhali angalia mtandao wako na ujaribu tena. Tatizo likiendelea, andika kwa hello@rethinkingafrica.africa.\"",
+  "ui.failed": "\"Hatukuweza kutuma sifa yako sasa hivi. Tafadhali angalia mtandao wako na ujaribu tena. Tatizo likiendelea, andika kwa drdamolaafrica@gmail.com.\"",
   "ui.friend": "\"rafiki\"",
   "ui.waMessage": "\"Habari Dkt. Damola. Nimemaliza Jaribio la Africa Lens. Sifa yangu ni {profile}. Tafadhali nitumie mwongozo wangu.\"",
   "ui.delivered": "\"Majibu yako na sifa yako yametumwa kwa {email}. Kama huioni barua pepe, angalia folda ya Promotions au Spam.\"",
