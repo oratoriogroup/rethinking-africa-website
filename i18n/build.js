@@ -24,7 +24,9 @@ const BASE = "https://rethinkingafrica.africa";
 
 const LANGS = {
   fr: { dir: "ltr" },
-  ha: { dir: "ltr" },
+  // Cormorant Garamond and Lato have no Hausa hooked letters, so load just those
+  // six letters from Noto (a few KB, via Google Fonts' text= subsetting).
+  ha: { dir: "ltr", fonts: "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@600;700&display=swap&text=%C9%93%C9%97%C6%99%C6%81%C6%8A%C6%98" },
   ar: { dir: "rtl", fonts: "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" },
   sw: { dir: "ltr" }
 };

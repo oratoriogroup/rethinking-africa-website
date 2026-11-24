@@ -85,6 +85,21 @@
     btn.addEventListener("click", open);
     var nav = header.querySelector("nav.main");
     header.insertBefore(btn, nav);
+
+    // If logo, menu and button do not fit on one line, use the two-row layout.
+    var site = header.parentNode, brand = header.querySelector(".brand");
+    var fit = function () {
+      site.classList.remove("stacked");
+      if (!nav || !brand || !window.matchMedia("(min-width:1320px)").matches) return;
+      var top = brand.getBoundingClientRect().top;
+      var navOff = Math.abs(nav.getBoundingClientRect().top - top) > 20;
+      var btnOff = Math.abs(btn.getBoundingClientRect().top - top) > 30;
+      var navTwoLines = nav.getBoundingClientRect().height > 60;
+      if (navOff || btnOff || navTwoLines) site.classList.add("stacked");
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   }
 
   if (!pref) open();
