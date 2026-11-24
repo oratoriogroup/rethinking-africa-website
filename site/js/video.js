@@ -6,16 +6,14 @@
 
    data-autoplay: the video starts by itself, MUTED, once the box is on screen
    (browsers block autoplay with sound, and the project rule is never to autoplay with sound).
-   The visitor taps the player's unmute button to hear it. Autoplay is skipped, and the box
-   stays click-to-play, when the visitor has data saver on, is on a 2G connection, or has
-   asked their device to reduce motion. */
+   The visitor taps the player's unmute button to hear it. It autoplays whether or not
+   data saver is on; only visitors who asked their device to reduce motion get click-to-play. */
 (function(){
   var ok=/^[A-Za-z0-9_-]{11}$/;
 
+  // Autoplays for everyone, data saver or not. The one exception is visitors who
+  // asked their device to reduce motion (an accessibility setting); they get the play button.
   function canAutoplay(){
-    var c=navigator.connection||{};
-    if(c.saveData) return false;
-    if(/(^|-)2g$/.test(c.effectiveType||'')) return false;
     if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
     return true;
   }
