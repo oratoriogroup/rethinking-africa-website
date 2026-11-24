@@ -33,9 +33,12 @@ const PAGES = ["index.html", "quiz.html"];
 const ALT_START = "<!--i18n:alternates-->";
 const ALT_END = "<!--/i18n:alternates-->";
 
+/* Language pages always use the full file name (/fr/index.html, not /fr/):
+   vercel.json has trailingSlash:false, which turns /fr/ into /fr, and at /fr
+   the page's relative links would resolve to the English pages. */
 function pageUrl(lang, page) {
-  const p = page === "index.html" ? "" : page;
-  return lang === "en" ? `${BASE}/${p}` : `${BASE}/${lang}/${p}`;
+  if (lang === "en") return `${BASE}/${page === "index.html" ? "" : page}`;
+  return `${BASE}/${lang}/${page}`;
 }
 
 function alternates(page) {
