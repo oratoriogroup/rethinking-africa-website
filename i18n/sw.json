@@ -12,7 +12,6 @@
   "aria.home": "aria-label=\"Mwanzo wa Rethinking Africa\"",
   "footer.tagline": "Mpango huru wa utafiti, vyombo vya habari na elimu kwa umma unaoweka Afrika katikati, ulioanzishwa na Dkt. Oluwakemi Damola Adejumo-Ayibiowu.",
   "free": "Bure. Hakuna malipo, kamwe.",
-
   "title": "| Kurejesha Akili. Kufikiria Upya Mustakabali.</title>",
   "meta.desc": "content=\"Jukwaa la habari linaloongozwa na utafiti, linalochunguza maendeleo, maarifa, utawala, utamaduni na uwezekano wa Afrika kwa mtazamo unaoweka Afrika katikati.\"",
   "og.desc": "content=\"Jukwaa la habari linaloongozwa na utafiti, lililoanzishwa na Dkt. Oluwakemi Damola Adejumo-Ayibiowu, linalochunguza maendeleo, maarifa, utawala, utamaduni na uwezekano wa Afrika.\"",
@@ -20,7 +19,6 @@
   "hero.lede": "Jukwaa la habari linaloongozwa na utafiti, linalochunguza maendeleo, maarifa, utawala, utamaduni na uwezekano wa Afrika kwa mtazamo unaoweka Afrika katikati.</p>",
   "hero.watch": ">Tazama Kipindi Kipya</a>",
   "hero.join": ">Jiunge na Jumuiya</a>",
-  "hero.share": ">Shiriki Wazo</a>",
   "hero.alt": "alt=\"Dkt. Oluwakemi Damola Adejumo-Ayibiowu, akitabasamu, amevaa gauni la adire la rangi ya bluu-nili na dhahabu\"",
   "quizband.eyebrow": ">Anza hapa</span>",
   "quizband.h2": ">Ulifundishwa kuiona Afrika vipi?</h2>",
@@ -126,7 +124,6 @@
   "footer.privacy": ">Faragha &amp; Masharti</a>",
   "footer.editorial": ">Viwango vya Uhariri</a>",
   "footer.rights": "Haki zote zimehifadhiwa.",
-
   "quiz.title": "<title>Jaribio la Africa Lens la Sekunde 90 |",
   "quiz.meta.desc": "content=\"Maswali saba. Mambo saba ambayo hukuwahi kuambiwa kuhusu maarifa ya Kiafrika, na kwa nini yalikoma. Gundua wewe ni mjenzi wa aina gani wa mustakabali wa Afrika.\"",
   "h1": ">Jaribio la Sekunde 90<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
@@ -154,7 +151,6 @@
   "result.wa": ">Ipate kwenye WhatsApp</a>",
   "result.carry": "<strong>Swali moja la kubeba pamoja nawe:</strong>",
   "result.motto": "Afrika haipaswi kusomwa tu. Afrika lazima izungumze, ifikiri, ibuni na iamue.",
-
   "ui.questionOf": "\"Swali {n} kati ya {total}\"",
   "ui.yourAnswer": "\"Jibu lako:\"",
   "ui.seeProfile": "\"Ona sifa yangu\"",
@@ -167,7 +163,6 @@
   "ui.friend": "\"rafiki\"",
   "ui.waMessage": "\"Habari Dkt. Damola. Nimemaliza Jaribio la Africa Lens. Sifa yangu ni {profile}. Tafadhali nitumie mwongozo wangu.\"",
   "ui.delivered": "\"Majibu yako na sifa yako yametumwa kwa {email}. Kama huioni barua pepe, angalia folda ya Promotions au Spam.\"",
-
   "q1": "\"Ulipokuwa ukikua, ulifundishwa kwamba maarifa kutoka Ulaya au Marekani ni bora kuliko maarifa kutoka Afrika?\"",
   "q1.a1": "\"Ndiyo, waziwazi\"",
   "q1.a2": "\"Hakuna aliyesema, lakini niliuhisi\"",
@@ -175,7 +170,6 @@
   "q1.a4": "\"Sijawahi kulifikiria hivi\"",
   "q1.text": "\"Miaka mia sita iliyopita, Timbuktu nchini Mali ulikuwa mji wa wasomi. Familia zilitunza maktaba majumbani mwao. Mamia ya maelfu ya vitabu vilivyoandikwa kwa mkono kuhusu tiba, unajimu, hisabati na sheria. Wanafunzi walikuja kutoka mbali kusoma huko. Ulikuwa mji wa chuo kikuu kabla ya vingi vya Ulaya kuwepo.\"",
   "q1.why": "\"Mwaka 1591 jeshi lililovamia liliiharibu jumuiya ya wasomi, na wasomi wake wakuu waliuawa au kuchukuliwa. Baadaye, chini ya ukoloni wa Kifaransa, shule zilizochukua nafasi yake zilifundisha hadithi tofauti, na miswada mingi ilipelekwa Ulaya. Familia zilificha kilichobaki ndani ya masanduku na kuyazika. Vitabu vilinusurika. Vyuo vikuu havikunusurika.\"",
-
   "q2": "\"Je, elimu yako ilikuleta karibu zaidi na jamii yako, au ilikupeleka mbali zaidi nayo?\"",
   "q2.a1": "\"Mbali zaidi sana\"",
   "q2.a2": "\"Kidogo kwa vyote viwili\"",
@@ -183,7 +177,6 @@
   "q2.a4": "\"Nilisoma mbali na nyumbani\"",
   "q2.text": "\"Kabla ya shule za kikoloni, watoto wengi wa Kiafrika walijifunza biashara, ufundi au kundi la maarifa kutoka kwa watu waliowazunguka. Kilimo, ufumaji, ujenzi, uponyaji, biashara. Kujifunza kulifanyika ndani ya jamii na kulibaki humo.\"",
   "q2.why": "\"Shule za kikoloni zilijengwa kwa lengo lililotajwa wazi: kuzalisha makarani na matarishi wa kuitumikia serikali, si wajenzi, wavumbuzi au wamiliki. Watoto walifundishwa kwa lugha ya kigeni, kuhusu maeneo ya kigeni, na waliadhibiwa kwa kuzungumza lugha zao. Uhuru ulipokuja, bendera zilibadilika. Katika nchi nyingi, mitaala haikubadilika. Kama shule ilikufanya uhisi kwamba nyumbani hakuna cha kukufundisha, huo ulikuwa mpango ukifanya kazi, si wewe ukishindwa.\"",
-
   "q3": "\"Unaona chungu cha maji cha udongo kijijini. Unafikiria nini?\"",
   "q3.a1": "\"Kitu cha jadi, kinachostahili kutunzwa\"",
   "q3.a2": "\"Umaskini, kusema kweli. Ndivyo nilivyofundishwa\"",
@@ -191,7 +184,6 @@
   "q3.a4": "\"Ninatumia kimoja. Sijawahi kufikiria juu yake\"",
   "q3.text": "\"Chungu cha udongo huhifadhi maji yakiwa baridi katika joto kali bila umeme wowote. Maji hupenya polepole kupitia ukuta wa udongo, na yanapovukiza nje huondoa joto kutoka kwa maji yaliyo ndani. Ni sayansi halisi, iliyobuniwa kwa vizazi kwa kujaribu ni udongo upi, unene upi na umbo lipi vilivyoweka maji baridi zaidi.\"",
   "q3.why": "\"Hakuna aliyeifadhili. Hakuna maabara iliyoichunguza, hakuna kampuni iliyoiboresha, hakuna hataza iliyoilinda, hakuna chuo kikuu kilichoifundisha. Iliitwa ufundi badala ya sayansi, kwa hiyo ilibaki vilevile kwa karne nyingi. Leo wahandisi wa Ulaya na Ghuba wanatumia kanuni hiyohiyo ya kupoza katika majengo ya kisasa, na inaelezwa kama uvumbuzi.\"",
-
   "q4": "\"Mzee anaanza kukueleza maarifa ya jadi. Hisia yako ya kwanza ni ipi?\"",
   "q4.a1": "\"Kuyarekodi kabla hayajapotea\"",
   "q4.a2": "\"Kuuliza tunawezaje kuyajaribu na kuyathibitisha\"",
@@ -199,7 +191,6 @@
   "q4.a4": "\"Kumtambulisha kwa mtu anayeweza kuyatumia\"",
   "q4.text": "\"Kila kompyuta na simu duniani hufanya kazi kwa binari: kila kitu hupunguzwa kuwa hali mbili, kuwaka au kuzima, 1 au 0, kisha huunganishwa kujenga chochote. Mfumo wa Ifá wa Wayoruba hufanya kazi kwa kanuni hiyohiyo kabisa. Kila alama ni moja ya hali mbili. Alama nne huunda umbo moja. Maumbo kumi na sita huungana kuwa matokeo 256, kila moja likiambatana na mafungu ya beti zilizohifadhiwa kichwani. Ni mfumo wa taarifa wa binari, uliohifadhiwa katika kumbukumbu ya binadamu iliyofunzwa, wenye umri wa zaidi ya miaka elfu moja.\"",
   "q4.why": "\"Uliitwa ushirikina. Wamisionari na maafisa wa kikoloni waliukataza, waliobadili dini waliambiwa wauache, na haukuwahi kuruhusiwa kuingia katika idara yoyote ya hisabati ya chuo kikuu. Kwa hiyo mantiki ileile iliyozaa kompyuta upande mmoja wa dunia iliitwa uchawi upande mwingine. Hakuna Mwafrika aliyealikwa kwenye mkutano ambapo binari ilifanywa kuwa mashine.\"",
-
   "q5": "\"Ni nini kinachokutia wasiwasi zaidi kuhusu Afrika leo?\"",
   "q5.a1": "\"Elimu, na maarifa yanayopotea\"",
   "q5.a2": "\"Serikali na taasisi dhaifu\"",
@@ -207,7 +198,6 @@
   "q5.a4": "\"Teknolojia, na kuachwa nyuma tena\"",
   "q5.text": "\"Great Zimbabwe ni mji wa kuta za mawe zenye urefu wa hadi mita kumi na moja, uliojengwa bila saruji yoyote. Mawe yamechongwa kwa usahihi mkubwa kiasi kwamba yanashikana yenyewe, na yamefanya hivyo kwa takriban miaka mia nane. Ulikuwa kitovu cha ufalme tajiri wa biashara ulioungana na Bahari ya Hindi.\"",
   "q5.why": "\"Wazungu walipougundua, walikataa kuamini kwamba Waafrika ndio walioujenga. Mamlaka za kikoloni zilieneza hadithi kwamba wageni ndio lazima walioujenga. Wawindaji hazina walichimba eneo hilo wakitafuta dhahabu na kutupa tabaka zile zile za udongo zilizobeba ushahidi, wakiuharibu. Baadaye wanaakiolojia waliosema wazi kwamba Waafrika ndio walioujenga walishinikizwa kunyamaza. Jengo lilikuwa la Kiafrika. Ukweli pia. Vyote viwili vilizikwa.\"",
-
   "q6": "\"Unaishi Afrika, au nje yake?\"",
   "q6.a1": "\"Afrika\"",
   "q6.a2": "\"Nje ya Afrika\"",
@@ -215,7 +205,6 @@
   "q6.a4": "\"Najiandaa kuondoka\"",
   "q6.text": "\"Fedha ambazo Waafrika walio nje hutuma nyumbani kila mwaka sasa ni nyingi kuliko misaada yote ya kigeni ambayo bara hupokea. Zinafika bila masharti, bila washauri na bila fomu. Zinalipa ada za shule, zinajenga nyumba, zinazika wazazi na zinaanzisha biashara.\"",
   "q6.why": "\"Hakuna kilichozuia hili, na hiyo ndiyo hoja. Ni ushahidi ulio wazi kabisa kwamba Waafrika tayari wanaifadhili Afrika. Kinachokosekana si fedha wala nia. Ni taasisi ambazo zingegeuza mamilioni ya matendo madogo ya watu binafsi kuwa shule, viwanda na makampuni yanayodumu kuliko mtu aliyeyalipia.\"",
-
   "q7": "\"Kamilisha sentensi hii. Mustakabali wa Afrika utajengwa hasa kwa...\"",
   "q7.a1": "\"Kurejesha kilichokatizwa\"",
   "q7.a2": "\"Kurekebisha mifumo tunayoishi ndani yake\"",
@@ -223,7 +212,6 @@
   "q7.a4": "\"Kujenga kile ambacho hakijawahi kuwepo\"",
   "q7.text": "\"Tazama mfumo katika kila ulichosoma hivi punde. Hakuna kilichoshindwa. Hakuna kilichokanushwa. Kila kimoja kilikatizwa: kilivamiwa, kilinyimwa fedha, kilipewa jina jipya, kilidhihakiwa au kilizikwa. Na katika kila hali, maarifa yenyewe yalinusurika, ndani ya chungu, ndani ya kumbukumbu, ndani ya ukuta, ndani ya sanduku lililofichwa.\"",
   "q7.why": "\"Hiyo ndiyo hoja nzima ya jukwaa hili. Afrika haikosi akili. Akili yake haikuwahi kutambuliwa, kulindwa, kufadhiliwa wala kurithishwa ipasavyo. Hilo si janga unalorithi. Ni kazi ambayo haijakamilika, na kazi ambayo haijakamilika inaweza kuendelezwa na yeyote anayeamua kuichukua.\"",
-
   "p.KR.name": "\"Mrejeshaji wa Maarifa\"",
   "p.KR.rarity": "\"Takriban mtu 1 kati ya 4\"",
   "p.KR.desc": "\"Unahisi upotevu wa kile kinachotoweka. Hisia yako ni kukitafuta, kukiandika na kukihifadhi, kabla mtu wa mwisho anayekikumbuka hajaondoka.\"",

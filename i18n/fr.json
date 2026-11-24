@@ -12,7 +12,6 @@
   "aria.home": "aria-label=\"Accueil de Rethinking Africa\"",
   "footer.tagline": "Une initiative indépendante de recherche, de médias et d’éducation publique centrée sur l’Afrique, fondée par Dr Oluwakemi Damola Adejumo-Ayibiowu.",
   "free": "Gratuit. Sans paiement, jamais.",
-
   "title": "| Reconquérir l’intelligence. Réimaginer l’avenir.</title>",
   "meta.desc": "content=\"Une plateforme médiatique fondée sur la recherche, qui explore le développement, les savoirs, la gouvernance, la culture et les possibles africains dans une perspective centrée sur l’Afrique.\"",
   "og.desc": "content=\"Une plateforme médiatique fondée sur la recherche, créée par Dr Oluwakemi Damola Adejumo-Ayibiowu, qui explore le développement, les savoirs, la gouvernance, la culture et les possibles africains.\"",
@@ -20,7 +19,6 @@
   "hero.lede": "Une plateforme médiatique fondée sur la recherche, qui explore le développement, les savoirs, la gouvernance, la culture et les possibles africains dans une perspective centrée sur l’Afrique.</p>",
   "hero.watch": ">Voir le dernier épisode</a>",
   "hero.join": ">Rejoindre la communauté</a>",
-  "hero.share": ">Partager une idée</a>",
   "hero.alt": "alt=\"Dr Oluwakemi Damola Adejumo-Ayibiowu, souriante, dans une robe en adire indigo et or\"",
   "quizband.eyebrow": ">Commencez ici</span>",
   "quizband.h2": ">Comment vous a-t-on appris à voir l’Afrique ?</h2>",
@@ -126,7 +124,6 @@
   "footer.privacy": ">Confidentialité &amp; conditions</a>",
   "footer.editorial": ">Normes éditoriales</a>",
   "footer.rights": "Tous droits réservés.",
-
   "quiz.title": "<title>Le quiz Africa Lens en 90 secondes |",
   "quiz.meta.desc": "content=\"Sept questions. Sept choses qu’on ne vous a jamais dites sur les savoirs africains, et pourquoi elles se sont arrêtées. Découvrez quel bâtisseur de l’avenir africain vous êtes.\"",
   "h1": ">Le quiz en 90 secondes<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
@@ -154,7 +151,6 @@
   "result.wa": ">Le recevoir sur WhatsApp</a>",
   "result.carry": "<strong>Une question à garder avec vous :</strong>",
   "result.motto": "L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.",
-
   "ui.questionOf": "\"Question {n} sur {total}\"",
   "ui.yourAnswer": "\"Votre réponse :\"",
   "ui.seeProfile": "\"Voir mon profil\"",
@@ -167,7 +163,6 @@
   "ui.friend": "\"ami(e)\"",
   "ui.waMessage": "\"Bonjour Dr Damola. Je viens de faire le quiz Africa Lens. Mon profil est {profile}. Merci de m’envoyer mon guide.\"",
   "ui.delivered": "\"Vos réponses et votre profil ont été envoyés à {email}. Si vous ne voyez pas l’e-mail, vérifiez vos dossiers Promotions ou Spam.\"",
-
   "q1": "\"Pendant votre enfance, vous a-t-on appris que les savoirs venus d’Europe ou d’Amérique valaient mieux que ceux venus d’Afrique ?\"",
   "q1.a1": "\"Oui, clairement\"",
   "q1.a2": "\"Personne ne l’a dit, mais je l’ai ressenti\"",
@@ -175,7 +170,6 @@
   "q1.a4": "\"Je n’y avais jamais pensé ainsi\"",
   "q1.text": "\"Il y a six cents ans, Tombouctou, au Mali, était une ville de savants. Les familles gardaient des bibliothèques chez elles. Des centaines de milliers de manuscrits sur la médecine, l’astronomie, les mathématiques et le droit. Des étudiants venaient de très loin pour y étudier. C’était une ville universitaire avant que beaucoup d’universités européennes n’existent.\"",
   "q1.why": "\"En 1591, une armée d’invasion a détruit la communauté savante ; ses principaux érudits ont été tués ou déportés. Plus tard, sous la colonisation française, les écoles qui l’ont remplacée ont enseigné une autre histoire, et de nombreux manuscrits ont été emportés en Europe. Les familles ont caché ce qui restait dans des coffres et les ont enterrés. Les livres ont survécu. Les universités, non.\"",
-
   "q2": "\"Votre éducation vous a-t-elle rapproché de votre communauté, ou vous en a-t-elle éloigné ?\"",
   "q2.a1": "\"Beaucoup éloigné\"",
   "q2.a2": "\"Un peu des deux\"",
@@ -183,7 +177,6 @@
   "q2.a4": "\"J’ai été scolarisé loin de chez moi\"",
   "q2.text": "\"Avant l’école coloniale, la plupart des enfants africains apprenaient un métier, un artisanat ou un ensemble de savoirs auprès des gens qui les entouraient. Agriculture, tissage, construction, soins, commerce. L’apprentissage se faisait au sein de la communauté et y restait.\"",
   "q2.why": "\"Les écoles coloniales avaient un but déclaré : former des commis et des messagers au service d’une administration, pas des bâtisseurs, des inventeurs ou des propriétaires. Les enfants apprenaient dans une langue étrangère, sur des lieux étrangers, et étaient punis s’ils parlaient la leur. À l’indépendance, les drapeaux ont changé. Dans beaucoup de pays, les programmes, non. Si l’école vous a fait sentir que votre foyer n’avait rien à vous apprendre, c’était le système qui fonctionnait, pas vous qui échouiez.\"",
-
   "q3": "\"Vous voyez un canari en argile dans un village. Qu’en pensez-vous ?\"",
   "q3.a1": "\"Quelque chose de traditionnel, à préserver\"",
   "q3.a2": "\"La pauvreté, honnêtement. C’est ce qu’on m’a appris\"",
@@ -191,7 +184,6 @@
   "q3.a4": "\"J’en utilise un. Je n’y avais jamais pensé\"",
   "q3.text": "\"Un canari en argile garde l’eau fraîche par forte chaleur, sans aucune électricité. L’eau traverse lentement la paroi d’argile et, en s’évaporant à l’extérieur, elle retire la chaleur de l’eau à l’intérieur. C’est une vraie science, mise au point au fil des générations en testant quelle argile, quelle épaisseur et quelle forme gardaient l’eau la plus fraîche.\"",
   "q3.why": "\"Personne ne l’a financée. Aucun laboratoire ne l’a étudiée, aucune entreprise ne l’a améliorée, aucun brevet ne l’a protégée, aucune université ne l’a enseignée. On l’a appelée artisanat au lieu de science, alors elle est restée la même pendant des siècles. Aujourd’hui, des ingénieurs en Europe et dans le Golfe utilisent exactement ce principe de refroidissement dans des bâtiments modernes, et on le présente comme une innovation.\"",
-
   "q4": "\"Un aîné commence à vous expliquer un savoir traditionnel. Quel est votre premier réflexe ?\"",
   "q4.a1": "\"L’enregistrer avant qu’il ne disparaisse\"",
   "q4.a2": "\"Demander comment le tester et le prouver\"",
@@ -199,7 +191,6 @@
   "q4.a4": "\"Le présenter à quelqu’un qui pourrait l’utiliser\"",
   "q4.text": "\"Tous les ordinateurs et téléphones du monde fonctionnent en binaire : tout est réduit à deux états, allumé ou éteint, 1 ou 0, puis combiné pour tout construire. Le système Ifá des Yoruba repose exactement sur le même principe. Chaque marque est l’un de deux états. Quatre marques forment une figure. Seize figures se combinent en 256 issues, chacune liée à un ensemble de versets mémorisés. C’est un système d’information binaire, conservé dans une mémoire humaine entraînée, vieux de plus de mille ans.\"",
   "q4.why": "\"On l’a qualifié de superstition. Missionnaires et administrateurs coloniaux l’ont découragé, on a demandé aux convertis de l’abandonner, et il n’a jamais été admis dans un seul département universitaire de mathématiques. Ainsi, la même logique qui est devenue l’ordinateur dans une partie du monde a été appelée sorcellerie dans une autre. Personne en Afrique n’a été invité à la réunion où le binaire est devenu une machine.\"",
-
   "q5": "\"Qu’est-ce qui vous inquiète le plus pour l’Afrique aujourd’hui ?\"",
   "q5.a1": "\"L’éducation, et la perte des savoirs\"",
   "q5.a2": "\"Les gouvernements et la faiblesse des institutions\"",
@@ -207,7 +198,6 @@
   "q5.a4": "\"La technologie, et le risque d’être encore laissés pour compte\"",
   "q5.text": "\"Le Grand Zimbabwe est une ville aux murs de pierre hauts de onze mètres, construits sans aucun ciment. Les pierres sont taillées avec une telle précision qu’elles se tiennent entre elles, et cela depuis environ huit cents ans. C’était le centre d’un riche royaume marchand relié à l’océan Indien.\"",
   "q5.why": "\"Quand les Européens l’ont découvert, ils ont refusé de croire que des Africains l’avaient bâti. Les autorités coloniales ont répandu l’idée que des étrangers devaient en être les auteurs. Des chasseurs de trésors ont fouillé le site à la recherche d’or et ont jeté les couches de terre mêmes qui contenaient la preuve, détruisant les indices. Plus tard, des archéologues qui affirmaient clairement que des Africains l’avaient construit ont subi des pressions pour se taire. Le bâtiment était africain. La vérité aussi. Les deux ont été enterrés.\"",
-
   "q6": "\"Vivez-vous en Afrique, ou à l’extérieur ?\"",
   "q6.a1": "\"En Afrique\"",
   "q6.a2": "\"Hors d’Afrique\"",
@@ -215,7 +205,6 @@
   "q6.a4": "\"Je m’apprête à partir\"",
   "q6.text": "\"L’argent que les Africains de l’étranger envoient chez eux chaque année dépasse désormais toute l’aide extérieure que reçoit le continent. Il arrive sans conditions, sans consultants et sans formulaires. Il paie les frais de scolarité, construit des maisons, enterre des parents et lance des entreprises.\"",
   "q6.why": "\"Rien n’a arrêté celui-ci, et c’est bien le point. C’est la preuve la plus claire que les Africains financent déjà l’Afrique. Ce qui manque, ce n’est ni l’argent ni la volonté. Ce sont les institutions qui transformeraient des millions de petits gestes privés en écoles, en usines et en entreprises qui survivent à ceux qui les ont financées.\"",
-
   "q7": "\"Complétez cette phrase. L’avenir de l’Afrique sera surtout construit en...\"",
   "q7.a1": "\"Retrouvant ce qui a été interrompu\"",
   "q7.a2": "\"Réparant les systèmes dans lesquels nous vivons\"",
@@ -223,7 +212,6 @@
   "q7.a4": "\"Construisant ce qui n’a jamais existé\"",
   "q7.text": "\"Remarquez le motif dans tout ce que vous venez de lire. Rien de tout cela n’a échoué. Rien n’a été réfuté. Chaque chose a été interrompue : envahie, privée de financement, rebaptisée, ridiculisée ou enterrée. Et dans chaque cas, le savoir lui-même a survécu, dans un canari, dans une mémoire, dans un mur, dans un coffre caché.\"",
   "q7.why": "\"C’est tout l’argument de cette plateforme. L’Afrique ne manque pas d’intelligence. Son intelligence n’a jamais été reconnue, protégée, financée ni transmise comme il se doit. Ce n’est pas une tragédie dont vous héritez. C’est un travail inachevé, et un travail inachevé peut être poursuivi par quiconque décide de s’en saisir.\"",
-
   "p.KR.name": "\"Le Gardien du savoir\"",
   "p.KR.rarity": "\"Environ 1 personne sur 4\"",
   "p.KR.desc": "\"Vous ressentez la perte de ce qui disparaît. Votre instinct est de le retrouver, de l’écrire et de le garder, avant que la dernière personne qui s’en souvient ne parte.\"",

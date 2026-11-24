@@ -12,7 +12,6 @@
   "aria.home": "aria-label=\"Shafin farko na Rethinking Africa\"",
   "footer.tagline": "Shiri mai zaman kansa na bincike, kafafen yaɗa labarai da ilimantar da jama’a wanda ya ɗora Afirka a tsakiya, wanda Dakta Oluwakemi Damola Adejumo-Ayibiowu ta kafa.",
   "free": "Kyauta. Babu biyan kuɗi, har abada.",
-
   "title": "| Dawo da Basira. Sake Tunanin Gaba.</title>",
   "meta.desc": "content=\"Dandalin yaɗa labarai da ke tafiya bisa bincike, wanda ke nazarin ci gaba, ilimi, mulki, al’adu da damarmakin Afirka ta mahangar da ta ɗora Afirka a tsakiya.\"",
   "og.desc": "content=\"Dandalin yaɗa labarai da ke tafiya bisa bincike, wanda Dakta Oluwakemi Damola Adejumo-Ayibiowu ta kafa, domin nazarin ci gaba, ilimi, mulki, al’adu da damarmakin Afirka.\"",
@@ -20,7 +19,6 @@
   "hero.lede": "Dandalin yaɗa labarai da ke tafiya bisa bincike, wanda ke nazarin ci gaba, ilimi, mulki, al’adu da damarmakin Afirka ta mahangar da ta ɗora Afirka a tsakiya.</p>",
   "hero.watch": ">Kalli Sabon Shiri</a>",
   "hero.join": ">Shiga Al’umma</a>",
-  "hero.share": ">Raba Ra’ayi</a>",
   "hero.alt": "alt=\"Dakta Oluwakemi Damola Adejumo-Ayibiowu, tana murmushi, sanye da rigar adire mai launin shuɗi da zinariya\"",
   "quizband.eyebrow": ">Fara a nan</span>",
   "quizband.h2": ">Yaya aka koya maka ka kalli Afirka?</h2>",
@@ -126,7 +124,6 @@
   "footer.privacy": ">Sirri &amp; Sharuɗɗa</a>",
   "footer.editorial": ">Ƙa’idojin Edita</a>",
   "footer.rights": "Duk haƙƙoƙi a kiyaye suke.",
-
   "quiz.title": "<title>Gwajin Africa Lens na Daƙiƙa 90 |",
   "quiz.meta.desc": "content=\"Tambayoyi bakwai. Abubuwa bakwai da ba a taɓa faɗa maka ba game da ilimin Afirka, da dalilin da ya sa suka tsaya. Gano wane irin mai gina makomar Afirka kake.\"",
   "h1": ">Gwajin Daƙiƙa 90<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
@@ -154,7 +151,6 @@
   "result.wa": ">Karɓa ta WhatsApp</a>",
   "result.carry": "<strong>Tambaya ɗaya da za ka riƙe:</strong>",
   "result.motto": "Ba wai kawai a yi nazarin Afirka ba. Dole Afirka ta yi magana, ta yi tunani, ta ƙirƙira kuma ta yanke shawara.",
-
   "ui.questionOf": "\"Tambaya ta {n} cikin {total}\"",
   "ui.yourAnswer": "\"Amsarka:\"",
   "ui.seeProfile": "\"Duba bayanin halina\"",
@@ -167,7 +163,6 @@
   "ui.friend": "\"aboki\"",
   "ui.waMessage": "\"Sannu Dakta Damola. Na kammala Gwajin Africa Lens. Bayanin halina shi ne {profile}. Don Allah ki aiko min da jagorana.\"",
   "ui.delivered": "\"An aika amsoshinka da bayanin halinka zuwa {email}. Idan ba ka ga imel ɗin ba, duba babban fayil na Promotions ko Spam.\"",
-
   "q1": "\"Lokacin da kake girma, an koya maka cewa ilimin Turai ko Amurka ya fi ilimin Afirka?\"",
   "q1.a1": "\"Eh, a fili\"",
   "q1.a2": "\"Ba wanda ya faɗa, amma na ji hakan\"",
@@ -175,7 +170,6 @@
   "q1.a4": "\"Ban taɓa tunani a kan haka ta wannan hanya ba\"",
   "q1.text": "\"Shekaru ɗari shida da suka wuce, Timbuktu a ƙasar Mali birni ne na malamai. Iyalai suna ajiye ɗakunan karatu a gidajensu. Ɗaruruwan dubban littattafai da aka rubuta da hannu kan magani, ilimin taurari, lissafi da shari’a. Ɗalibai suna zuwa daga nesa don yin karatu a can. Birni ne na jami’a tun kafin da yawa daga cikin na Turai su wanzu.\"",
   "q1.why": "\"A shekarar 1591 wata rundunar mahara ta lalata al’ummar malaman, kuma an kashe ko an tafi da manyan malamanta. Daga baya, a ƙarƙashin mulkin mallakar Faransa, makarantun da suka maye gurbinta sun koyar da wani labari daban, kuma an kwashe rubuce-rubuce da yawa zuwa Turai. Iyalai sun ɓoye abin da ya rage a cikin akwatuna suka binne su. Littattafan sun tsira. Jami’o’in ba su tsira ba.\"",
-
   "q2": "\"Shin ilimin da ka samu ya kusantar da kai da al’ummarka, ko ya nisantar da kai daga gare ta?\"",
   "q2.a1": "\"Ya nisantar da ni sosai\"",
   "q2.a2": "\"Kaɗan daga duka biyun\"",
@@ -183,7 +177,6 @@
   "q2.a4": "\"Na yi karatu nesa da gida\"",
   "q2.text": "\"Kafin makarantun mulkin mallaka, yawancin yaran Afirka suna koyon sana’a, fasahar hannu ko wani fanni na ilimi daga mutanen da ke kewaye da su. Noma, saƙa, gini, magani, kasuwanci. Koyo yana faruwa a cikin al’umma kuma yana zama a can.\"",
   "q2.why": "\"An gina makarantun mulkin mallaka da manufa a bayyane: don samar da magatakarda da ’yan aike da za su yi wa gwamnati hidima, ba masu gini, masu ƙirƙira ko masu mallaka ba. An koya wa yara da harshen waje, game da wuraren waje, kuma ana hukunta su idan sun yi magana da nasu harshe. Da ’yancin kai ya zo, tutoci sun canza. A ƙasashe da yawa, manhajar karatu ba ta canza ba. Idan makaranta ta sa ka ji cewa gidanku ba shi da abin da zai koya maka, wannan tsarin ne ke aiki, ba kai ne ka kasa ba.\"",
-
   "q3": "\"Ka ga tukunyar ruwa ta laka a ƙauye. Me kake tunani?\"",
   "q3.a1": "\"Wani abu na gargajiya, wanda ya kamata a kiyaye\"",
   "q3.a2": "\"Talauci, a gaskiya. Abin da aka koya min ke nan\"",
@@ -191,7 +184,6 @@
   "q3.a4": "\"Ina amfani da ita. Ban taɓa tunani a kanta ba\"",
   "q3.text": "\"Tukunyar laka tana sa ruwa ya yi sanyi a cikin zafi mai tsanani ba tare da wutar lantarki ko kaɗan ba. Ruwa yana ratsawa a hankali ta bangon lakar, kuma idan ya bushe a waje yana janye zafi daga ruwan da ke ciki. Kimiyya ce ta gaske, wadda aka gano a tsawon tsararraki ta hanyar gwada wace laka, wane kauri da wace siffa ce ke sa ruwa ya fi sanyi.\"",
   "q3.why": "\"Ba wanda ya ba ta kuɗi. Babu ɗakin gwaji da ya yi nazarinta, babu kamfanin da ya inganta ta, babu haƙƙin mallaka da ya kare ta, babu jami’ar da ta koyar da ita. An kira ta sana’a maimakon kimiyya, don haka ta tsaya a yadda take tsawon ƙarnuka. A yau injiniyoyi a Turai da yankin Gulf suna amfani da ainihin wannan ƙa’ida ta sanyaya a cikin gine-ginen zamani, kuma ana bayyana ta a matsayin sabuwar ƙirƙira.\"",
-
   "q4": "\"Wani dattijo ya fara bayyana maka ilimin gargajiya. Mene ne abu na farko da zuciyarka ke so ka yi?\"",
   "q4.a1": "\"Na naɗa shi kafin ya ɓace\"",
   "q4.a2": "\"Na tambayi yadda za mu gwada shi mu tabbatar da shi\"",
@@ -199,7 +191,6 @@
   "q4.a4": "\"Na haɗa shi da wanda zai iya amfani da shi\"",
   "q4.text": "\"Kowace kwamfuta da waya a duniya tana aiki ne da tsarin lambobi biyu (binary): ana rage komai zuwa yanayi biyu, a kunne ko a kashe, 1 ko 0, sannan a haɗa su don gina komai. Tsarin Ifá na Yarbawa yana aiki ne da ainihin wannan ƙa’ida. Kowace alama ɗaya ce daga cikin yanayi biyu. Alamomi huɗu suna yin siffa ɗaya. Siffofi goma sha shida suna haɗuwa su zama sakamako 256, kowanne yana da nasa baituka da aka haddace. Tsarin bayanai ne na lambobi biyu, wanda aka adana a ƙwaƙwalwar ɗan Adam da aka horar, mai shekaru fiye da dubu.\"",
   "q4.why": "\"An kira shi camfi. ’Yan mishan da jami’an mulkin mallaka sun hana shi, an gaya wa waɗanda suka sauya addini su bar shi, kuma ba a taɓa barin sa ya shiga ko da sashen lissafi ɗaya na wata jami’a ba. Don haka ainihin tunanin da ya zama kwamfuta a wani ɓangare na duniya an kira shi tsafi a wani ɓangare. Ba a gayyaci kowa daga Afirka zuwa taron da aka mayar da tsarin lambobi biyu na’ura ba.\"",
-
   "q5": "\"Me ya fi damunka game da Afirka a yau?\"",
   "q5.a1": "\"Ilimi, da ilimin da ke ɓacewa\"",
   "q5.a2": "\"Gwamnati da raunanan cibiyoyi\"",
@@ -207,7 +198,6 @@
   "q5.a4": "\"Fasaha, da sake barin mu a baya\"",
   "q5.text": "\"Great Zimbabwe birni ne mai katangun dutse masu tsawon har mita goma sha ɗaya, waɗanda aka gina ba tare da siminti ko kaɗan ba. An sassaƙa duwatsun da daidaito sosai har suna riƙe juna, kuma sun yi haka kusan shekaru ɗari takwas. Ita ce cibiyar wata masarauta mai arzikin kasuwanci da ke da alaƙa da Tekun Indiya.\"",
   "q5.why": "\"Lokacin da Turawa suka gano ta, sun ƙi yarda cewa ’yan Afirka ne suka gina ta. Hukumomin mulkin mallaka sun yaɗa labarin cewa lallai baƙi ne suka gina ta. Masu neman dukiya sun tona wurin suna neman zinariya, suka zubar da ainihin layukan ƙasar da ke ɗauke da hujja, suka lalata shaidar. Daga baya, masana tarihin kayan tarihi da suka faɗa a fili cewa ’yan Afirka ne suka gina ta an matsa musu lamba su yi shiru. Ginin na Afirka ne. Haka ma gaskiyar. Duka biyun an binne su.\"",
-
   "q6": "\"Kana zaune a Afirka, ko a wajenta?\"",
   "q6.a1": "\"A Afirka\"",
   "q6.a2": "\"A wajen Afirka\"",
@@ -215,7 +205,6 @@
   "q6.a4": "\"Ina shirin tafiya\"",
   "q6.text": "\"Kuɗin da ’yan Afirka mazauna ƙetare ke aikawa gida kowace shekara yanzu ya fi duk tallafin ƙasashen waje da nahiyar ke karɓa. Yana zuwa ba tare da sharuɗɗa ba, ba tare da masu ba da shawara ba kuma ba tare da fom ba. Yana biyan kuɗin makaranta, yana gina gidaje, yana binne iyaye kuma yana fara kasuwanci.\"",
   "q6.why": "\"Babu abin da ya hana wannan, kuma wannan ne muhimmin abu. Ita ce hujja mafi bayyana cewa ’yan Afirka sun riga sun ɗauki nauyin Afirka. Abin da ya rasa ba kuɗi ba ne ko niyya. Cibiyoyi ne da za su mayar da miliyoyin ƙananan ayyukan mutane zuwa makarantu, masana’antu da kamfanoni da za su daɗe fiye da wanda ya biya kuɗinsu.\"",
-
   "q7": "\"Ka kammala wannan jumlar. Makomar Afirka za a gina ta ne galibi ta hanyar...\"",
   "q7.a1": "\"Dawo da abin da aka katse\"",
   "q7.a2": "\"Gyara tsare-tsaren da muke rayuwa a cikinsu\"",
@@ -223,7 +212,6 @@
   "q7.a4": "\"Gina abin da bai taɓa wanzuwa ba\"",
   "q7.text": "\"Ka lura da tsarin da ke cikin duk abin da ka karanta yanzu. Babu ɗaya da ya kasa. Babu ɗaya da aka ƙaryata. Kowanne an katse shi: an mamaye shi, an hana shi kuɗi, an sauya masa suna, an yi masa izgili ko an binne shi. Kuma a kowane hali, ilimin da kansa ya tsira, a cikin tukunya, a cikin ƙwaƙwalwa, a cikin katanga, a cikin akwatin da aka ɓoye.\"",
   "q7.why": "\"Wannan ne dukkan hujjar wannan dandali. Afirka ba ta rasa basira ba. Ba a taɓa ganewa, karewa, ɗaukar nauyi ko gadar da basirarta yadda ya kamata ba. Wannan ba bala’i ba ne da kake gada. Aiki ne da ba a kammala ba, kuma aikin da ba a kammala ba za a iya ci gaba da shi ta hannun duk wanda ya yanke shawarar ɗauka.\"",
-
   "p.KR.name": "\"Mai Dawo da Ilimi\"",
   "p.KR.rarity": "\"Kusan mutum 1 cikin 4\"",
   "p.KR.desc": "\"Kana jin raɗaɗin rasa abin da ke ɓacewa. Zuciyarka tana so ka nemo shi, ka rubuta shi kuma ka adana shi, kafin mutumin ƙarshe da ya tuna shi ya tafi.\"",
