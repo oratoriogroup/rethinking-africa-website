@@ -28,36 +28,15 @@ Go to **emailjs.com** and sign up. Use the email address that should own the acc
    - **To Email:** `{{to_email}}`
    - **From Name:** `Rethinking Africa with Dr. Damola`
    - **Reply To:** `hello@rethinkingafrica.africa`
-   - **Subject:** `Your Africa Lens Quiz profile: {{profile_name}}`
-3. Paste this into the message body:
+   - **Subject:** `{{subject}}`
+3. Choose **Edit Content**, then **Code Editor**, and paste the whole of `i18n/emailjs-template.html`
+   (in the project's `i18n` folder). Click **Apply Changes**.
 
-```
-Dear {{to_name}},
-
-Thank you for taking the Africa Lens Quiz.
-
-Your African future-builder profile is: {{profile_name}}
-({{profile_rarity}})
-
-{{profile_desc}}
-
-{{profile_strength}}
-
-One question to carry with you:
-{{profile_question}}
-
-Here are your answers:
-
-{{quiz_answers}}
-
-New episodes come out regularly on the channel:
-https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1
-
-Africa must not only be studied. Africa must speak, think, create and determine.
-
-Rethinking Africa with Dr. Damola
-rethinkingafrica.africa
-```
+   The template has no fixed wording of its own. The quiz sends every sentence
+   (greeting, headings, button text, motto and the subject line) in the reader's
+   language, plus the text direction for Arabic. To change the wording, edit the
+   `mail...` lines in the `UI` list in `quiz.html` and their translations in `i18n/`,
+   not the template.
 
 4. Save. Copy the **Template ID**. It looks like `template_xy98zw7`.
 
