@@ -109,8 +109,8 @@ for (const [lang, cfg] of Object.entries(LANGS)) {
     html = html.replace('<html lang="en">', `<html lang="${lang}" dir="${cfg.dir}">`);
     html = fixPaths(html);
     if (cfg.fonts) {
-      html = html.replace('<link rel="stylesheet" href="../css/style.css">',
-        `<link href="${cfg.fonts}" rel="stylesheet">\n<link rel="stylesheet" href="../css/style.css">`);
+      html = html.replace(/<link rel="stylesheet" href="\.\.\/css\/style\.css[^"]*">/,
+        (m) => `<link href="${cfg.fonts}" rel="stylesheet">\n${m}`);
     }
     html = html.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${pageUrl(lang, page)}">`);
     html = setAlternates(html, page);

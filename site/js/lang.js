@@ -26,8 +26,10 @@
     var link = document.querySelector('link[rel="alternate"][hreflang="' + code + '"]');
     if (!link) return null;
     // Stay on this host (works on the Vercel address as well as the real domain).
-    var u = new URL(link.href);
-    return location.origin + u.pathname + location.hash;
+    var path;
+    try { path = new URL(link.href).pathname; }
+    catch (e) { path = link.getAttribute("href").replace(/^https?:\/\/[^/]+/, ""); } // very old browsers
+    return location.protocol + "//" + location.host + path + location.hash;
   }
 
   function go(code) {
@@ -57,36 +59,56 @@
     if (target && target !== location.href) { location.replace(target); return; }
   }
 
-  var dialog;
+  /* The pop-up is a plain fixed overlay rather than <dialog>, so it shows
+     correctly in every phone browser, including Opera Mini, older Android
+     browsers and the in-app browsers of WhatsApp, Facebook and Instagram. */
+  var overlay, lastFocus;
   function build() {
-    dialog = document.createElement("dialog");
-    dialog.className = "lang-dialog";
-    dialog.setAttribute("aria-labelledby", "lang-title");
-    var html = '<button type="button" class="lang-close" aria-label="Close">&times;</button>' +
+    overlay = document.createElement("div");
+    overlay.className = "lang-overlay";
+    overlay.setAttribute("hidden", "");
+    var html = '<div class="lang-dialog" role="dialog" aria-modal="true" aria-labelledby="lang-title">' +
+      '<button type="button" class="lang-close" aria-label="Close">&times;</button>' +
       '<p class="lang-title" id="lang-title">Choose your language</p>' +
-      '<p class="lang-hints">' + LANGS.slice(1).map(function (l) {
-        return '<span lang="' + l.code + '"' + (l.code === "ar" ? ' dir="rtl"' : "") + ">" + l.hint + "</span>";
-      }).join(" · ") + "</p><div class=\"lang-list\">";
+      '<ul class="lang-list">';
     LANGS.forEach(function (l) {
-      html += '<button type="button" class="lang-option' + (l.code === current ? " is-current" : "") +
-        '" data-lang="' + l.code + '" lang="' + l.code + '"' + (l.code === "ar" ? ' dir="rtl"' : "") + ">" + l.name + "</button>";
+      var rtl = l.code === "ar" ? ' dir="rtl"' : "";
+      html += '<li><button type="button" class="lang-option' + (l.code === current ? " is-current" : "") +
+        '" data-lang="' + l.code + '" lang="' + l.code + '"' + rtl + '>' +
+        '<span class="lang-name">' + l.name + '</span>' +
+        (l.code === "en" ? "" : '<span class="lang-hint">' + l.hint + '</span>') +
+        '</button></li>';
     });
-    dialog.innerHTML = html + "</div>";
-    dialog.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-lang]");
+    overlay.innerHTML = html + "</ul></div>";
+    overlay.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-lang]") : null;
       if (b) go(b.getAttribute("data-lang"));
-      else if (e.target.closest(".lang-close") || e.target === dialog) close();
+      else if ((e.target.closest && e.target.closest(".lang-close")) || e.target === overlay) close();
     });
-    dialog.addEventListener("cancel", function () { if (!saved()) store(current); });
-    document.body.appendChild(dialog);
+    document.addEventListener("keydown", function (e) {
+      if (overlay.hasAttribute("hidden")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "Tab") { // keep keyboard focus inside the pop-up
+        var f = overlay.querySelectorAll("button"), first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    document.body.appendChild(overlay);
   }
   function open() {
-    if (!dialog) build();
-    if (typeof dialog.showModal === "function") dialog.showModal(); else dialog.setAttribute("open", "");
+    if (!overlay) build();
+    lastFocus = document.activeElement;
+    overlay.removeAttribute("hidden");
+    document.documentElement.classList.add("lang-open"); // stop the page scrolling behind it
+    var cur = overlay.querySelector(".is-current") || overlay.querySelector(".lang-option");
+    if (cur && cur.focus) cur.focus();
   }
   function close() {
     if (!saved()) store(current);
-    if (dialog) { if (typeof dialog.close === "function") dialog.close(); else dialog.removeAttribute("open"); }
+    if (overlay) overlay.setAttribute("hidden", "");
+    document.documentElement.classList.remove("lang-open");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
   // Header button
