@@ -533,3 +533,13 @@ h1{font-size:clamp(2.1rem,8vw,4.4rem)}
   .hero-anim{width:104px;margin-bottom:.8rem}
   .hero h1{font-size:clamp(2.8rem,4.6vw,4rem);margin-bottom:.9rem}
 }
+
+/* Checker fixes: placeholder contrast, calmer menu tracking, no unused fallback font */
+input::placeholder,textarea::placeholder{color:#5E6584}
+nav.main a{letter-spacing:.05em}
+:root{--sans:'Lato','Segoe UI',Helvetica,Arial,sans-serif}
+html[lang="ha"]{--sans:'Lato','Noto Sans','Segoe UI',Arial,sans-serif}
+
+/* Checker fixes, round 2 */
+.dark .pub .yr{color:var(--gold)}               /* bright gold on dark, deep gold on ivory */
+.hero-portrait figcaption{letter-spacing:.02em}

@@ -29,7 +29,6 @@
     "hero.watch": ">Watch the Latest Episode</a>",
     "hero.join": ">Join the Community</a>",
     "hero.alt": "alt=\"Dr Oluwakemi Damola Adejumo-Ayibiowu, smiling, in an indigo and gold adire-print dress\"",
-    "quizband.eyebrow": ">Start here</span>",
     "quizband.h2": ">How were you taught to see Africa?</h2>",
     "quizband.p": "Seven questions, about ninety seconds. Discover which of the five African future-building profiles is yours, and receive the free manifesto.",
     "quizband.btn": ">Take the Africa Lens Quiz</a>",
@@ -39,11 +38,9 @@
     "latest.p": "Why African education often prepares young people to leave local opportunities rather than transform them, and what an education designed from African realities would do instead.",
     "latest.label": ">Trained Away: press play</span>",
     "latest.btn": ">Watch now</a>",
-    "why.eyebrow": ">Why we exist</span>",
     "why.h2": ">Africa is not empty of intelligence</h2>",
     "why.p": "Its challenge is that much of its intelligence has not been sufficiently recognised, refined, institutionalised, financed and transformed into collective power. This platform moves beyond describing Africa's problems: it asks how they were produced, what sustains them, what knowledge has been neglected, and what practical alternatives can be built.",
     "why.more": ">Read more about the vision</a>",
-    "sci.eyebrow": ">Interrupted science</span>",
     "sci.h2": ">This is not the past. This is interrupted science.</h2>",
     "sci.p": "The clay pot is not a symbol of poverty; it is an off-grid thermodynamic device, refined through generations of empirical experimentation. Using AI speculative imaging, we project what African sciences should look like today, had their development never been violently interrupted.",
     "sci.was": ">How the world sees it</span>",
@@ -52,12 +49,10 @@
     "sci.cap2": "<figcaption>Thermodynamics, computation, engineering: scientific archives awaiting restoration.</figcaption>",
     "sci.quote": ">What was interrupted can be restored. What was deferred can be recovered.</p>",
     "sci.btn": ">Read the research</a>",
-    "pics.eyebrow": ">Africa in pictures</span>",
     "pics.h2": ">The story we are rethinking</h2>",
     "pics.cap1": "<figcaption>The Clay Pot Evolution: traditional wisdom, modern science.</figcaption>",
     "pics.cap2": "<figcaption>The Ifá Binary Core: a 1,000-year-old algorithmic engine.</figcaption>",
     "pics.cap3": "<figcaption>From Great Zimbabwe to the smart city: built by Africa, for Africa.</figcaption>",
-    "themes.eyebrow": ">What we investigate</span>",
     "themes.h2": ">Six major themes</h2>",
     "theme1.h": "<h3>Education &amp; Knowledge</h3>",
     "theme1.p": "<p>How education shapes African identity, ambition, work and possibility.</p>",
@@ -71,23 +66,19 @@
     "theme5.p": "<p>How language, media, religion and global power shape African self-perception.</p>",
     "theme6.h": "<h3>African Futures</h3>",
     "theme6.p": "<p>How Africans can design cities, institutions, technologies and economies rooted in their realities.</p>",
-    "question.eyebrow": ">The question Africa must answer</span>",
     "question.q1": "What knowledge did your parents possess that your generation failed to inherit?",
     "question.q2": "What is one thing African education trains us to leave behind?",
     "question.q3": "Can Africa modernise without becoming someone else?",
     "question.btn": ">Submit your answer</a>",
     "question.note": "Selected responses appear on the site with the contributor's permission.",
-    "voices.eyebrow": ">African voices</span>",
     "voices.h2": ">Many voices, one table</h2>",
     "voices.p": "Scholars, artisans, students, entrepreneurs, elders, policymakers\n      and the diaspora. Each month this platform features one African voice and the knowledge they\n      carry. If that is you, or someone you know, tell us.",
     "voices.btn1": ">Recommend a voice</a>",
     "voices.btn2": ">See the collection</a>",
-    "written.eyebrow": ">Ideas and research</span>",
     "written.h2": ">The written work</h2>",
     "written.p": "Articles, research summaries, reading lists and downloadable briefs\n      sit alongside the episodes. This is what separates the platform from commentary: every claim\n      can be traced to a source.",
     "written.btn1": ">Read the ideas</a>",
     "written.btn2": ">Peer-reviewed publications</a>",
-    "join.eyebrow": ">Join the work</span>",
     "join.h2": ">Africa's future cannot be imagined by one voice</h2>",
     "join.p": "Bring your research, experience, question or story into the conversation.",
     "join.b1": ">Propose an Episode</a>",
@@ -96,13 +87,11 @@
     "join.b4": ">Share an African Innovation</a>",
     "join.b5": ">Volunteer or Collaborate</a>",
     "join.b6": ">Invite Dr Damola</a>",
-    "founder.eyebrow": ">The founder</span>",
     "founder.h2": ">Meet Dr Damola</h2>",
     "founder.alt": "alt=\"Dr Oluwakemi Damola Adejumo-Ayibiowu, wearing an indigo and gold adire-print dress\"",
     "founder.p": "Dr Damola is a development economist, Afrocentric scholar, AI generalist, public policy strategist and gospel music artist with over 25 years of experience across government, academia and international consultancy. Through Rethinking Africa she brings scholarship out of restricted academic spaces and into public conversation.",
     "founder.btn": ">Read the full story</a>",
     "founder.for": "<em>For scholars, students, policymakers, professionals, creators, community leaders, members of the diaspora, and everyone committed to Africa's intellectual and developmental renewal.</em>",
-    "sub.eyebrow": ">Join the community</span>",
     "sub.h2": ">Join the Founding 1,000</h2>",
     "sub.p": "Be among the first thousand members of a movement to recover African intelligence and agency. Discover African-centred perspectives grounded in research, watch conversations with scholars and practitioners, and receive new episodes, articles and event invitations, beginning with the free <strong>7 Days of Rethinking</strong> series.",
     "sub.name": ">First name</label>",
@@ -119,14 +108,12 @@
     "sub.btn": ">Subscribe</button>",
     "sub.quiz": ">Take the quiz first</a>",
     "sub.note": "No spam. Unsubscribe any time.",
-    "support.eyebrow": ">Support the work</span>",
     "support.h2": ">Help this initiative grow</h2>",
     "support.p": "is an independent initiative. Your support funds research, production, translation and the documentation of African knowledge, and it keeps this platform free for students and communities across the continent.",
     "support.once": ">Give once</a>",
     "support.monthly": ">Give monthly</a>",
     "support.sponsor": ">Sponsor an episode</a>",
     "support.note": "Gifts support an independent educational initiative and are not tax-deductible charitable donations. A summary of how funds are used is published annually on this site.",
-    "partners.eyebrow": ">Institutions &amp; partners</span>",
     "partners.h2": ">Partner with Rethinking Africa</h2>",
     "partners.p": "Universities, research centres, cultural institutions, media organisations and development bodies are invited to collaborate on research, media and public-engagement projects.",
     "partners.btn": ">Start a conversation</a>",
@@ -269,8 +256,6 @@
   "about.html": {
     "about.001": ">Meet Dr Damola</h2>",
     "about.002": ">Africa must not only be studied. Africa must speak, think, create and determine.</p>",
-    "about.003": ">Why we exist</span>",
-    "about.004": ">The founder</span>",
     "about.005": ">About Rethinking Africa</h1>",
     "about.006": ">Watch. Think. Contribute.</p>",
     "about.007": ">An African-centred research, media and public-education platform</h2>",
@@ -311,10 +296,6 @@
     "about.042": ">Rethinking Africa is a growing community of scholars, students, professionals, artists, entrepreneurs, policymakers, artisans, elders, young people and members of the African diaspora.</p>",
     "about.043": ">You are invited to propose a story or episode, participate in an interview, contribute a research reflection, recommend a scholar or practitioner, share a community innovation, identify neglected African knowledge, suggest solutions to development challenges, or partner on research, media and public-engagement projects.</p>",
     "about.044": "><a class=\"btn btn-solid\" href=\"contribute.html\">Contribute</a> <a class=\"btn btn-ghost\" href=\"index.html#subscribe\" style=\"margin-left:.5rem\">Join the community</a></p>",
-    "about.045": ">About Rethinking Africa</span>",
-    "about.046": ">What we do</span>",
-    "about.047": ">Our intellectual approach</span>",
-    "about.048": ">Join the conversation</span>",
     "about.049": "<title>About | Rethinking Africa with Dr. Damola</title>",
     "about.050": "content=\"What Rethinking Africa is, why it exists, what it does, its intellectual approach, and its founder Dr Damola Adejumo-Ayibiowu.\""
   },
@@ -339,7 +320,6 @@
     "watch.020": ">Roundtables, debates and public dialogues from events and gatherings.</p>",
     "watch.021": ">New episodes first</h2>",
     "watch.022": ">Subscribe on YouTube and join the mailing list to be notified when new investigations are released.</p>",
-    "watch.023": ">Series</span>",
     "watch.024": "<title>Watch | Rethinking Africa with Dr. Damola</title>"
   },
   "ideas.html": {
@@ -364,9 +344,7 @@
     "ideas.021": ">One-page research and policy briefs for educators, officials and practitioners.</p>",
     "ideas.022": ">Invited scholars contribute essays and evidence-based critiques. To propose a contribution, visit the <a href=\"contribute.html\">Contribute</a> page.</p>",
     "ideas.023": ">First publications arriving with the launch episodes</h2>",
-    "ideas.024": ">Join the mailing list to receive new briefs and reading lists as they are published.</p>",
-    "ideas.025": ">Featured research</span>",
-    "ideas.026": ">The library</span>"
+    "ideas.024": ">Join the mailing list to receive new briefs and reading lists as they are published.</p>"
   },
   "publications.html": {
     "publications.001": "<title>Publications | Rethinking Africa with Dr. Damola</title>",
@@ -425,8 +403,6 @@
     "publications.055": ">Attac.no, 13 February 2020. Published in Norwegian.</p>",
     "publications.056": ">Working with this research</h2>",
     "publications.057": ">Educators, students and researchers are welcome to use this work. For reading lists, teaching materials or a copy of any article, write to us.</p>",
-    "publications.058": ">Author</span>",
-    "publications.059": ">Peer-reviewed journal articles</span>",
     "publications.060": ">doi.org/10.1525/gp.2026.162017</a>",
     "publications.061": ">doi.org/10.31920/3050-2276/2026/v3n2a6</a>",
     "publications.062": ">doi.org/10.31920/2516-5305/2026/23n1a2</a>",
@@ -437,10 +413,7 @@
     "publications.067": ">doi.org/10.31920/2634-3649/2024/v14n1a16</a>",
     "publications.068": ">doi.org/10.20525/ijrbs.v12i10.3108</a>",
     "publications.069": ">doi.org/10.25159/0304-615X/1179</a>",
-    "publications.070": ">Books and chapters</span>",
     "publications.071": ">Volume doi.org/10.4018/978-1-7998-2306-3</a>",
-    "publications.072": ">Conference proceedings</span>",
-    "publications.073": ">Public and media writing</span>",
     "publications.074": ">Read the article</a>",
     "publications.075": ">Request materials</a>"
   },
@@ -461,10 +434,7 @@
     "african-voices.016": ">New conference collections will appear here as the programme travels.</p>",
     "african-voices.017": ">The Rethinking Wall</h2>",
     "african-voices.018": ">Readers answer one question each month. Selected responses are published\nhere, with permission, so the platform carries more than one voice.</p>",
-    "african-voices.019": "><a class=\"btn btn-navy\" href=\"contribute.html\">Add your voice</a></p>",
-    "african-voices.020": ">Featured voice</span>",
-    "african-voices.021": ">Conference conversations</span>",
-    "african-voices.022": ">Voices from the community</span>"
+    "african-voices.019": "><a class=\"btn btn-navy\" href=\"contribute.html\">Add your voice</a></p>"
   },
   "news.html": {
     "news.001": "<title>News and Events | Rethinking Africa with Dr. Damola</title>",
@@ -482,10 +452,7 @@
     "news.015": "><a class=\"btn btn-navy\" href=\"canada-2026.html\">See the Canada Conversations collection</a></p>",
     "news.016": ">Never miss an announcement</h2>",
     "news.017": ">News, events and new episodes go to the mailing list first.</p>",
-    "news.018": ">Announcements</span>",
-    "news.019": ">Announcement</span>",
-    "news.020": ">Blog</span>",
-    "news.021": ">Events</span>"
+    "news.019": ">Announcement</span>"
   },
   "contribute.html": {
     "contribute.001": ">Your name</label>",
@@ -525,8 +492,6 @@
     "contribute.035": ">We read every submission. If it fits a current or planned episode, we will\nwrite back to you. That can take a little time, because each one is read properly rather than sorted\nby a machine.</p>",
     "contribute.036": ">While you wait, the quiz will tell you which kind of African future-builder\nyou are, and start the free seven-day series.</p>",
     "contribute.037": "><a class=\"btn btn-solid\" href=\"quiz.html\">Take the quiz</a>\n<a class=\"btn btn-ghost\" href=\"https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1\" style=\"margin-left:.5rem\">Subscribe on YouTube</a></p>",
-    "contribute.038": ">Ways to take part</span>",
-    "contribute.039": ">Structured submission</span>",
     "contribute.js1": "'Please complete your name, email, type of contribution and message.'",
     "contribute.js2": "'This form is not connected yet. Please write to hello@rethinkingafrica.africa.'",
     "contribute.js3": "'Sending...'",
@@ -552,9 +517,7 @@
     "community.017": ">All episodes, series and shorts.</p>",
     "community.018": "><a href=\"https://www.youtube.com/@DrDamola.Africa\">Subscribe on YouTube</a></p>",
     "community.019": ">Events and public conversations</h2>",
-    "community.020": ">Public dialogues, campus conversations and conference sessions will be announced here and on the mailing list. If your institution would like to host one, visit the <a href=\"contribute.html\">Contribute</a> page.</p>",
-    "community.021": ">Stay connected</span>",
-    "community.022": ">Coming together</span>"
+    "community.020": ">Public dialogues, campus conversations and conference sessions will be announced here and on the mailing list. If your institution would like to host one, visit the <a href=\"contribute.html\">Contribute</a> page.</p>"
   },
   "contact.html": {
     "contact.001": "<title>Contact and Media | Rethinking Africa with Dr. Damola</title>",
@@ -575,9 +538,7 @@
     "contact.018": ">Programme logo</h3>",
     "contact.019": ">Official logo package with usage guidelines. <a href=\"assets/logo-primary-stacked.svg\">Download (SVG)</a></p>",
     "contact.020": ">One-page media profile</h3>",
-    "contact.021": ">The programme at a glance for editors and producers. <a href=\"#\">Download (PDF)</a></p>",
-    "contact.022": ">Reach us</span>",
-    "contact.023": ">Media kit</span>"
+    "contact.021": ">The programme at a glance for editors and producers. <a href=\"#\">Download (PDF)</a></p>"
   },
   "canada-2026.html": {
     "canada-2026.001": "<title>Canada Conversations 2026 | Rethinking Africa with Dr. Damola</title>",
@@ -589,7 +550,6 @@
     "canada-2026.009": "><a class=\"btn btn-navy\" href=\"quiz.html\">Be told when they are published</a></p>",
     "canada-2026.010": ">Were you part of these conversations?</h2>",
     "canada-2026.011": ">Guests may request their approved photographs, quotations or corrections at any time.</p>",
-    "canada-2026.012": ">The collection</span>",
     "canada-2026.013": ">Contact the programme</a>"
   },
   "policies.html": {
@@ -603,10 +563,7 @@
     "policies.010": ">Content is provided for public education. Visitors may share and quote materials with attribution and a link. Submitting a contribution grants the programme permission to review it; nothing is published without the contributor's consent.</p>",
     "policies.011": ">Ownership and participation</h2>",
     "policies.012": ">© Rethinking Africa with Dr. Damola. Episodes, articles, graphics and the programme identity are protected. Guests and contributors retain rights over their own words and images; interview and photograph consent is obtained before publication, and any participant may request corrections or removal of their contribution.</p>",
-    "policies.013": ">Media and interview enquiries: <a href=\"mailto:media@rethinkingafrica.africa\">media@rethinkingafrica.africa</a>.</p>",
-    "policies.014": ">Privacy policy</span>",
-    "policies.015": ">Terms of use</span>",
-    "policies.016": ">Copyright &amp; consent</span>"
+    "policies.013": ">Media and interview enquiries: <a href=\"mailto:media@rethinkingafrica.africa\">media@rethinkingafrica.africa</a>.</p>"
   },
   "editorial.html": {
     "editorial.001": "<title>Editorial Standards | Rethinking Africa with Dr. Damola</title>",
@@ -627,9 +584,7 @@
     "editorial.018": ">Protection of contributors</h3>",
     "editorial.019": ">Submitted stories are handled confidentially; nothing is published without consent, and identities are protected on request.</p>",
     "editorial.020": ">References and reading lists</h2>",
-    "editorial.021": ">Major episodes carry their references and reading lists on the <a href=\"ideas.html\">Ideas</a> page, so viewers, students and researchers can verify sources and go deeper.</p>",
-    "editorial.022": ">Our standards</span>",
-    "editorial.023": ">Citation policy</span>"
+    "editorial.021": ">Major episodes carry their references and reading lists on the <a href=\"ideas.html\">Ideas</a> page, so viewers, students and researchers can verify sources and go deeper.</p>"
   },
   "_keep": [
     "publications.009",
