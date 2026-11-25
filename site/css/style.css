@@ -749,6 +749,25 @@ html[data-theme="dark"] .gallery img,html[data-theme="dark"] .ba-grid img,html[d
 html.theme-changing,html.theme-changing *{transition:background-color var(--t-slow),color var(--t-slow),border-color var(--t-slow) !important}
 
 
+/* ===== 15c. Text effects (js/textfx.js) =====
+   Headlines rise in letter by letter; a rotating word slides through its list.
+   To remove: delete this section and the textfx.js <script> tag. */
+html.fx .hero h1:not(.fx-rise){visibility:hidden;animation:fx-show 0s 1.5s forwards}
+@keyframes fx-show{to{visibility:visible}}
+.fx-word{display:inline-block;white-space:nowrap}
+.fx-rise .fx-ch{
+  display:inline-block;opacity:0;transform:translateY(.45em);
+  animation:fx-rise .65s var(--ease) forwards;
+}
+@keyframes fx-rise{to{opacity:1;transform:none}}
+.rotate{--rot-line:1.15em;display:inline-block;vertical-align:bottom;height:var(--rot-line);line-height:var(--rot-line);overflow:hidden;color:var(--gold)}
+html[lang="ar"] .rotate{--rot-line:1.5em}
+/* Words sit at the end of the box, so a shorter word stays against the full stop after it */
+.rotate-track{display:flex;flex-direction:column;align-items:flex-end;transition:transform .7s var(--ease)}
+.rotate-track.snap{transition:none}
+.rotate-track>span{display:block;height:var(--rot-line);white-space:nowrap}
+
+
 /* ===== 16. Utilities (spacing on the token scale) ===== */
 .center{text-align:center}
 .mx-auto{margin-left:auto;margin-right:auto}

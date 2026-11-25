@@ -27,7 +27,7 @@
     "title": "| Reclaiming Intelligence. Reimagining the Future.</title>",
     "meta.desc": "content=\"A research-driven media platform exploring African development, knowledge, governance, culture and possibility from an African-centred perspective.\"",
     "og.desc": "content=\"A research-driven media platform founded by Dr Oluwakemi Damola Adejumo-Ayibiowu, exploring African development, knowledge, governance, culture and possibility.\"",
-    "hero.h1": "<h1>Rethinking Africa. Reclaiming Intelligence. Reimagining the Future.</h1>",
+    "hero.h1": "<h1>Rethinking Africa. Reclaiming <span class=\"rotate\" data-words=\"Intelligence|Knowledge|Agency\">Intelligence</span>. Reimagining the Future.</h1>",
     "hero.lede": "A research-driven media platform exploring African development, knowledge, governance, culture and possibility from an African-centred perspective.</p>",
     "hero.watch": ">Watch the Latest Episode</a>",
     "hero.join": ">Join the Community</a>",
