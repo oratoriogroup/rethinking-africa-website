@@ -25,6 +25,7 @@
   }
 
   apply(preferred());
+  root.classList.add("js");   // scripts are running: the menu can use its drawer
 
   // Text effects (js/textfx.js) will animate the headline in: hide it until they start,
   // so it does not flash first. css/style.css shows it anyway after 1.5s as a fallback.

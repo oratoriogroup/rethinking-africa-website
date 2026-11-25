@@ -122,7 +122,7 @@
     btn.addEventListener("click", open);
     var nav = header.querySelector("nav.main");
     // Sits in the header's button group, before the light/dark switch.
-    var tools = header.querySelector(".header-tools");
+    var tools = header.querySelector(".tool-pill") || header.querySelector(".header-tools");
     if (tools) tools.insertBefore(btn, tools.firstChild);
     else header.insertBefore(btn, nav);
 

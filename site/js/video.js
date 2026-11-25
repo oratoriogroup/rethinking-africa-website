@@ -21,7 +21,9 @@
   function play(a,id,muted){
     var f=document.createElement('iframe');
     var q=muted
-      ? 'autoplay=1&mute=1&playsinline=1&loop=1&playlist='+id+'&cc_load_policy=1&rel=0&modestbranding=1'
+      // No forced captions: the episodes already have subtitles burned into the picture,
+      // and YouTube's own captions on top made two lines of text collide.
+      ? 'autoplay=1&mute=1&playsinline=1&loop=1&playlist='+id+'&rel=0&modestbranding=1'
       : 'autoplay=1&playsinline=1&rel=0&modestbranding=1';
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?'+q;
     f.title=a.getAttribute('data-title')||'Video';

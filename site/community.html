@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
-<script src="js/theme.js?v=2"></script>
+<link rel="stylesheet" href="css/style.css?v=16">
+<script src="js/theme.js?v=3"></script>
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/community.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/community.html">
@@ -29,21 +29,51 @@
       <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <div class="header-tools">
-      <button type="button" class="theme-btn" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <div class="tool-pill">
+        <button type="button" class="theme-btn" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </div>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span aria-hidden="true"></span></button>
     </div>
-    <nav class="main" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a class="nav-quiz" href="quiz.html">Take the Quiz</a>
-      <a href="watch.html">Watch</a>
-      <a href="ideas.html">Ideas</a>
-      <a href="publications.html">Publications</a>
-      <a href="african-voices.html">African Voices</a>
-      <a href="news.html">News &amp; Events</a>
-      <a href="contribute.html">Contribute</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <nav class="main" id="site-nav" aria-label="Main">
+      <button type="button" class="nav-close" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+      <a class="nav-link" href="index.html">Home</a>
+      <details class="nav-group" data-pages="ideas.html publications.html">
+        <summary>Explore</summary>
+        <div class="nav-panel">
+          <a class="mi" href="ideas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z"/></svg><span class="mi-t">Ideas</span><span class="mi-d">Articles, research summaries and briefs</span></a>
+          <a class="mi" href="publications.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5v-15ZM5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"/></svg><span class="mi-t">Publications</span><span class="mi-d">Peer-reviewed research by Dr Damola</span></a>
+          <a class="mi" href="index.html#themes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span class="mi-t">Six Major Themes</span><span class="mi-d">Six questions the platform pursues</span></a>
+        </div>
+      </details>
+      <details class="nav-group" data-pages="watch.html african-voices.html news.html canada-2026.html">
+        <summary>Media &amp; Voices</summary>
+        <div class="nav-panel">
+          <a class="mi" href="watch.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM10 8.5v7l5.5-3.5z"/></svg><span class="mi-t">Watch</span><span class="mi-d">Episodes, series and trailers</span></a>
+          <a class="mi" href="african-voices.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.5 20c.6-3.4 3.2-5.5 6.5-5.5s5.9 2.1 6.5 5.5M16 4.3a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.2 2.5 3.5 5.2"/></svg><span class="mi-t">African Voices</span><span class="mi-d">Scholars, artisans, elders and the diaspora</span></a>
+          <a class="mi" href="news.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg><span class="mi-t">News &amp; Events</span><span class="mi-d">Announcements, events and reflections</span></a>
+        </div>
+      </details>
+      <a class="nav-link nav-quiz" href="quiz.html">Africa Lens Quiz</a>
+      <details class="nav-group" data-pages="contribute.html">
+        <summary>Contribute</summary>
+        <div class="nav-panel">
+          <a class="mi" href="contribute.html?type=episode#share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h12v10H3zM15 10.5l6-3.5v10l-6-3.5"/></svg><span class="mi-t">Propose an Episode</span><span class="mi-d">A story, observation or contradiction</span></a>
+          <a class="mi" href="contribute.html?type=guest#share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM3.5 20c.6-3.4 3.2-5.5 6.5-5.5 1.5 0 2.9.4 4 1.2M18 14v6M15 17h6"/></svg><span class="mi-t">Recommend a Guest</span><span class="mi-d">Researchers, artisans, elders, innovators</span></a>
+          <a class="mi" href="contribute.html?type=article#share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h4"/></svg><span class="mi-t">Submit an Article</span><span class="mi-d">Evidence-based essays and lived experience</span></a>
+          <a class="mi" href="contribute.html?type=invite#share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3ZM5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg><span class="mi-t">Invite Dr. Damola</span><span class="mi-d">Talks, panels and partnerships</span></a>
+        </div>
+      </details>
+      <details class="nav-group" data-pages="about.html contact.html community.html editorial.html policies.html" data-current>
+        <summary>About &amp; Contact</summary>
+        <div class="nav-panel">
+          <a class="mi" href="about.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 11v5M12 8h.01"/></svg><span class="mi-t">About</span><span class="mi-d">The vision and Dr Damola's story</span></a>
+          <a class="mi" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg><span class="mi-t">Contact</span><span class="mi-d">Partnerships, media and speaking</span></a>
+          <a class="mi" href="community.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span class="mi-t">Join the Community</span><span class="mi-d">Email, WhatsApp and events</span></a>
+        </div>
+      </details>
     </nav>
   </div>
+  <div class="nav-scrim" hidden></div>
 </header>
 <main id="main">
 <div class="hero"><div class="wrap"><h1>Join the community</h1><p class="lede">Wherever you are, whether Lagos, Nairobi, London or Atlanta, there is a place in this conversation.</p></div></div>
@@ -81,5 +111,6 @@
   </div>
 </footer>
 <script src="js/textfx.js?v=4" defer></script>
-<script src="js/lang.js?v=4" defer></script>
+<script src="js/lang.js?v=5" defer></script>
+<script src="js/nav.js?v=2" defer></script>
 </body></html>

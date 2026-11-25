@@ -80,7 +80,11 @@ const HEADER = fs.readFileSync(path.join(LAYOUT, "header.html"), "utf8").replace
 const FOOTER = fs.readFileSync(path.join(LAYOUT, "footer.html"), "utf8").replace(/\r\n/g, "\n").trim();
 
 function setLayout(html, page) {
-  const header = HEADER.replace(`<a href="${page}"`, `<a href="${page}" aria-current="page"`);
+  // Mark this page's own menu link, and open-highlight the menu group that holds it.
+  const header = HEADER
+    .replace(new RegExp(`(<a class="(?:nav-link|mi)[^"]*" href="${page.replace(".", "\\.")}")`), `$1 aria-current="page"`)
+    .replace(/<details class="nav-group" data-pages="([^"]*)"/g, (m, list) =>
+      list.split(" ").includes(page) ? `${m} data-current` : m);
   const out = html
     .replace(/<header class="site">[\s\S]*?<\/header>/, () => header)
     .replace(/<footer class="site">[\s\S]*?<\/footer>/, () => FOOTER);
