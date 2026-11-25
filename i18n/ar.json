@@ -284,5 +284,6 @@
   "foot.connect.h": ">تواصل</p>",
   "foot.watch": ">شاهد الحلقات</a>",
   "foot.ideaspubs": ">الأفكار والمنشورات</a>",
-  "foot.partner": ">كن شريكًا لنا</a>"
+  "foot.partner": ">كن شريكًا لنا</a>",
+  "layout.totop": "aria-label=\"العودة إلى الأعلى\""
 }

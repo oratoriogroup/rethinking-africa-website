@@ -62,7 +62,8 @@
     "foot.connect.h": ">Connect</p>",
     "foot.watch": ">Watch Episodes</a>",
     "foot.ideaspubs": ">Ideas &amp; Publications</a>",
-    "foot.partner": ">Partner With Us</a>"
+    "foot.partner": ">Partner With Us</a>",
+    "layout.totop": "aria-label=\"Back to top\""
   },
   "index.html": {
     "title": "| Reclaiming Intelligence. Reimagining the Future.</title>",

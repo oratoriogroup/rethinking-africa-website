@@ -88,6 +88,23 @@
     }
   });
 
+  /* ----- Back to top: appears after about one screen of scrolling ----- */
+  var top = document.querySelector(".to-top");
+  if (top) {
+    var tick = false;
+    var showTop = function () { top.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.9); tick = false; };
+    window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(showTop); } }, { passive: true });
+    showTop();
+    top.addEventListener("click", function (e) {
+      e.preventDefault();
+      var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+      // Move keyboard focus back to the top too, without jumping the page.
+      var main = document.getElementById("main");
+      if (main) { main.setAttribute("tabindex", "-1"); main.focus({ preventScroll: true }); }
+    });
+  }
+
   // Growing past tablet width: put the drawer away and reset the dropdowns.
   var onWide = function () { fit(); if (wide.matches && header.classList.contains("nav-open")) { setOpen(false); closeGroups(); } };
   if (mq.addEventListener) mq.addEventListener("change", onWide); else if (mq.addListener) mq.addListener(onWide);

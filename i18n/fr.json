@@ -284,5 +284,6 @@
   "foot.connect.h": ">Nous suivre</p>",
   "foot.watch": ">Regarder les épisodes</a>",
   "foot.ideaspubs": ">Idées &amp; publications</a>",
-  "foot.partner": ">Devenir partenaire</a>"
+  "foot.partner": ">Devenir partenaire</a>",
+  "layout.totop": "aria-label=\"Retour en haut\""
 }
