@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=16">
+<link rel="stylesheet" href="../css/style.css?v=19">
 <script src="../js/theme.js?v=3"></script>
 <script type="application/ld+json">
 {
@@ -348,15 +348,37 @@
     <div class="wrap center">
       <h2>انضم إلى الألف المؤسّسين</h2>
       <p class="intro">كن من أول ألف عضو في حركة لاستعادة الذكاء الأفريقي والاستقلالية الأفريقية. اكتشف وجهات نظر تتمحور حول أفريقيا وتقوم على البحث، وشاهد حوارات مع باحثين وممارسين، واحصل على الحلقات والمقالات ودعوات الفعاليات الجديدة، بدءًا بسلسلة <strong>7 أيام لإعادة التفكير</strong> المجانية.</p>
-      <!-- DEVELOPER: wire to email provider; keep fields to exactly these four -->
-      <!-- DEVELOPER: replace action with your MailerLite / ConvertKit embedded form URL.
-           This is a normal HTML form post. It needs no server of our own. -->
-      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post">
-        <div class="field"><label for="s-name">الاسم الأول</label><input id="s-name" name="fields[name]" type="text" required></div>
-        <div class="field"><label for="s-email">البريد الإلكتروني</label><input id="s-email" name="fields[email]" type="email" required></div>
-        <div class="field"><label for="s-wa">رقم واتساب (اختياري)</label><input id="s-wa" name="fields[whatsapp]" type="tel" placeholder="+234 800 000 0000"></div>
-        <div class="field"><label for="s-country">البلد</label><input id="s-country" name="fields[country]" type="text"></div>
-        <div class="field"><label for="s-interest">مجال الاهتمام</label>
+      <!-- DEVELOPER: set data-action to the MailerLite embedded form URL (the same one as
+           MAILING_LIST_ACTION in quiz.html). Until then the form explains it is not open yet.
+           js/join.js posts it in the background and shows the welcome at once. -->
+      <form class="join-form" data-action="REPLACE_WITH_MAILING_LIST_ACTION" method="post">
+        <div class="field"><label for="s-name">الاسم الأول</label><input id="s-name" name="fields[name]" type="text" autocomplete="given-name" required></div>
+        <div class="field"><label for="s-email">البريد الإلكتروني</label><input id="s-email" name="fields[email]" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="s-wa">رقم واتساب (اختياري)</label>
+          <div class="tel-group">
+            <select id="s-wa-code" name="fields[whatsapp_code]" aria-label="رمز الدولة">
+              <option value="+234">+234 NG</option>
+              <option value="+233">+233 GH</option>
+              <option value="+254">+254 KE</option>
+              <option value="+27">+27 ZA</option>
+              <option value="+255">+255 TZ</option>
+              <option value="+256">+256 UG</option>
+              <option value="+251">+251 ET</option>
+              <option value="+237">+237 CM</option>
+              <option value="+221">+221 SN</option>
+              <option value="+225">+225 CI</option>
+              <option value="+250">+250 RW</option>
+              <option value="+20">+20 EG</option>
+              <option value="+212">+212 MA</option>
+              <option value="+44">+44 UK</option>
+              <option value="+1">+1 US/CA</option>
+              <option value="">+ …</option>
+            </select>
+            <input id="s-wa" name="fields[whatsapp]" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="800 000 0000">
+          </div>
+        </div>
+        <div class="field"><label for="s-country">البلد</label><input id="s-country" name="fields[country]" type="text" autocomplete="country-name"></div>
+        <div class="field span-2"><label for="s-interest">مجال الاهتمام</label>
           <select id="s-interest" name="fields[interest]">
             <option>التعليم والمعرفة</option>
             <option>الحوكمة والمؤسسات</option>
@@ -365,58 +387,105 @@
             <option>الثقافة والهوية والاستقلالية الأفريقية</option>
             <option>مستقبلات أفريقيا</option>
           </select></div>
-        <div>
-          <button class="btn btn-solid" type="submit">اشترك</button>
-          <a class="btn btn-ghost" href="quiz.html">خذ الاختبار أولًا</a>
+        <div class="span-2">
+          <button class="btn btn-solid btn-block" type="submit">انضم إلى الألف المؤسّسين</button>
+          <p class="note form-status" role="status" aria-live="polite"></p>
         </div>
       </form>
+      <div class="join-welcome" hidden>
+        <h3>مرحبًا بك بين الألف المؤسّسين.</h3>
+        <p>تفقّد بريدك: اليوم الأول من <strong>7 أيام لإعادة التفكير</strong> في طريقه إليك.</p>
+      </div>
       <p class="note mt-4">لا رسائل مزعجة. يمكنك إلغاء الاشتراك في أي وقت.</p>
     </div>
   </section>
 
-
-  <!-- SUPPORT THE INITIATIVE -->
-  <section class="dark support-band">
-    <div class="wrap center">
-      <h2>ساعد هذه المبادرة على النمو</h2>
-      <p class="intro">Rethinking Africa with Dr. Damola مبادرة مستقلة. دعمك يموّل البحث والإنتاج والترجمة وتوثيق المعرفة الأفريقية، ويُبقي هذه المنصة مجانية للطلاب والمجتمعات في أنحاء القارة.</p>
-      <div class="cta-row">
-        <!-- DEVELOPER: connect Paystack/Flutterwave (Nigeria) and PayPal (diaspora) -->
-        <a class="btn btn-solid" href="#">تبرّع مرة واحدة</a>
-        <a class="btn btn-ghost" href="#">تبرّع شهريًا</a>
-        <a class="btn btn-ghost" href="contact.html">ارعَ حلقة</a>
+  <!-- BUILD WITH US: support and partnership in one place -->
+  <section class="dark support-band build">
+    <div class="wrap">
+      <div class="center">
+        <h2 id="build-title">ساعد هذه المبادرة على النمو</h2>
+        <p class="intro">Rethinking Africa with Dr. Damola مبادرة مستقلة. دعمك يموّل البحث والإنتاج والترجمة وتوثيق المعرفة الأفريقية، ويُبقي هذه المنصة مجانية للطلاب والمجتمعات في أنحاء القارة.</p>
       </div>
-      <p class="note mt-4 measure mx-auto">تدعم المساهمات مبادرة تعليمية مستقلة، وهي ليست تبرعات خيرية قابلة للخصم الضريبي. يُنشر ملخص سنوي لكيفية استخدام الأموال على هذا الموقع.</p>
+      <div class="carousel build-carousel" data-carousel aria-labelledby="build-title">
+        <div class="carousel-track">
+          <!-- DEVELOPER: connect Paystack/Flutterwave (Nigeria) and PayPal (diaspora) to the two Give links -->
+          <div class="slide build-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+            <h3>تبرّع مرة واحدة</h3>
+            <p>موّل بحثًا أفريقيًا مفتوح الوصول بمساهمة واحدة.</p>
+            <a class="btn btn-solid" href="#">تبرّع مرة واحدة</a>
+          </div>
+          <div class="slide build-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg>
+            <h3>تبرّع شهريًا</h3>
+            <p>ادعم إنتاج الحلقات وترجمتها شهرًا بعد شهر.</p>
+            <a class="btn btn-ghost" href="#">تبرّع شهريًا</a>
+          </div>
+          <div class="slide build-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h12v10H3zM15 10.5l6-3.5v10l-6-3.5"/></svg>
+            <h3>ارعَ حلقة</h3>
+            <p>تكفّل بفيلم وثائقي أو بحوار مع باحث.</p>
+            <a class="btn btn-ghost" href="contact.html">ارعَ حلقة</a>
+          </div>
+          <div class="slide build-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21v-7h6v7M2.5 10 12 3.5l9.5 6.5Z"/></svg>
+            <h3>شراكة مؤسسية</h3>
+            <p>الجامعات ومراكز البحث والهيئات الثقافية: لنبنِ معًا مشاريع للتواصل مع الجمهور.</p>
+            <button type="button" class="btn btn-ghost" data-open="partner-dialog">ابدأ حوارًا</button>
+          </div>
+        </div>
+      </div>
+      <p class="fine-print">تدعم المساهمات مبادرة تعليمية مستقلة، وهي ليست تبرعات خيرية قابلة للخصم الضريبي. يُنشر ملخص سنوي لكيفية استخدام الأموال على هذا الموقع.</p>
     </div>
-  </section>
-
-  <!-- 11. PARTNERS -->
-  <section class="tone-cloth">
-    <div class="wrap center">
-      <h2>كن شريكًا لـ Rethinking Africa</h2>
-      <p class="intro">ندعو الجامعات ومراكز البحث والمؤسسات الثقافية والمؤسسات الإعلامية وهيئات التنمية إلى التعاون في مشاريع البحث والإعلام والتواصل مع الجمهور.</p>
-      <a class="btn btn-navy" href="contact.html">ابدأ حوارًا</a>
-    </div>
+    <dialog class="modal" id="partner-dialog" aria-labelledby="partner-title">
+      <button type="button" class="lb-close" data-close aria-label="إغلاق">&times;</button>
+      <h3 id="partner-title">كن شريكًا لـ Rethinking Africa</h3>
+      <p>ندعو الجامعات ومراكز البحث والمؤسسات الثقافية والمؤسسات الإعلامية وهيئات التنمية إلى التعاون في مشاريع البحث والإعلام والتواصل مع الجمهور.</p>
+      <p class="modal-actions"><a class="btn btn-solid" href="mailto:partnerships@rethinkingafrica.africa">partnerships@rethinkingafrica.africa</a>
+      <a class="btn btn-ghost" href="contact.html">اتصل بنا</a></p>
+    </dialog>
   </section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="شعار Rethinking Africa with Dr. Damola" loading="lazy">
-    <div class="links">
-      <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
-      <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
-      <a href="https://www.tiktok.com/@DrDamolaAfrica">TikTok</a>
-      <a href="https://www.facebook.com/DrDamolaAfrica">Facebook</a>
-      <a href="https://x.com/DrDamolaAfrica">X</a>
-      <a href="https://www.linkedin.com/company/rethinking-africa-with-dr-damola">LinkedIn</a>
-      <a href="community.html">WhatsApp</a>
-      <a href="policies.html">الخصوصية والشروط</a>
-      <a href="editorial.html">المعايير التحريرية</a>
-      <a href="contact.html">اتصل بنا</a>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="شعار Rethinking Africa with Dr. Damola" loading="lazy" decoding="async">
+        <p>مبادرة مستقلة للبحث والإعلام والتثقيف العام تتمحور حول أفريقيا، أسستها الدكتورة أولوواكيمي دامولا أديجومو-أيبيوو.</p>
+        <p><a class="foot-mail" href="mailto:drdamolaafrica@gmail.com">drdamolaafrica@gmail.com</a></p>
+      </div>
+      <nav class="foot-col" aria-label="المنصة">
+        <p class="foot-h">المنصة</p>
+        <a href="index.html">الرئيسية</a>
+        <a href="quiz.html">خذ الاختبار</a>
+        <a href="watch.html">شاهد الحلقات</a>
+        <a href="ideas.html">الأفكار والمنشورات</a>
+      </nav>
+      <nav class="foot-col" aria-label="المجتمع">
+        <p class="foot-h">المجتمع</p>
+        <a href="african-voices.html">أصوات أفريقية</a>
+        <a href="news.html">الأخبار والفعاليات</a>
+        <a href="contribute.html">ساهم</a>
+        <a href="contact.html">كن شريكًا لنا</a>
+      </nav>
+      <div class="foot-col">
+        <p class="foot-h">تواصل</p>
+        <div class="socials">
+          <a href="https://www.youtube.com/@DrDamola.Africa" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.6 2.6 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.2V8.8l5.4 3.2Z"/></svg></a>
+          <a href="https://www.instagram.com/DrDamolaAfrica" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.5h8A5.5 5.5 0 0 1 21.5 8v8a5.5 5.5 0 0 1-5.5 5.5H8A5.5 5.5 0 0 1 2.5 16V8A5.5 5.5 0 0 1 8 2.5Zm0 2A3.5 3.5 0 0 0 4.5 8v8A3.5 3.5 0 0 0 8 19.5h8a3.5 3.5 0 0 0 3.5-3.5V8A3.5 3.5 0 0 0 16 4.5Zm4 3.3a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm0 2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4Zm5-3.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+          <a href="https://www.tiktok.com/@DrDamolaAfrica" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2.5h3c.2 2 1.7 3.6 3.6 3.8v3.1c-1.4 0-2.6-.4-3.6-1.1v6.6a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.7 2.3Z"/></svg></a>
+          <a href="https://www.facebook.com/DrDamolaAfrica" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 1-1h2.2V2.5h-3C11.1 2.5 10.3 4.6 10.3 6.5v2H8v3.4h2.3v9.6H14v-9.6h2.8l.4-3.4Z"/></svg></a>
+          <a href="https://x.com/DrDamolaAfrica" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.5h5l12 17h-5ZM5.4 20.5 10.6 14.4l1.2 1.7-4.1 4.4ZM18.6 3.5l-5.2 6.1-1.2-1.7 4.1-4.4Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/rethinking-africa-with-dr-damola" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9h3v11h-3ZM6 3.5a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5ZM10 9h2.9v1.5c.4-.8 1.5-1.7 3.1-1.7 3.2 0 3.8 2.1 3.8 4.8V20h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H10Z"/></svg></a>
+          <a href="community.html" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Zm0 2a7.5 7.5 0 1 1-3.9 13.9l-.4-.2-2.3.6.6-2.2-.3-.4A7.5 7.5 0 0 1 12 4.5ZM9.2 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6.5.9 1.4 1.9 2.6 2.4.3.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4 0 .5-.2 1.3-1 1.7-.7.4-1.6.5-3.4-.3-2.3-1-3.8-3.3-4-3.5-.2-.3-1-1.4-1-2.6s.6-1.9.9-2.2Z"/></svg></a>
+        </div>
+        <a href="policies.html">الخصوصية والشروط</a>
+        <a href="editorial.html">المعايير التحريرية</a>
+      </div>
     </div>
-    <p>مبادرة مستقلة للبحث والإعلام والتثقيف العام تتمحور حول أفريقيا، أسستها الدكتورة أولوواكيمي دامولا أديجومو-أيبيوو.</p>
-    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
+    <p class="foot-legal">© 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 
@@ -438,5 +507,6 @@
 <script src="../js/nav.js?v=2" defer></script>
 <script src="../js/carousel.js?v=2" defer></script>
 <script src="../js/compare.js?v=1" defer></script>
+<script src="../js/join.js?v=1" defer></script>
 </body>
 </html>
