@@ -63,7 +63,8 @@
     "foot.watch": ">Watch Episodes</a>",
     "foot.ideaspubs": ">Ideas &amp; Publications</a>",
     "foot.partner": ">Partner With Us</a>",
-    "layout.totop": "aria-label=\"Back to top\""
+    "layout.totop": "aria-label=\"Back to top\"",
+    "foot.renewal": ">Built for African Intellectual Renewal</p>"
   },
   "index.html": {
     "title": "| Reclaiming Intelligence. Reimagining the Future.</title>",
@@ -184,7 +185,8 @@
     "build.once.p": ">Fund open-access African research with a single gift.</p>",
     "build.monthly.p": ">Sustain episode production and translation, month after month.</p>",
     "build.sponsor.p": ">Underwrite a documentary or a conversation with a scholar.</p>",
-    "build.partner.p": ">Universities, research centres and cultural bodies: build public-engagement projects with us.</p>"
+    "build.partner.p": ">Universities, research centres and cultural bodies: build public-engagement projects with us.</p>",
+    "hero.role": ">Founder &amp; Scholar</span>"
   },
   "quiz.html": {
     "quiz.title": "<title>The 90-Second Africa Lens Quiz |",
@@ -222,7 +224,7 @@
     "ui.sendBtn": "\"Email me my profile\"",
     "ui.sendingBtn": "\"Sending to your email...\"",
     "ui.sending": "\"Sending your answers and profile to {email}. This takes a few seconds.\"",
-    "ui.failed": "\"We could not send your profile just now. Please check your connection and try again. If it keeps failing, write to drdamolaafrica@gmail.com.\"",
+    "ui.failed": "\"We could not send your profile just now. Please check your connection and try again. If it keeps failing, reach us through the Contact page.\"",
     "ui.friend": "\"friend\"",
     "ui.waMessage": "\"Hello Dr Damola. I just took the Africa Lens Quiz. My profile is {profile}. Please send me my guide.\"",
     "ui.delivered": "\"Your answers and your profile have been sent to {email}. If you cannot see the email, check your Promotions or Spam folder.\"",
@@ -562,9 +564,9 @@
     "contribute.036": ">While you wait, the quiz will tell you which kind of African future-builder\nyou are, and start the free seven-day series.</p>",
     "contribute.037": "><a class=\"btn btn-solid\" href=\"quiz.html\">Take the quiz</a>\n<a class=\"btn btn-ghost\" href=\"https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1\">Subscribe on YouTube</a></p>",
     "contribute.js1": "'Please complete your name, email, type of contribution and message.'",
-    "contribute.js2": "'This form is not connected yet. Please write to drdamolaafrica@gmail.com.'",
+    "contribute.js2": "'This form is not connected yet. Please reach us through the Contact page.'",
     "contribute.js3": "'Sending...'",
-    "contribute.js4": "'Something went wrong. Please try again, or write to drdamolaafrica@gmail.com.'",
+    "contribute.js4": "'Something went wrong. Please try again, or reach us through the Contact page.'",
     "contribute.040": "<title>Contribute | Rethinking Africa with Dr. Damola</title>",
     "contribute.041": "content=\"Propose an episode, submit a story, recommend a guest or partner with Rethinking Africa with Dr. Damola.\""
   },
@@ -627,7 +629,7 @@
     "policies.005": ">Privacy, Terms &amp; Copyright</h1>",
     "policies.006": ">How this platform protects visitors, contributors and its own work.</p>",
     "policies.007": ">Your data</h2>",
-    "policies.008": ">We collect only what the subscription and contribution forms request (name, email, country and area of interest) and use it solely to send the newsletter, respond to submissions and improve the programme. We do not sell or share personal data. You may unsubscribe or request deletion at any time by writing to drdamolaafrica@gmail.com.</p>",
+    "policies.008": ">We collect only what the subscription and contribution forms request (name, email, country and area of interest) and use it solely to send the newsletter, respond to submissions and improve the programme. We do not sell or share personal data. You may unsubscribe or request deletion at any time through our <a href=\"contact.html\">Contact page</a>.</p>",
     "policies.009": ">Using this site</h2>",
     "policies.010": ">Content is provided for public education. Visitors may share and quote materials with attribution and a link. Submitting a contribution grants the programme permission to review it; nothing is published without the contributor's consent.</p>",
     "policies.011": ">Ownership and participation</h2>",
@@ -645,7 +647,7 @@
     "editorial.010": ">Source selection</h3>",
     "editorial.011": ">We favour primary sources, peer-reviewed work and named expertise, and clearly distinguish facts from interpretation and speculation.</p>",
     "editorial.012": ">Corrections</h3>",
-    "editorial.013": ">Verified errors are corrected promptly and visibly on the relevant page or episode description. Corrections may be requested at drdamolaafrica@gmail.com.</p>",
+    "editorial.013": ">Verified errors are corrected promptly and visibly on the relevant page or episode description. Corrections may be requested through our <a href=\"contact.html\">Contact page</a>.</p>",
     "editorial.014": ">Guest representation</h3>",
     "editorial.015": ">Guests are quoted in context, informed of how material will be used, and may review their approved photographs and quotations.</p>",
     "editorial.016": ">AI &amp; dramatisation disclosure</h3>",

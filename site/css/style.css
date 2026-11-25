@@ -92,7 +92,7 @@
   --s-8:2.5rem;
   --s-9:3.2rem;
   --s-10:5rem;
-  --gutter:1.1rem;
+  --gutter:1.25rem;
 
   /* Type: Cormorant Garamond for headings, Lato for everything else */
   --serif:'Cormorant Garamond',Garamond,Georgia,'Times New Roman',serif;
@@ -188,7 +188,11 @@ input,textarea{caret-color:var(--heading)}
 
 
 /* ===== 3. Layout ===== */
-.wrap{max-width:1020px;margin:0 auto;padding:0 var(--gutter)}
+/* One master grid: content up to 1320px wide; section colours always run edge to edge.
+   Reading text keeps its comfortable measure (paragraphs stop at about 68 characters). */
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+@media (min-width:640px){:root{--gutter:2rem}}
+@media (min-width:1024px){:root{--gutter:3rem}}
 section{padding:var(--s-9) 0}
 section+section{border-top:1px solid transparent}
 [id]{scroll-margin-top:130px}               /* anchor links land below the sticky header */
@@ -316,7 +320,6 @@ html:not(.js) nav.main::before{display:none}
    js/nav.js adds .nav-drawer when a long language does not fit, keeping the drawer. */
 @media (min-width:1024px){
   header.site:not(.nav-drawer) .menu-btn,header.site:not(.nav-drawer) .nav-close,header.site:not(.nav-drawer) .nav-scrim{display:none}
-  header.site:not(.nav-drawer) .wrap{max-width:1260px}
   header.site:not(.nav-drawer) nav.main{
     position:static;transform:none;visibility:visible;transition:none;width:auto;padding:0;overflow:visible;
     flex-direction:row;align-items:center;gap:2px;margin-inline-start:auto;background:none;box-shadow:none;
@@ -439,7 +442,36 @@ p:has(>.btn+.btn)>.btn+.btn{margin-inline-start:0}
   .hero-grid .cta-row{justify-content:flex-start}
   .hero-grid h1,.hero-grid p.lede{margin-inline-start:0}
 }
-
+/* Homepage hero: editorial headline, 7:5 columns, all three actions on one row on wide screens */
+.hero-grid h1{font-size:clamp(2.75rem,5vw,4.75rem);line-height:1.06;letter-spacing:-.02em;max-width:13em}
+.hero-grid p.lede{max-width:36rem}
+@media (min-width:640px){.hero-grid p.lede{font-size:1.125rem}}
+@media (min-width:1024px){
+  .hero:has(.hero-grid){padding:3rem 0}
+  .hero-grid{grid-template-columns:7fr 5fr;gap:3rem;min-height:min(82vh,860px)}
+  .hero-grid .cta-row{gap:.875rem}
+  .hero-grid .cta-row .btn{padding:.85rem 1.25rem;font-size:.98rem}
+}
+@media (min-width:1280px){.hero-grid .cta-row{flex-wrap:nowrap}}
+/* Larger portrait medallion, layered halo, warm glow and a glass nameplate */
+.hero-portrait{width:min(68vw,256px)}
+@media (min-width:640px){.hero-portrait{width:320px}}
+.hero-portrait .halo{
+  background:radial-gradient(circle,rgba(var(--gold-rgb),.24) 0,rgba(var(--gold-rgb),.08) 48%,transparent 70%);
+  animation:pulse 5s ease-in-out infinite;
+}
+.halo::after{inset:-14px;border:2px dotted var(--gold-edge-strong);animation:spin 120s linear infinite reverse}
+.hero-portrait::before{margin-right:46px}
+.hero-portrait::after{margin-left:46px}
+.hero-portrait figcaption{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem .5rem;
+  width:max-content;max-width:min(88vw,440px);margin:1.6rem 0 0 50%;transform:translateX(-50%);
+  padding:.55rem 1.1rem;border-radius:16px;letter-spacing:0;text-align:center;
+  background:rgba(var(--indigo-rgb),.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid var(--gold-edge);color:var(--ivory);
+}
+.np-role{color:var(--gold)}
+.np-role::before{content:"•";margin-inline-end:.5rem;color:var(--gold-edge-strong)}
 
 /* ===== 8. Cards and panels ===== */
 .card{
@@ -668,33 +700,50 @@ select{
 
 
 /* ===== 11. Footer ===== */
-/* The darkest cloth, finished with a gold selvedge */
+/* The darkest cloth under a fine gold hairline; compact, everything on one grid */
 footer.site{
   background:var(--indigo-night);color:var(--on-dark-muted);
-  padding:3.2rem 0 2rem;font-size:var(--fs-md);box-shadow:inset 0 3px 0 var(--gold);
+  padding:2.5rem 0 1.5rem;font-size:var(--fs-sm);border-top:1px solid var(--gold-edge-strong);
 }
-/* Four columns: brand, platform, community, connect & legal */
-.foot-grid{display:grid;grid-template-columns:1fr;gap:var(--s-7) var(--s-6)}
-@media (min-width:640px){.foot-grid{grid-template-columns:1fr 1fr}}
-@media (min-width:1000px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1.25fr}}
-footer.site .logo{display:block;width:160px;height:auto;margin:0 0 var(--s-4)}
-.foot-brand p{max-width:38ch}
+@media (min-width:640px){footer.site{padding-top:3rem}}
+/* Brand 5 · Platform 2 · Community 2 · Connect & legal 3 (of 12) */
+.foot-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6) var(--s-4);align-items:start;
+  padding-bottom:var(--s-6);border-bottom:1px solid rgba(var(--ivory-rgb),.1);
+}
+/* Phones and tablets: brand and connect run full width; the two link lists sit side by side */
+.foot-brand,.foot-col:last-child{grid-column:1 / -1}
+@media (min-width:1000px){
+  .foot-grid{grid-template-columns:5fr 2fr 2fr 3fr;gap:var(--s-7)}
+  .foot-brand,.foot-col:last-child{grid-column:auto}
+}
+footer.site .foot-lockup{min-height:0;padding:0;margin-bottom:var(--s-3)}
+.foot-lockup svg{width:52px;height:44px}
+.foot-lockup span{font-size:1.3rem}
+.foot-brand p{max-width:42ch;line-height:1.6}
 .foot-col{display:flex;flex-direction:column;align-items:flex-start}
-.foot-h{margin-bottom:var(--s-2);font-family:var(--sans);font-size:var(--fs-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.foot-h{margin-bottom:var(--s-1);font-family:var(--sans);font-size:var(--fs-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 footer.site a{
-  display:inline-flex;align-items:center;min-height:44px;padding:.45rem 0;
-  color:var(--on-dark);text-decoration:none;font-family:var(--sans);font-size:var(--fs-md);
+  display:inline-flex;align-items:center;min-height:36px;padding:.25rem 0;
+  color:var(--on-dark);text-decoration:none;font-family:var(--sans);font-size:var(--fs-sm);
   transition:color var(--t-fast);
 }
 footer.site a:hover{color:var(--gold)}
-footer.site .foot-mail{color:var(--gold);text-decoration:underline;text-decoration-color:var(--gold-edge-strong);text-underline-offset:.22em}
-.socials{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--s-3)}
+.socials{display:flex;flex-wrap:wrap;gap:6px;margin:var(--s-1) 0 var(--s-2)}
+@media (min-width:1000px){.socials{flex-wrap:nowrap;gap:4px}}
 footer.site .socials a{
-  width:44px;justify-content:center;padding:0;border-radius:50%;border:1px solid var(--ivory-edge);color:var(--ivory);
+  flex:none;width:36px;min-height:36px;justify-content:center;padding:0;border-radius:50%;border:1px solid var(--ivory-edge);color:var(--ivory);
   transition:color var(--t-fast),border-color var(--t-fast),background-color var(--t-fast);
 }
+@media (max-width:999px){footer.site .socials a{width:42px;min-height:42px}}
+@media (max-width:379px){footer.site .socials a{width:38px;min-height:38px}}
 footer.site .socials a:hover{color:var(--indigo-night);background:var(--gold);border-color:var(--gold)}
-.socials svg{width:20px;height:20px;fill:currentColor}
+.socials svg{width:18px;height:18px;fill:currentColor}
+/* Bottom bar: copyright on one side, the line of purpose on the other */
+.foot-bottom{display:flex;flex-direction:column;align-items:center;gap:var(--s-1);padding-top:var(--s-5);font-size:var(--fs-xs);color:var(--on-dark-muted);text-align:center}
+.foot-bottom p{max-width:none;margin:0}
+.foot-bottom p+p{margin-top:0;color:var(--gold)}
+@media (min-width:640px){.foot-bottom{flex-direction:row;justify-content:space-between;text-align:start}}
 /* Back to top: a round button in the bottom corner, shown once the reader has scrolled (js/nav.js) */
 .to-top{
   position:fixed;z-index:40;bottom:max(18px,env(safe-area-inset-bottom));inset-inline-end:18px;
@@ -710,8 +759,6 @@ footer.site .to-top:hover,.to-top:focus-visible{background:var(--gold);color:var
 .to-top svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 html.nav-locked .to-top,html.lang-open .to-top{visibility:hidden}
 #main:focus{outline:none}
-.foot-legal{margin-top:var(--s-7);padding-top:var(--s-5);border-top:1px solid rgba(var(--ivory-rgb),.12);font-size:var(--fs-xs);text-align:center}
-footer.site p+p{margin-top:var(--s-2)}
 
 
 /* ===== 11b. Homepage components ===== */
@@ -793,7 +840,13 @@ p.qs-line{margin-top:.15rem;font-size:var(--fs-sm);color:var(--text-soft)}
 /* Stacked over each other, the labels go in opposite corners so they never overlap */
 .compare.is-ready .compare-b .ba-label{top:auto;bottom:12px}
 .compare-range,.compare-handle{display:none}
-.compare.is-ready{display:block;--pos:50%;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-lg);border:1px solid var(--gold-edge);box-shadow:var(--shadow-deep)}
+.compare.is-ready{
+  display:block;--pos:50%;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-lg);border:1px solid var(--gold-edge);box-shadow:var(--shadow-deep);
+  transition:box-shadow var(--t-slow),border-color var(--t-slow);
+}
+/* Full width of the grid on wide screens: a cinematic 16:9 stage */
+@media (min-width:1000px){.compare.is-ready{aspect-ratio:16/9}}
+.compare.is-ready:hover{border-color:var(--gold-edge-strong);box-shadow:var(--shadow-deep),0 0 0 4px var(--gold-glow)}
 .compare.is-ready figure{position:absolute;inset:0;border:0;border-radius:0}
 .compare.is-ready img{height:100%;object-fit:cover}
 .compare.is-ready .compare-b{clip-path:inset(0 0 0 var(--pos))}
@@ -1089,6 +1142,9 @@ html.fx .hero h1:not(.fx-rise){visibility:hidden;animation:fx-show 0s 1.5s forwa
   animation:fx-rise .65s var(--ease) forwards;
 }
 @keyframes fx-rise{to{opacity:1;transform:none}}
+/* Scroll reveal: added only by the script, so without it everything simply shows */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in{opacity:1;transform:none}
 .rotate{--rot-line:1.15em;display:inline-block;vertical-align:bottom;height:var(--rot-line);line-height:var(--rot-line);overflow:hidden;color:var(--gold)}
 html[lang="ar"] .rotate{--rot-line:1.5em}
 /* Words sit at the end of the box, so a shorter word stays against the full stop after it */
@@ -1130,7 +1186,7 @@ html[lang="ar"] .rotate{--rot-line:1.5em}
   .btn,.card,.theme-card,.yt-play,.gallery figure,.ba-grid figure{transition:none}
   .btn:hover,.card:hover,.theme-card:hover,.gallery figure:hover,.ba-grid figure:hover{transform:none}
   .insight{animation:none}
-  .halo::before,.halo::after,.voices-art svg>g:first-child{animation:none}
+  .halo::before,.halo::after,.hero-portrait .halo,.voices-art svg>g:first-child{animation:none}
   .btn-solid:hover::after,.btn-solid:focus-visible::after{transition:none;transform:translateX(-120%)}
   .gallery .frame img,.join-card,.join-go::after,.theme-card::before{transition:none}
   .gallery figure:hover .frame img{transform:none}

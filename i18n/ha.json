@@ -136,7 +136,7 @@
   "ui.sendBtn": "\"Aika min bayanin halina ta imel\"",
   "ui.sendingBtn": "\"Ana aikawa zuwa imel ɗinka...\"",
   "ui.sending": "\"Ana aika amsoshinka da bayanin halinka zuwa {email}. Zai ɗauki ’yan daƙiƙoƙi.\"",
-  "ui.failed": "\"Ba mu iya aika bayanin halinka a yanzu ba. Don Allah ka duba haɗin intanet ɗinka ka sake gwadawa. Idan ya ci gaba da kasawa, ka rubuta zuwa drdamolaafrica@gmail.com.\"",
+  "ui.failed": "\"Ba mu iya aika bayanin halinka a yanzu ba. Don Allah ka duba haɗin intanet ɗinka ka sake gwadawa. Idan ya ci gaba da kasawa, ka tuntuɓe mu ta shafin Tuntuɓa.\"",
   "ui.friend": "\"aboki\"",
   "ui.waMessage": "\"Sannu Dakta Damola. Na kammala Gwajin Africa Lens. Bayanin halina shi ne {profile}. Don Allah ki aiko min da jagorana.\"",
   "ui.delivered": "\"An aika amsoshinka da bayanin halinka zuwa {email}. Idan ba ka ga imel ɗin ba, duba babban fayil na Promotions ko Spam.\"",
@@ -285,5 +285,7 @@
   "foot.watch": ">Kalli shirye-shirye</a>",
   "foot.ideaspubs": ">Ra’ayoyi &amp; Wallafe-wallafe</a>",
   "foot.partner": ">Haɗa kai da mu</a>",
-  "layout.totop": "aria-label=\"Koma sama\""
+  "layout.totop": "aria-label=\"Koma sama\"",
+  "foot.renewal": ">An gina shi don farfaɗo da tunanin Afirka</p>",
+  "hero.role": ">Mai kafawa &amp; masaniya</span>"
 }

@@ -69,6 +69,15 @@
     }, 1800);
   }
 
+  /* ----- 3. Sections ease in as they scroll into view (headings, grids, carousels) ----- */
+  if ("IntersectionObserver" in window) {
+    var parts = document.querySelectorAll("main section:not(.hero):not(.quiz-strip) .wrap > :is(h2, .grid, .join-grid, .carousel, .compare, .portrait-row, form, .center)");
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); seen.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    Array.prototype.forEach.call(parts, function (el) { el.classList.add("rv"); seen.observe(el); });
+  }
+
   /* ----- 1. Headlines rise in ----- */
   var n = 0;
   function piece(text, cls) {

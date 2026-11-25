@@ -136,7 +136,7 @@
   "ui.sendBtn": "\"M’envoyer mon profil\"",
   "ui.sendingBtn": "\"Envoi en cours...\"",
   "ui.sending": "\"Envoi de vos réponses et de votre profil à {email}. Cela prend quelques secondes.\"",
-  "ui.failed": "\"Nous n’avons pas pu envoyer votre profil pour le moment. Vérifiez votre connexion et réessayez. Si le problème persiste, écrivez à drdamolaafrica@gmail.com.\"",
+  "ui.failed": "\"Nous n’avons pas pu envoyer votre profil pour le moment. Vérifiez votre connexion et réessayez. Si le problème persiste, contactez-nous via la page Contact.\"",
   "ui.friend": "\"ami(e)\"",
   "ui.waMessage": "\"Bonjour Dr Damola. Je viens de faire le quiz Africa Lens. Mon profil est {profile}. Merci de m’envoyer mon guide.\"",
   "ui.delivered": "\"Vos réponses et votre profil ont été envoyés à {email}. Si vous ne voyez pas l’e-mail, vérifiez vos dossiers Promotions ou Spam.\"",
@@ -285,5 +285,7 @@
   "foot.watch": ">Regarder les épisodes</a>",
   "foot.ideaspubs": ">Idées &amp; publications</a>",
   "foot.partner": ">Devenir partenaire</a>",
-  "layout.totop": "aria-label=\"Retour en haut\""
+  "layout.totop": "aria-label=\"Retour en haut\"",
+  "foot.renewal": ">Pensé pour le renouveau intellectuel africain</p>",
+  "hero.role": ">Fondatrice &amp; chercheuse</span>"
 }

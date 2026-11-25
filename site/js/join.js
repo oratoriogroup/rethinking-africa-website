@@ -7,11 +7,11 @@
 (function () {
   var lang = (document.documentElement.lang || "en").slice(0, 2);
   var CLOSED = {
-    en: "Sign-ups open very soon. Until then, write to drdamolaafrica@gmail.com.",
-    fr: "Les inscriptions ouvrent très bientôt. D’ici là, écrivez à drdamolaafrica@gmail.com.",
-    ha: "Rajista za ta buɗe nan ba da jimawa ba. Kafin nan, rubuta zuwa drdamolaafrica@gmail.com.",
-    ar: "يُفتح التسجيل قريبًا جدًا. حتى ذلك الحين، راسلنا على drdamolaafrica@gmail.com.",
-    sw: "Usajili utafunguliwa hivi karibuni. Hadi wakati huo, andika kwa drdamolaafrica@gmail.com."
+    en: "Sign-ups open very soon. Until then, reach us through the Contact page.",
+    fr: "Les inscriptions ouvrent très bientôt. D’ici là, contactez-nous via la page Contact.",
+    ha: "Rajista za ta buɗe nan ba da jimawa ba. Kafin nan, tuntuɓe mu ta shafin Tuntuɓa.",
+    ar: "يُفتح التسجيل قريبًا جدًا. حتى ذلك الحين، تواصل معنا عبر صفحة التواصل.",
+    sw: "Usajili utafunguliwa hivi karibuni. Hadi wakati huo, wasiliana nasi kupitia ukurasa wa Mawasiliano."
   };
 
   var form = document.querySelector(".join-form");
