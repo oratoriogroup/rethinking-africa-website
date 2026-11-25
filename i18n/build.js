@@ -14,7 +14,8 @@
  * page, so edits to the English pages are caught.
  *
  * Run it again after changing an English page or a translation.
- * It also refreshes the hreflang links in the English pages.
+ * It also stamps the shared header and footer (i18n/layout/) into every English
+ * page and refreshes their hreflang links.
  */
 const fs = require("fs");
 const path = require("path");
@@ -71,14 +72,33 @@ function fixPaths(html) {
   });
 }
 
+/* Shared header and footer: i18n/layout/header.html and footer.html are the one
+   source for every page. Edit those files (not a page's own copy), then rebuild.
+   The current page's menu link gets aria-current="page". */
+const LAYOUT = path.join(__dirname, "layout");
+const HEADER = fs.readFileSync(path.join(LAYOUT, "header.html"), "utf8").replace(/\r\n/g, "\n").trim();
+const FOOTER = fs.readFileSync(path.join(LAYOUT, "footer.html"), "utf8").replace(/\r\n/g, "\n").trim();
+
+function setLayout(html, page) {
+  const header = HEADER.replace(`<a href="${page}"`, `<a href="${page}" aria-current="page"`);
+  const out = html
+    .replace(/<header class="site">[\s\S]*?<\/header>/, () => header)
+    .replace(/<footer class="site">[\s\S]*?<\/footer>/, () => FOOTER);
+  if (!/<header class="site">/.test(html) || !/<footer class="site">/.test(html)) {
+    console.warn(`${page}: no <header class="site"> or <footer class="site"> to replace`);
+    problems++;
+  }
+  return out;
+}
+
 let problems = 0;
 
-// English pages: keep their hreflang links current.
+// English pages: apply the shared header/footer and keep their hreflang links current.
 for (const page of PAGES) {
   const file = path.join(SITE, page);
   const html = fs.readFileSync(file, "utf8");
   const eol = html.includes("\r\n") ? "\r\n" : "\n";
-  const next = setAlternates(html, page).replace(/\r?\n/g, eol);
+  const next = setAlternates(setLayout(html.replace(/\r\n/g, "\n"), page), page).replace(/\n/g, eol);
   if (next !== html) fs.writeFileSync(file, next, "utf8");
 }
 
