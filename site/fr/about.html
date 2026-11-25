@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/about.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/about.html">
@@ -23,14 +23,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">Aller au contenu</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Accueil de Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Menu principal">
       <a href="index.html">Accueil</a>
-      <a href="quiz.html" style="color:#E8A11C">Faire le quiz</a>
+      <a class="nav-quiz" href="quiz.html">Faire le quiz</a>
       <a href="watch.html">Regarder</a>
       <a href="ideas.html">Idées</a>
       <a href="publications.html">Publications</a>
@@ -43,17 +44,16 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 <div class="hero"><div class="wrap"><h1>À propos de Rethinking Africa</h1><p class="lede">Regarder. Réfléchir. Contribuer.</p></div></div>
-<hr class="horizon">
 
 <!-- 1. ABOUT RETHINKING AFRICA -->
 <section><div class="wrap">
 <h2>Une plateforme de recherche, de médias et d’éducation publique centrée sur l’Afrique</h2>
 <p><strong>Rethinking Africa with Dr. Damola</strong> explore les idées, les systèmes et les choix qui façonnent le développement de l’Afrique. À travers des analyses fondées sur la recherche, des récits documentaires, des entretiens, des débats publics et des créations médiatiques, la plateforme examine comment les Africains se comprennent eux-mêmes, éduquent leurs enfants, organisent leurs institutions, préservent leurs savoirs et imaginent leur avenir.</p>
-<p style="font-family:var(--serif);font-size:1.2rem;font-style:italic;margin-top:1.2rem">L’Afrique ne manque pas d’intelligence. Son défi est qu’une grande partie de son intelligence n’a pas été suffisamment reconnue, affinée, institutionnalisée, financée et transformée en puissance collective.</p>
-<p style="margin-top:1.2rem">La plateforme va donc au-delà de la simple description des problèmes de l’Afrique. Elle demande comment ces problèmes ont été produits, ce qui les entretient, quels savoirs ont été négligés et quelles alternatives concrètes peuvent être construites.</p>
-<p style="margin-top:1rem">La note conceptuelle complète du programme est disponible en téléchargement : <a href="#">Note conceptuelle du programme (PDF)</a>.</p>
+<p class="quote mt-5">L’Afrique ne manque pas d’intelligence. Son défi est qu’une grande partie de son intelligence n’a pas été suffisamment reconnue, affinée, institutionnalisée, financée et transformée en puissance collective.</p>
+<p class="mt-5">La plateforme va donc au-delà de la simple description des problèmes de l’Afrique. Elle demande comment ces problèmes ont été produits, ce qui les entretient, quels savoirs ont été négligés et quelles alternatives concrètes peuvent être construites.</p>
+<p class="mt-4">La note conceptuelle complète du programme est disponible en téléchargement : <a href="#">Note conceptuelle du programme (PDF)</a>.</p>
 </div></section>
 
 <!-- 2. WHY WE EXIST -->
@@ -63,13 +63,12 @@
 <p>Dans le même temps, les systèmes éducatifs et de développement peuvent apprendre aux Africains à admirer ce qui vient d’ailleurs tout en se méfiant de ce qui naît de leur propre environnement. Rethinking Africa a été créé pour remettre en cause ce déséquilibre intellectuel.</p>
 <p>Il ne s’agit pas d’idéaliser le passé africain ni de rejeter les savoirs venus d’autres régions du monde. Il s’agit de renforcer la capacité de l’Afrique à dialoguer avec le monde en confiance, à puiser intelligemment dans les savoirs mondiaux et à y participer sans renoncer à sa voix, à sa mémoire ni à son autonomie.</p>
 </div></section>
-<hr class="horizon">
 
 <!-- 3. WHAT WE DO -->
 <section><div class="wrap">
 <h2>Une recherche sérieuse, rendue publique</h2>
 <p>Rethinking Africa transforme la recherche sérieuse et l’expérience africaine vécue en savoir public accessible : essais vidéo fondés sur la recherche, entretiens avec des chercheurs, des praticiens et des détenteurs de savoirs communautaires, documentaires et récits de terrain, courtes vidéos explicatives, articles et analyses de politiques publiques, histoires d’innovation et d’entreprise africaines, et dialogues entre générations, entre aînés et jeunes.</p>
-<p style="margin-top:1.2rem"><strong>Chaque histoire commence par une question.</strong> Pourquoi l’éducation africaine coupe-t-elle parfois les gens de leur environnement ? Pourquoi les grands projets africains dépendent-ils encore d’une expertise importée ? Pourquoi les jeunes rejettent-ils si souvent les métiers et les savoirs des générations précédentes ? Comment les savoirs endogènes peuvent-ils devenir science, industrie et entreprise modernes ? Comment l’Afrique peut-elle se moderniser sans devenir la copie d’une autre civilisation ?</p>
+<p class="mt-5"><strong>Chaque histoire commence par une question.</strong> Pourquoi l’éducation africaine coupe-t-elle parfois les gens de leur environnement ? Pourquoi les grands projets africains dépendent-ils encore d’une expertise importée ? Pourquoi les jeunes rejettent-ils si souvent les métiers et les savoirs des générations précédentes ? Comment les savoirs endogènes peuvent-ils devenir science, industrie et entreprise modernes ? Comment l’Afrique peut-elle se moderniser sans devenir la copie d’une autre civilisation ?</p>
 </div></section>
 
 <!-- 4. INTELLECTUAL APPROACH -->
@@ -83,14 +82,13 @@
 <div class="terr"><h3>Accessible</h3><p>Les idées académiques complexes sont traduites dans une langue que chacun peut comprendre.</p></div>
 <div class="terr"><h3>Tournée vers l’avenir</h3><p>Non seulement ce qui est arrivé à l’Afrique, mais ce que l’Afrique peut désormais retrouver, reconstruire et créer.</p></div>
 </div>
-<p style="margin-top:1.4rem">Lisez nos <a href="editorial.html">normes éditoriales et de recherche</a>.</p>
+<p class="mt-6">Lisez nos <a href="editorial.html">normes éditoriales et de recherche</a>.</p>
 </div></section>
-<hr class="horizon">
 
 <!-- 5. ABOUT DR DAMOLA -->
 <section><div class="wrap">
 <h2>Rencontrez Dr Damola</h2>
-<p style="font-family:var(--serif);font-size:1.15rem;color:var(--indigo);margin-bottom:1rem">Dr Oluwakemi Damola Adejumo-Ayibiowu, PhD</p>
+<p class="byline">Dr Oluwakemi Damola Adejumo-Ayibiowu, PhD</p>
 <div class="portrait-row">
 <img class="portrait" src="../assets/dr-damola-portrait.webp" alt="Dr Oluwakemi Damola Adejumo-Ayibiowu" width="320" height="400" loading="lazy">
 <div>
@@ -98,7 +96,7 @@
 <p>En tant que chercheuse, elle travaille sur la gouvernance afrocentrée, la renaissance africaine et la décolonisation du savoir. Elle est chercheuse postdoctorale principale à l’Université d’Afrique du Sud (UNISA), où elle approfondit ses travaux sur les systèmes de savoirs endogènes, l’innovation en matière de politiques publiques et la manière dont les technologies émergentes comme l’IA peuvent réorienter la trajectoire de développement de l’Afrique lorsqu’elles sont ancrées dans les réalités locales, en se demandant non seulement ce que la technologie peut faire, mais qui elle sert et comment elle s’accorde avec le projet de renaissance de l’Afrique.</p>
 </div>
 </div>
-<p style="margin-top:1.2rem">Son parcours professionnel comprend des fonctions dans des institutions nationales telles que la Banque centrale du Nigeria et le Service fédéral des impôts du Nigeria. À l’international, elle a été consultante pour la Banque mondiale, le PNUD, l’UE et le FIDA sur la réforme institutionnelle, l’évaluation du développement et des approches de transformation économique ancrées dans la culture.</p>
+<p class="mt-5">Son parcours professionnel comprend des fonctions dans des institutions nationales telles que la Banque centrale du Nigeria et le Service fédéral des impôts du Nigeria. À l’international, elle a été consultante pour la Banque mondiale, le PNUD, l’UE et le FIDA sur la réforme institutionnelle, l’évaluation du développement et des approches de transformation économique ancrées dans la culture.</p>
 <p>Elle a publié et présenté ses travaux en Afrique, en Europe et en Amérique du Nord. Elle est titulaire d’un doctorat en études du développement (UNISA), d’un master en réduction de la pauvreté et gestion du développement (Université de Birmingham, Royaume-Uni) et d’une licence en économie (Université Obafemi Awolowo, Nigeria). Elle est praticienne certifiée Prosci&reg; en conduite du changement et membre de l’AIKRN, du CITN, du NIM, de l’ANAN et de la NES.</p>
 <p>Au-delà du monde universitaire et des politiques publiques, elle est autrice-compositrice et fondatrice de l’Oratorio Music Foundation (créée en 1996), à travers laquelle elle accompagne des jeunes et anime des initiatives de musique gospel sur les campus. Fille du légendaire humoriste nigérian Baba Sala, elle perpétue un héritage familial de création à travers la musique et l’humour, publiés sous le nom d’Oyindamola.</p>
 <p>Dans tout ce qu’elle entreprend, Dr Damola cherche à faire progresser une recherche centrée sur l’Afrique et des applications de l’IA qui remettent en cause les paradigmes dominants ; à réformer les systèmes du secteur public pour plus d’équité, de responsabilité et de croissance nationale ; à former un leadership afrocentré alliant sagesse, technologie et valeurs culturelles ; et à utiliser la musique et le mentorat pour ramener les cœurs vers Dieu et inspirer la transformation.</p>
@@ -111,14 +109,14 @@
 <h2>Pas une plateforme où une seule personne parle</h2>
 <p>Rethinking Africa est une communauté grandissante de chercheurs, d’étudiants, de professionnels, d’artistes, d’entrepreneurs, de décideurs, d’artisans, d’aînés, de jeunes et de membres de la diaspora africaine.</p>
 <p>Vous êtes invité à proposer une histoire ou un épisode, à participer à un entretien, à partager une réflexion de recherche, à recommander un chercheur ou un praticien, à faire connaître une innovation communautaire, à signaler des savoirs africains négligés, à suggérer des solutions aux défis du développement, ou à devenir partenaire de projets de recherche, de médias et d’engagement public.</p>
-<p style="font-family:var(--serif);font-size:1.2rem;font-style:italic;margin-top:1.2rem">L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.</p>
-<p style="margin-top:1.4rem"><a class="btn btn-solid" href="contribute.html">Contribuer</a> <a class="btn btn-ghost" href="index.html#subscribe" style="margin-left:.5rem">Rejoindre la communauté</a></p>
+<p class="quote mt-5">L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.</p>
+<p class="mt-6"><a class="btn btn-solid" href="contribute.html">Contribuer</a> <a class="btn btn-ghost" href="index.html#subscribe">Rejoindre la communauté</a></p>
 </div></section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Logo de Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Logo de Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -132,7 +130,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <p>Une initiative indépendante de recherche, de médias et d’éducation publique centrée sur l’Afrique, fondée par Dr Oluwakemi Damola Adejumo-Ayibiowu.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
   </div>
 </footer>
 <script src="../js/lang.js?v=3" defer></script>

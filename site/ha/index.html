@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@600;700&display=swap&text=%C9%93%C9%97%C6%99%C6%81%C6%8A%C6%98" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,14 +63,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">Tsallaka zuwa abin ciki</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Shafin farko na Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Babban menu">
       <a href="index.html" aria-current="page">Gida</a>
-      <a href="quiz.html" style="color:#E8A11C">Yi Gwaji</a>
+      <a class="nav-quiz" href="quiz.html">Yi Gwaji</a>
       <a href="watch.html">Kalla</a>
       <a href="ideas.html">Ra’ayoyi</a>
       <a href="publications.html">Wallafe-wallafe</a>
@@ -83,7 +84,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <!-- 1. MAIN MESSAGE + TRAILER -->
   <div class="hero">
     <div class="wrap hero-grid">
@@ -109,24 +110,22 @@
       </figure>
     </div>
   </div>
-  <hr class="horizon">
 
   <!-- QUIZ BAND: primary destination for viewers arriving from video end cards -->
   <section class="quiz-band">
     <div class="wrap"><div class="panel">
       <h2>Yaya aka koya maka ka kalli Afirka?</h2>
-      <p style="max-width:52ch;margin:0 auto 1.4rem">Tambayoyi bakwai, kusan daƙiƙa casa’in. Gano wane ne naka daga cikin nau’o’i biyar na masu gina makomar Afirka, kuma ka karɓi takardar manufa kyauta.</p>
+      <p class="intro">Tambayoyi bakwai, kusan daƙiƙa casa’in. Gano wane ne naka daga cikin nau’o’i biyar na masu gina makomar Afirka, kuma ka karɓi takardar manufa kyauta.</p>
       <a class="btn btn-navy" href="quiz.html">Yi Gwajin Africa Lens</a>
-      <p class="note" style="margin-top:.8rem">Kyauta. Babu biyan kuɗi, har abada.</p>
+      <p class="note mt-3">Kyauta. Babu biyan kuɗi, har abada.</p>
     </div></div>
   </section>
-  <hr class="horizon">
 
   <!-- What the platform is + trailer (click-to-play, never autoplay) -->
   <section class="tone-cloth">
     <div class="wrap">
-      <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> yana haɗa bincike, ƙwarewar rayuwa da muryoyin ’yan Afirka domin nazarin tsarin da ke siffanta nahiyar, da kuma neman hanyoyi na zahiri zuwa ’yancin kai, ƙwazo da sabuntawar Afirka.</p>
-      <div class="video-frame" style="margin-top:1.6rem">
+      <p class="measure-wide lead"><strong>Rethinking Africa with Dr. Damola</strong> yana haɗa bincike, ƙwarewar rayuwa da muryoyin ’yan Afirka domin nazarin tsarin da ke siffanta nahiyar, da kuma neman hanyoyi na zahiri zuwa ’yancin kai, ƙwazo da sabuntawar Afirka.</p>
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the trailer's 11-character YouTube video ID inside data-yt="".
              Example: for youtube.com/watch?v=AbCdEfGhIjK use data-yt="AbCdEfGhIjK".
              Click-to-play facade: the player loads only when pressed. Never autoplays. -->
@@ -144,23 +143,22 @@
       <span class="eyebrow keep">Sabon shiri</span>
       <h2>Trained Away</h2>
       <p>Dalilin da ya sa ilimin Afirka yakan shirya matasa su bar damarmakin gida maimakon su inganta su, da abin da ilimin da aka tsara daga haƙiƙanin rayuwar Afirka zai yi a maimakon haka.</p>
-      <div class="video-frame" style="margin-top:1.4rem">
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the "Trained Away" episode's YouTube video ID inside data-yt="". -->
         <a class="yt-facade" data-yt="" data-title="Trained Away: Rethinking Africa with Dr. Damola" href="https://www.youtube.com/@DrDamola.Africa">
           <span class="yt-play" aria-hidden="true"></span>
           <span class="yt-label">Trained Away: danna kunna</span>
         </a>
       </div>
-      <p style="margin-top:1.3rem"><a class="btn btn-solid" href="watch.html">Kalla yanzu</a></p>
+      <p class="mt-5"><a class="btn btn-solid" href="watch.html">Kalla yanzu</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 3. WHY RETHINKING AFRICA EXISTS -->
   <section>
     <div class="wrap">
       <h2>Afirka ba ta rasa basira ba</h2>
-      <p style="max-width:64ch">Ƙalubalenta shi ne yawancin basirarta ba a gane ta ba, ba a inganta ta ba, ba a kafa mata cibiyoyi ba, ba a ba ta kuɗi ba, kuma ba a mayar da ita ƙarfin gamayya yadda ya kamata ba. Wannan dandali ya wuce bayyana matsalolin Afirka: yana tambayar yadda aka haifar da su, me ke ɗorewar da su, wane ilimi aka yi watsi da shi, da waɗanne hanyoyi na zahiri za a iya ginawa. <a href="about.html">Ƙara karanta game da hangen nesa</a>.</p>
+      <p class="measure-wide">Ƙalubalenta shi ne yawancin basirarta ba a gane ta ba, ba a inganta ta ba, ba a kafa mata cibiyoyi ba, ba a ba ta kuɗi ba, kuma ba a mayar da ita ƙarfin gamayya yadda ya kamata ba. Wannan dandali ya wuce bayyana matsalolin Afirka: yana tambayar yadda aka haifar da su, me ke ɗorewar da su, wane ilimi aka yi watsi da shi, da waɗanne hanyoyi na zahiri za a iya ginawa. <a href="about.html">Ƙara karanta game da hangen nesa</a>.</p>
     </div>
   </section>
 
@@ -169,7 +167,7 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Wannan ba tarihin baya ba ne. Wannan kimiyya ce da aka katse.</h2>
-      <p style="max-width:64ch">Tukunyar laka ba alamar talauci ba ce; na’ura ce ta sanyaya ba tare da wutar lantarki ba, wadda aka inganta ta hanyar gwaje-gwajen tsararraki. Ta amfani da hotunan hasashe na fasahar AI, muna nuna yadda kimiyyar Afirka za ta kasance a yau, da ba a katse ci gabanta da ƙarfi ba.</p>
+      <p class="measure-wide">Tukunyar laka ba alamar talauci ba ce; na’ura ce ta sanyaya ba tare da wutar lantarki ba, wadda aka inganta ta hanyar gwaje-gwajen tsararraki. Ta amfani da hotunan hasashe na fasahar AI, muna nuna yadda kimiyyar Afirka za ta kasance a yau, da ba a katse ci gabanta da ƙarfi ba.</p>
       <div class="ba-grid">
         <figure>
           <span class="ba-label was">Yadda duniya ke ganinta</span>
@@ -182,11 +180,10 @@
           <figcaption>Ilimin zafi da makamashi, lissafi, injiniyanci: tarin kimiyya da ke jiran a dawo da shi.</figcaption>
         </figure>
       </div>
-      <p style="font-family:var(--serif);font-size:1.2rem;font-style:italic;margin-top:1.6rem">Abin da aka katse za a iya dawo da shi. Abin da aka jinkirta za a iya sake samunsa.</p>
-      <p style="margin-top:1.2rem"><a class="btn btn-solid" href="ideas.html">Karanta binciken</a></p>
+      <p class="quote mt-6">Abin da aka katse za a iya dawo da shi. Abin da aka jinkirta za a iya sake samunsa.</p>
+      <p class="mt-5"><a class="btn btn-solid" href="ideas.html">Karanta binciken</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- AFRICA IN PICTURES - visual story strip -->
   <section class="tone-cloth pictures">
@@ -197,13 +194,12 @@
            unsplash.com - choose images of African work, craft, learning and city life
            that show capability and dignity, never crisis cliches. -->
       <div class="gallery">
-        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" alt="Ci gaban tukunyar laka: kimiyyar kayayyaki mai sanyaya kanta ba tare da hayaƙin carbon ba domin biranen Afirka na gaba" loading="lazy"></span><figcaption>Ci gaban Tukunyar Laka: hikimar gargajiya, kimiyyar zamani.</figcaption></figure>
-        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" alt="Tsarin lambobi biyu na Ifá da aka nuna a matsayin cibiyar kwamfutar quantum: Odù 16, yanayi 256" loading="lazy"></span><figcaption>Cibiyar Tsarin Lambobi Biyu na Ifá: injin lissafi mai shekaru 1,000.</figcaption></figure>
-        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" alt="Birni na zamani na Afirka a nan gaba wanda injiniyancin duwatsu marasa siminti na Great Zimbabwe ya ƙarfafa" loading="lazy"></span><figcaption>Daga Great Zimbabwe zuwa birni na zamani: Afirka ce ta gina, domin Afirka.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" width="900" height="675" alt="Ci gaban tukunyar laka: kimiyyar kayayyaki mai sanyaya kanta ba tare da hayaƙin carbon ba domin biranen Afirka na gaba" loading="lazy"></span><figcaption>Ci gaban Tukunyar Laka: hikimar gargajiya, kimiyyar zamani.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" width="900" height="675" alt="Tsarin lambobi biyu na Ifá da aka nuna a matsayin cibiyar kwamfutar quantum: Odù 16, yanayi 256" loading="lazy"></span><figcaption>Cibiyar Tsarin Lambobi Biyu na Ifá: injin lissafi mai shekaru 1,000.</figcaption></figure>
+        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" width="900" height="675" alt="Birni na zamani na Afirka a nan gaba wanda injiniyancin duwatsu marasa siminti na Great Zimbabwe ya ƙarfafa" loading="lazy"></span><figcaption>Daga Great Zimbabwe zuwa birni na zamani: Afirka ce ta gina, domin Afirka.</figcaption></figure>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 4. MAJOR THEMES -->
   <section class="dark themes">
@@ -219,14 +215,13 @@
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 5. THE QUESTION AFRICA MUST ANSWER -->
   <section class="big-question">
-    <div class="wrap" style="text-align:center">
-      <h2 id="rotating-question" style="max-width:26ch;margin:0 auto 1.2rem">Wane ilimi iyayenku suke da shi wanda zamaninku bai gada ba?</h2>
+    <div class="wrap center">
+      <h2 id="rotating-question">Wane ilimi iyayenku suke da shi wanda zamaninku bai gada ba?</h2>
       <a class="btn btn-navy" href="contribute.html">Aika amsarka</a>
-      <p class="note" style="margin-top:.9rem">Ana wallafa zaɓaɓɓun amsoshi a shafin tare da izinin mai ba da gudunmawa.</p>
+      <p class="note mt-4">Ana wallafa zaɓaɓɓun amsoshi a shafin tare da izinin mai ba da gudunmawa.</p>
     </div>
   </section>
 
@@ -234,71 +229,69 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Muryoyi da yawa, teburi ɗaya</h2>
-      <p style="max-width:60ch">Malamai, masu sana’a, ɗalibai, ’yan kasuwa, dattawa, masu tsara manufofi
+      <p class="measure">Malamai, masu sana’a, ɗalibai, ’yan kasuwa, dattawa, masu tsara manufofi
       da ’yan Afirka mazauna ƙetare. Kowane wata wannan dandali yana gabatar da murya ɗaya ta Afirka da ilimin da
       take ɗauke da shi. Idan kai ne, ko wani da ka sani, ka sanar da mu.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-solid" href="contribute.html">Ba da shawarar murya</a>
-      <a class="btn btn-ghost" href="african-voices.html" style="margin-left:.5rem">Duba tarin</a></p>
+      <p class="mt-6"><a class="btn btn-solid" href="contribute.html">Ba da shawarar murya</a>
+      <a class="btn btn-ghost" href="african-voices.html">Duba tarin</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 7. LATEST WRITING & FROM THE FIELD -->
   <section class="tone-cloth">
     <div class="wrap">
       <h2>Ayyukan rubutu</h2>
-      <p style="max-width:62ch">Maƙaloli, taƙaitattun bincike, jerin littattafan karatu da gajerun takardun saukarwa
+      <p class="measure">Maƙaloli, taƙaitattun bincike, jerin littattafan karatu da gajerun takardun saukarwa
       suna tare da shirye-shiryen. Wannan ne ya bambanta dandalin da sharhi kawai: kowace magana
       za a iya bin diddiginta zuwa tushenta.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-navy" href="ideas.html">Karanta ra’ayoyin</a>
-      <a class="btn btn-navy" href="publications.html" style="margin-left:.5rem;background:transparent;color:var(--indigo);border-color:var(--gold)">Wallafe-wallafen da masana suka duba</a></p>
+      <p class="mt-6"><a class="btn btn-navy" href="ideas.html">Karanta ra’ayoyin</a>
+      <a class="btn btn-ghost" href="publications.html">Wallafe-wallafen da masana suka duba</a></p>
     </div>
   </section>
 
   <!-- 8. WAYS TO CONTRIBUTE -->
   <section class="dark">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Murya ɗaya ba za ta iya hasashen makomar Afirka ba</h2>
-      <p style="max-width:54ch;margin:0 auto 1.6rem">Kawo bincikenka, ƙwarewarka, tambayarka ko labarinka cikin tattaunawar.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">Kawo bincikenka, ƙwarewarka, tambayarka ko labarinka cikin tattaunawar.</p>
+      <div class="cta-row">
         <a class="btn btn-solid" href="contribute.html">Ba da Shawarar Shiri</a>
         <a class="btn btn-ghost" href="contribute.html">Ba da Shawarar Baƙo</a>
         <a class="btn btn-ghost" href="contribute.html">Aika Maƙala</a>
       </div>
-      <div class="cta-row" style="flex-wrap:wrap;margin-top:.8rem">
+      <div class="cta-row mt-3">
         <a class="btn btn-ghost" href="contribute.html">Raba Ƙirƙirar Afirka</a>
         <a class="btn btn-ghost" href="contribute.html">Yi Aikin Sa-kai ko Haɗin Gwiwa</a>
         <a class="btn btn-ghost" href="contribute.html">Gayyaci Dakta Damola</a>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 9. ABOUT DR DAMOLA -->
   <section>
     <div class="wrap">
       <h2>Ku san Dakta Damola</h2>
-      <p style="font-family:var(--serif);font-size:1.15rem;color:var(--indigo);margin-bottom:1rem">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
+      <p class="byline">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
       <div class="portrait-row">
         <img class="portrait" src="../assets/dr-damola-portrait.webp" alt="Dakta Oluwakemi Damola Adejumo-Ayibiowu, sanye da rigar adire mai launin shuɗi da zinariya" width="320" height="400" loading="lazy">
         <div>
           <p>Dakta Damola masaniyar tattalin arzikin ci gaba ce, malama mai ɗora Afirka a tsakiya, ƙwararriya a fannoni da dama na AI, mai tsara dabarun manufofin gwamnati kuma mawaƙiyar waƙoƙin bishara, mai ƙwarewa ta fiye da shekaru 25 a gwamnati, jami’o’i da ba da shawara na ƙasa da ƙasa. Ta hanyar Rethinking Africa tana fitar da ilimin jami’a daga wuraren da aka taƙaita zuwa tattaunawar jama’a.</p>
-          <p style="margin-top:1rem"><a class="btn btn-navy" href="about.html">Karanta cikakken labarin</a></p>
+          <p class="mt-4"><a class="btn btn-navy" href="about.html">Karanta cikakken labarin</a></p>
         </div>
       </div>
-      <p style="margin-top:1.6rem;max-width:64ch"><em>Domin malamai, ɗalibai, masu tsara manufofi, ƙwararru, masu ƙirƙira, shugabannin al’umma, ’yan Afirka mazauna ƙetare, da duk wanda ya himmatu ga farfaɗo da tunani da ci gaban Afirka.</em></p>
+      <p class="mt-6 measure-wide"><em>Domin malamai, ɗalibai, masu tsara manufofi, ƙwararru, masu ƙirƙira, shugabannin al’umma, ’yan Afirka mazauna ƙetare, da duk wanda ya himmatu ga farfaɗo da tunani da ci gaban Afirka.</em></p>
     </div>
   </section>
 
   <!-- 10. NEWSLETTER SUBSCRIPTION -->
   <section class="dark tone-indigo membership" id="subscribe">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Shiga cikin Mutane 1,000 na Farko</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">Kasance cikin mambobi dubu na farko na wani yunƙuri na dawo da basira da ’yancin Afirka. Gano mahangar da ta ɗora Afirka a tsakiya bisa bincike, kalli tattaunawa da malamai da ƙwararru, kuma ka karɓi sababbin shirye-shirye, maƙaloli da gayyatar taruka, farawa da jerin <strong>Kwanaki 7 na Sake Tunani</strong> kyauta.</p>
+      <p class="intro">Kasance cikin mambobi dubu na farko na wani yunƙuri na dawo da basira da ’yancin Afirka. Gano mahangar da ta ɗora Afirka a tsakiya bisa bincike, kalli tattaunawa da malamai da ƙwararru, kuma ka karɓi sababbin shirye-shirye, maƙaloli da gayyatar taruka, farawa da jerin <strong>Kwanaki 7 na Sake Tunani</strong> kyauta.</p>
       <!-- DEVELOPER: wire to email provider; keep fields to exactly these four -->
       <!-- DEVELOPER: replace action with your MailerLite / ConvertKit embedded form URL.
            This is a normal HTML form post. It needs no server of our own. -->
-      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post" style="max-width:460px;margin:0 auto;text-align:left">
+      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post">
         <div class="field"><label for="s-name">Sunan farko</label><input id="s-name" name="fields[name]" type="text" required></div>
         <div class="field"><label for="s-email">Imel</label><input id="s-email" name="fields[email]" type="email" required></div>
         <div class="field"><label for="s-wa">Lambar WhatsApp (ba dole ba)</label><input id="s-wa" name="fields[whatsapp]" type="tel" placeholder="+234 800 000 0000"></div>
@@ -312,38 +305,36 @@
             <option>Al’adu, Asali &amp; ’Yancin Afirka</option>
             <option>Makomar Afirka</option>
           </select></div>
-        <div style="text-align:center;margin-top:1.2rem">
+        <div>
           <button class="btn btn-solid" type="submit">Yi Rajista</button>
-          <a class="btn btn-ghost" href="quiz.html" style="margin-left:.5rem">Fara yin gwajin tukuna</a>
+          <a class="btn btn-ghost" href="quiz.html">Fara yin gwajin tukuna</a>
         </div>
       </form>
-      <p class="note" style="margin-top:.9rem">Babu saƙonnin banza. Za ka iya fita a kowane lokaci.</p>
+      <p class="note mt-4">Babu saƙonnin banza. Za ka iya fita a kowane lokaci.</p>
     </div>
   </section>
-  <hr class="horizon">
 
 
   <!-- SUPPORT THE INITIATIVE -->
   <section class="dark support-band">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Taimaka wa wannan shiri ya bunƙasa</h2>
-      <p style="max-width:56ch;margin:0 auto 1.6rem">Rethinking Africa with Dr. Damola shiri ne mai zaman kansa. Tallafinka yana ɗaukar nauyin bincike, shirya shirye-shirye, fassara da adana ilimin Afirka, kuma yana sa wannan dandali ya kasance kyauta ga ɗalibai da al’ummomi a faɗin nahiyar.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">Rethinking Africa with Dr. Damola shiri ne mai zaman kansa. Tallafinka yana ɗaukar nauyin bincike, shirya shirye-shirye, fassara da adana ilimin Afirka, kuma yana sa wannan dandali ya kasance kyauta ga ɗalibai da al’ummomi a faɗin nahiyar.</p>
+      <div class="cta-row">
         <!-- DEVELOPER: connect Paystack/Flutterwave (Nigeria) and PayPal (diaspora) -->
         <a class="btn btn-solid" href="#">Bayar sau ɗaya</a>
         <a class="btn btn-ghost" href="#">Bayar kowane wata</a>
         <a class="btn btn-ghost" href="contact.html">Ɗauki nauyin shiri</a>
       </div>
-      <p class="note" style="margin-top:1rem;max-width:60ch;margin-left:auto;margin-right:auto">Gudunmawa tana tallafa wa shirin ilimi mai zaman kansa, kuma ba gudunmawar sadaka ba ce da ake cirewa daga haraji. Ana wallafa taƙaitaccen bayanin yadda ake amfani da kuɗaɗen kowace shekara a wannan shafin.</p>
+      <p class="note mt-4 measure mx-auto">Gudunmawa tana tallafa wa shirin ilimi mai zaman kansa, kuma ba gudunmawar sadaka ba ce da ake cirewa daga haraji. Ana wallafa taƙaitaccen bayanin yadda ake amfani da kuɗaɗen kowace shekara a wannan shafin.</p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 11. PARTNERS -->
   <section class="tone-cloth">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Yi haɗin gwiwa da Rethinking Africa</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">Ana gayyatar jami’o’i, cibiyoyin bincike, cibiyoyin al’adu, kafafen yaɗa labarai da hukumomin ci gaba don haɗa kai a ayyukan bincike, yaɗa labarai da cuɗanya da jama’a.</p>
+      <p class="intro">Ana gayyatar jami’o’i, cibiyoyin bincike, cibiyoyin al’adu, kafafen yaɗa labarai da hukumomin ci gaba don haɗa kai a ayyukan bincike, yaɗa labarai da cuɗanya da jama’a.</p>
       <a class="btn btn-navy" href="contact.html">Fara tattaunawa</a>
     </div>
   </section>
@@ -351,7 +342,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Tambarin Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Tambarin Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -365,7 +356,7 @@
       <a href="contact.html">Tuntuɓe Mu</a>
     </div>
     <p>Shiri mai zaman kansa na bincike, kafafen yaɗa labarai da ilimantar da jama’a wanda ya ɗora Afirka a tsakiya, wanda Dakta Oluwakemi Damola Adejumo-Ayibiowu ta kafa.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Duk haƙƙoƙi a kiyaye suke.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Duk haƙƙoƙi a kiyaye suke.</p>
   </div>
 </footer>
 

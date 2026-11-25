@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,14 +62,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">Aller au contenu</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Accueil de Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Menu principal">
       <a href="index.html" aria-current="page">Accueil</a>
-      <a href="quiz.html" style="color:#E8A11C">Faire le quiz</a>
+      <a class="nav-quiz" href="quiz.html">Faire le quiz</a>
       <a href="watch.html">Regarder</a>
       <a href="ideas.html">Idées</a>
       <a href="publications.html">Publications</a>
@@ -82,7 +83,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <!-- 1. MAIN MESSAGE + TRAILER -->
   <div class="hero">
     <div class="wrap hero-grid">
@@ -108,24 +109,22 @@
       </figure>
     </div>
   </div>
-  <hr class="horizon">
 
   <!-- QUIZ BAND: primary destination for viewers arriving from video end cards -->
   <section class="quiz-band">
     <div class="wrap"><div class="panel">
       <h2>Comment vous a-t-on appris à voir l’Afrique ?</h2>
-      <p style="max-width:52ch;margin:0 auto 1.4rem">Sept questions, environ quatre-vingt-dix secondes. Découvrez lequel des cinq profils de bâtisseurs de l’avenir africain est le vôtre, et recevez le manifeste gratuit.</p>
+      <p class="intro">Sept questions, environ quatre-vingt-dix secondes. Découvrez lequel des cinq profils de bâtisseurs de l’avenir africain est le vôtre, et recevez le manifeste gratuit.</p>
       <a class="btn btn-navy" href="quiz.html">Faire le quiz Africa Lens</a>
-      <p class="note" style="margin-top:.8rem">Gratuit. Sans paiement, jamais.</p>
+      <p class="note mt-3">Gratuit. Sans paiement, jamais.</p>
     </div></div>
   </section>
-  <hr class="horizon">
 
   <!-- What the platform is + trailer (click-to-play, never autoplay) -->
   <section class="tone-cloth">
     <div class="wrap">
-      <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> réunit la recherche, l’expérience vécue et les voix africaines pour examiner les systèmes qui façonnent le continent, et explorer des voies concrètes vers l’autonomie, l’excellence et le renouveau africains.</p>
-      <div class="video-frame" style="margin-top:1.6rem">
+      <p class="measure-wide lead"><strong>Rethinking Africa with Dr. Damola</strong> réunit la recherche, l’expérience vécue et les voix africaines pour examiner les systèmes qui façonnent le continent, et explorer des voies concrètes vers l’autonomie, l’excellence et le renouveau africains.</p>
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the trailer's 11-character YouTube video ID inside data-yt="".
              Example: for youtube.com/watch?v=AbCdEfGhIjK use data-yt="AbCdEfGhIjK".
              Click-to-play facade: the player loads only when pressed. Never autoplays. -->
@@ -143,23 +142,22 @@
       <span class="eyebrow keep">Dernier épisode</span>
       <h2>Trained Away</h2>
       <p>Pourquoi l’éducation africaine prépare souvent les jeunes à quitter les opportunités locales plutôt qu’à les transformer, et ce que ferait une éducation conçue à partir des réalités africaines.</p>
-      <div class="video-frame" style="margin-top:1.4rem">
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the "Trained Away" episode's YouTube video ID inside data-yt="". -->
         <a class="yt-facade" data-yt="" data-title="Trained Away: Rethinking Africa with Dr. Damola" href="https://www.youtube.com/@DrDamola.Africa">
           <span class="yt-play" aria-hidden="true"></span>
           <span class="yt-label">Trained Away : appuyez sur lecture</span>
         </a>
       </div>
-      <p style="margin-top:1.3rem"><a class="btn btn-solid" href="watch.html">Regarder</a></p>
+      <p class="mt-5"><a class="btn btn-solid" href="watch.html">Regarder</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 3. WHY RETHINKING AFRICA EXISTS -->
   <section>
     <div class="wrap">
       <h2>L’Afrique ne manque pas d’intelligence</h2>
-      <p style="max-width:64ch">Son défi est qu’une grande partie de son intelligence n’a pas été suffisamment reconnue, affinée, institutionnalisée, financée et transformée en puissance collective. Cette plateforme va au-delà de la description des problèmes de l’Afrique : elle demande comment ils ont été produits, ce qui les entretient, quels savoirs ont été négligés et quelles alternatives concrètes peuvent être construites. <a href="about.html">En savoir plus sur la vision</a>.</p>
+      <p class="measure-wide">Son défi est qu’une grande partie de son intelligence n’a pas été suffisamment reconnue, affinée, institutionnalisée, financée et transformée en puissance collective. Cette plateforme va au-delà de la description des problèmes de l’Afrique : elle demande comment ils ont été produits, ce qui les entretient, quels savoirs ont été négligés et quelles alternatives concrètes peuvent être construites. <a href="about.html">En savoir plus sur la vision</a>.</p>
     </div>
   </section>
 
@@ -168,7 +166,7 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Ce n’est pas le passé. C’est une science interrompue.</h2>
-      <p style="max-width:64ch">Le canari en argile n’est pas un symbole de pauvreté ; c’est un dispositif thermodynamique autonome, perfectionné par des générations d’expérimentation empirique. Grâce à l’imagerie spéculative par IA, nous montrons à quoi devraient ressembler aujourd’hui les sciences africaines si leur développement n’avait jamais été violemment interrompu.</p>
+      <p class="measure-wide">Le canari en argile n’est pas un symbole de pauvreté ; c’est un dispositif thermodynamique autonome, perfectionné par des générations d’expérimentation empirique. Grâce à l’imagerie spéculative par IA, nous montrons à quoi devraient ressembler aujourd’hui les sciences africaines si leur développement n’avait jamais été violemment interrompu.</p>
       <div class="ba-grid">
         <figure>
           <span class="ba-label was">Comment le monde le voit</span>
@@ -181,11 +179,10 @@
           <figcaption>Thermodynamique, calcul, ingénierie : des archives scientifiques qui attendent d’être restaurées.</figcaption>
         </figure>
       </div>
-      <p style="font-family:var(--serif);font-size:1.2rem;font-style:italic;margin-top:1.6rem">Ce qui a été interrompu peut être restauré. Ce qui a été différé peut être retrouvé.</p>
-      <p style="margin-top:1.2rem"><a class="btn btn-solid" href="ideas.html">Lire la recherche</a></p>
+      <p class="quote mt-6">Ce qui a été interrompu peut être restauré. Ce qui a été différé peut être retrouvé.</p>
+      <p class="mt-5"><a class="btn btn-solid" href="ideas.html">Lire la recherche</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- AFRICA IN PICTURES - visual story strip -->
   <section class="tone-cloth pictures">
@@ -196,13 +193,12 @@
            unsplash.com - choose images of African work, craft, learning and city life
            that show capability and dignity, never crisis cliches. -->
       <div class="gallery">
-        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" alt="L’évolution du canari : une science des matériaux autorafraîchissante et sans carbone pour les villes africaines de demain" loading="lazy"></span><figcaption>L’évolution du canari : sagesse traditionnelle, science moderne.</figcaption></figure>
-        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" alt="Le système binaire d’Ifá représenté comme le cœur d’un ordinateur quantique : 16 Odù, 256 états" loading="lazy"></span><figcaption>Le noyau binaire d’Ifá : un moteur algorithmique vieux de 1 000 ans.</figcaption></figure>
-        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" alt="Une future ville intelligente africaine inspirée de l’ingénierie en pierre sèche du Grand Zimbabwe" loading="lazy"></span><figcaption>Du Grand Zimbabwe à la ville intelligente : bâti par l’Afrique, pour l’Afrique.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" width="900" height="675" alt="L’évolution du canari : une science des matériaux autorafraîchissante et sans carbone pour les villes africaines de demain" loading="lazy"></span><figcaption>L’évolution du canari : sagesse traditionnelle, science moderne.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" width="900" height="675" alt="Le système binaire d’Ifá représenté comme le cœur d’un ordinateur quantique : 16 Odù, 256 états" loading="lazy"></span><figcaption>Le noyau binaire d’Ifá : un moteur algorithmique vieux de 1 000 ans.</figcaption></figure>
+        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" width="900" height="675" alt="Une future ville intelligente africaine inspirée de l’ingénierie en pierre sèche du Grand Zimbabwe" loading="lazy"></span><figcaption>Du Grand Zimbabwe à la ville intelligente : bâti par l’Afrique, pour l’Afrique.</figcaption></figure>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 4. MAJOR THEMES -->
   <section class="dark themes">
@@ -218,14 +214,13 @@
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 5. THE QUESTION AFRICA MUST ANSWER -->
   <section class="big-question">
-    <div class="wrap" style="text-align:center">
-      <h2 id="rotating-question" style="max-width:26ch;margin:0 auto 1.2rem">Quels savoirs vos parents possédaient-ils que votre génération n’a pas su hériter ?</h2>
+    <div class="wrap center">
+      <h2 id="rotating-question">Quels savoirs vos parents possédaient-ils que votre génération n’a pas su hériter ?</h2>
       <a class="btn btn-navy" href="contribute.html">Envoyer votre réponse</a>
-      <p class="note" style="margin-top:.9rem">Des réponses choisies sont publiées sur le site avec l’accord de leurs auteurs.</p>
+      <p class="note mt-4">Des réponses choisies sont publiées sur le site avec l’accord de leurs auteurs.</p>
     </div>
   </section>
 
@@ -233,71 +228,69 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>Plusieurs voix, une seule table</h2>
-      <p style="max-width:60ch">Chercheurs, artisans, étudiants, entrepreneurs, aînés, décideurs
+      <p class="measure">Chercheurs, artisans, étudiants, entrepreneurs, aînés, décideurs
       et diaspora. Chaque mois, cette plateforme met en lumière une voix africaine et les savoirs qu’elle
       porte. Si c’est vous, ou quelqu’un que vous connaissez, dites-le-nous.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-solid" href="contribute.html">Recommander une voix</a>
-      <a class="btn btn-ghost" href="african-voices.html" style="margin-left:.5rem">Voir la collection</a></p>
+      <p class="mt-6"><a class="btn btn-solid" href="contribute.html">Recommander une voix</a>
+      <a class="btn btn-ghost" href="african-voices.html">Voir la collection</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 7. LATEST WRITING & FROM THE FIELD -->
   <section class="tone-cloth">
     <div class="wrap">
       <h2>Les écrits</h2>
-      <p style="max-width:62ch">Articles, synthèses de recherche, listes de lecture et notes téléchargeables
+      <p class="measure">Articles, synthèses de recherche, listes de lecture et notes téléchargeables
       accompagnent les épisodes. C’est ce qui distingue la plateforme du simple commentaire : chaque affirmation
       peut être rattachée à une source.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-navy" href="ideas.html">Lire les idées</a>
-      <a class="btn btn-navy" href="publications.html" style="margin-left:.5rem;background:transparent;color:var(--indigo);border-color:var(--gold)">Publications évaluées par les pairs</a></p>
+      <p class="mt-6"><a class="btn btn-navy" href="ideas.html">Lire les idées</a>
+      <a class="btn btn-ghost" href="publications.html">Publications évaluées par les pairs</a></p>
     </div>
   </section>
 
   <!-- 8. WAYS TO CONTRIBUTE -->
   <section class="dark">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>L’avenir de l’Afrique ne peut être imaginé par une seule voix</h2>
-      <p style="max-width:54ch;margin:0 auto 1.6rem">Apportez votre recherche, votre expérience, votre question ou votre histoire à la conversation.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">Apportez votre recherche, votre expérience, votre question ou votre histoire à la conversation.</p>
+      <div class="cta-row">
         <a class="btn btn-solid" href="contribute.html">Proposer un épisode</a>
         <a class="btn btn-ghost" href="contribute.html">Recommander un invité</a>
         <a class="btn btn-ghost" href="contribute.html">Soumettre un article</a>
       </div>
-      <div class="cta-row" style="flex-wrap:wrap;margin-top:.8rem">
+      <div class="cta-row mt-3">
         <a class="btn btn-ghost" href="contribute.html">Partager une innovation africaine</a>
         <a class="btn btn-ghost" href="contribute.html">Bénévolat ou collaboration</a>
         <a class="btn btn-ghost" href="contribute.html">Inviter Dr Damola</a>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 9. ABOUT DR DAMOLA -->
   <section>
     <div class="wrap">
       <h2>Rencontrez Dr Damola</h2>
-      <p style="font-family:var(--serif);font-size:1.15rem;color:var(--indigo);margin-bottom:1rem">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
+      <p class="byline">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
       <div class="portrait-row">
         <img class="portrait" src="../assets/dr-damola-portrait.webp" alt="Dr Oluwakemi Damola Adejumo-Ayibiowu, vêtue d’une robe en adire indigo et or" width="320" height="400" loading="lazy">
         <div>
           <p>Dr Damola est économiste du développement, chercheuse afrocentrée, généraliste de l’IA, stratège en politiques publiques et artiste de musique gospel, avec plus de 25 ans d’expérience au sein de l’administration, du monde universitaire et du conseil international. À travers Rethinking Africa, elle fait sortir le savoir des cercles académiques fermés pour le porter dans le débat public.</p>
-          <p style="margin-top:1rem"><a class="btn btn-navy" href="about.html">Lire toute l’histoire</a></p>
+          <p class="mt-4"><a class="btn btn-navy" href="about.html">Lire toute l’histoire</a></p>
         </div>
       </div>
-      <p style="margin-top:1.6rem;max-width:64ch"><em>Pour les chercheurs, les étudiants, les décideurs, les professionnels, les créateurs, les responsables communautaires, les membres de la diaspora, et toutes celles et ceux engagés dans le renouveau intellectuel et le développement de l’Afrique.</em></p>
+      <p class="mt-6 measure-wide"><em>Pour les chercheurs, les étudiants, les décideurs, les professionnels, les créateurs, les responsables communautaires, les membres de la diaspora, et toutes celles et ceux engagés dans le renouveau intellectuel et le développement de l’Afrique.</em></p>
     </div>
   </section>
 
   <!-- 10. NEWSLETTER SUBSCRIPTION -->
   <section class="dark tone-indigo membership" id="subscribe">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Rejoignez les 1 000 fondateurs</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">Faites partie des mille premiers membres d’un mouvement pour retrouver l’intelligence et l’autonomie africaines. Découvrez des perspectives centrées sur l’Afrique et fondées sur la recherche, regardez des conversations avec des chercheurs et des praticiens, et recevez les nouveaux épisodes, articles et invitations, en commençant par la série gratuite <strong>7 jours pour repenser</strong>.</p>
+      <p class="intro">Faites partie des mille premiers membres d’un mouvement pour retrouver l’intelligence et l’autonomie africaines. Découvrez des perspectives centrées sur l’Afrique et fondées sur la recherche, regardez des conversations avec des chercheurs et des praticiens, et recevez les nouveaux épisodes, articles et invitations, en commençant par la série gratuite <strong>7 jours pour repenser</strong>.</p>
       <!-- DEVELOPER: wire to email provider; keep fields to exactly these four -->
       <!-- DEVELOPER: replace action with your MailerLite / ConvertKit embedded form URL.
            This is a normal HTML form post. It needs no server of our own. -->
-      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post" style="max-width:460px;margin:0 auto;text-align:left">
+      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post">
         <div class="field"><label for="s-name">Prénom</label><input id="s-name" name="fields[name]" type="text" required></div>
         <div class="field"><label for="s-email">E-mail</label><input id="s-email" name="fields[email]" type="email" required></div>
         <div class="field"><label for="s-wa">Numéro WhatsApp (facultatif)</label><input id="s-wa" name="fields[whatsapp]" type="tel" placeholder="+234 800 000 0000"></div>
@@ -311,38 +304,36 @@
             <option>Culture, identité &amp; autonomie africaine</option>
             <option>Avenirs africains</option>
           </select></div>
-        <div style="text-align:center;margin-top:1.2rem">
+        <div>
           <button class="btn btn-solid" type="submit">S’abonner</button>
-          <a class="btn btn-ghost" href="quiz.html" style="margin-left:.5rem">Faire d’abord le quiz</a>
+          <a class="btn btn-ghost" href="quiz.html">Faire d’abord le quiz</a>
         </div>
       </form>
-      <p class="note" style="margin-top:.9rem">Pas de spam. Désabonnement à tout moment.</p>
+      <p class="note mt-4">Pas de spam. Désabonnement à tout moment.</p>
     </div>
   </section>
-  <hr class="horizon">
 
 
   <!-- SUPPORT THE INITIATIVE -->
   <section class="dark support-band">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Aidez cette initiative à grandir</h2>
-      <p style="max-width:56ch;margin:0 auto 1.6rem">Rethinking Africa with Dr. Damola est une initiative indépendante. Votre soutien finance la recherche, la production, la traduction et la documentation des savoirs africains, et permet à cette plateforme de rester gratuite pour les étudiants et les communautés de tout le continent.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">Rethinking Africa with Dr. Damola est une initiative indépendante. Votre soutien finance la recherche, la production, la traduction et la documentation des savoirs africains, et permet à cette plateforme de rester gratuite pour les étudiants et les communautés de tout le continent.</p>
+      <div class="cta-row">
         <!-- DEVELOPER: connect Paystack/Flutterwave (Nigeria) and PayPal (diaspora) -->
         <a class="btn btn-solid" href="#">Donner une fois</a>
         <a class="btn btn-ghost" href="#">Donner chaque mois</a>
         <a class="btn btn-ghost" href="contact.html">Parrainer un épisode</a>
       </div>
-      <p class="note" style="margin-top:1rem;max-width:60ch;margin-left:auto;margin-right:auto">Les dons soutiennent une initiative éducative indépendante et ne sont pas des dons de bienfaisance déductibles des impôts. Un résumé de l’utilisation des fonds est publié chaque année sur ce site.</p>
+      <p class="note mt-4 measure mx-auto">Les dons soutiennent une initiative éducative indépendante et ne sont pas des dons de bienfaisance déductibles des impôts. Un résumé de l’utilisation des fonds est publié chaque année sur ce site.</p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 11. PARTNERS -->
   <section class="tone-cloth">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Devenez partenaire de Rethinking Africa</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">Universités, centres de recherche, institutions culturelles, médias et organismes de développement sont invités à collaborer à des projets de recherche, de médias et d’engagement public.</p>
+      <p class="intro">Universités, centres de recherche, institutions culturelles, médias et organismes de développement sont invités à collaborer à des projets de recherche, de médias et d’engagement public.</p>
       <a class="btn btn-navy" href="contact.html">Engager la conversation</a>
     </div>
   </section>
@@ -350,7 +341,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Logo de Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Logo de Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -364,7 +355,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <p>Une initiative indépendante de recherche, de médias et d’éducation publique centrée sur l’Afrique, fondée par Dr Oluwakemi Damola Adejumo-Ayibiowu.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
   </div>
 </footer>
 

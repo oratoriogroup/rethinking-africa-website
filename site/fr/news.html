@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/news.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/news.html">
@@ -22,14 +22,15 @@
 </head>
 <body>
 <header class="site">
+  <a class="skip-link" href="#main">Aller au contenu</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Accueil de Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Menu principal">
       <a href="index.html">Accueil</a>
-      <a href="quiz.html" style="color:#E8A11C">Faire le quiz</a>
+      <a class="nav-quiz" href="quiz.html">Faire le quiz</a>
       <a href="watch.html">Regarder</a>
       <a href="ideas.html">Idées</a>
       <a href="publications.html">Publications</a>
@@ -41,9 +42,8 @@
     </nav>
   </div>
 </header>
-<main>
+<main id="main">
 <div class="hero"><div class="wrap"><h1>Actualités &amp; événements</h1><p class="lede">Annonces, réflexions de terrain et conversations auxquelles nous avons participé en Afrique et dans la diaspora.</p></div></div>
-<hr class="horizon">
 
 <section><div class="wrap">
 <h2>Dernières annonces</h2>
@@ -73,15 +73,14 @@
      Set href to the article page when one exists.
      =================================================================== -->
 
-<p style="max-width:60ch">Des réflexions écrites entre les épisodes : la pensée derrière le programme, des notes de terrain et des essais qui ne tenaient pas dans une vidéo. Les premiers textes arriveront avec le lancement.</p>
-<p style="margin-top:1.2rem"><a class="btn btn-solid" href="quiz.html">Les recevoir par e-mail</a></p>
+<p class="measure">Des réflexions écrites entre les épisodes : la pensée derrière le programme, des notes de terrain et des essais qui ne tenaient pas dans une vidéo. Les premiers textes arriveront avec le lancement.</p>
+<p class="mt-5"><a class="btn btn-solid" href="quiz.html">Les recevoir par e-mail</a></p>
 
 </div></section>
-<hr class="horizon">
 
 <section><div class="wrap">
 <h2>Événements auxquels nous avons participé ou que nous avons organisés</h2>
-<p style="max-width:64ch">Conférences, conversations sur les campus et dialogues publics, documentés pour que la communauté puisse suivre le parcours du programme. Photos et comptes rendus de chaque rencontre apparaîtront ici.</p>
+<p class="measure-wide">Conférences, conversations sur les campus et dialogues publics, documentés pour que la communauté puisse suivre le parcours du programme. Photos et comptes rendus de chaque rencontre apparaîtront ici.</p>
 
 <!-- ===================================================================
      HOW TO ADD AN EVENT
@@ -90,7 +89,7 @@
      saved into the assets folder. Write a real caption for every photo.
      =================================================================== -->
 <!--
-<h3 style="margin-top:1.8rem">Event name, City, Month 2026</h3>
+<h3 class="mt-7">Event name, City, Month 2026</h3>
 <p class="note">One line on the event and Dr Damola's role in it.</p>
 <div class="gallery">
 <figure><img src="../assets/EVENT-PHOTO-1.webp" alt="Describe what the photo shows" loading="lazy"><figcaption>Caption</figcaption></figure>
@@ -99,18 +98,18 @@
 </div>
 -->
 
-<p style="margin-top:1.6rem"><a class="btn btn-navy" href="canada-2026.html">Voir la collection Conversations au Canada</a></p>
+<p class="mt-6"><a class="btn btn-navy" href="canada-2026.html">Voir la collection Conversations au Canada</a></p>
 </div></section>
 
-<section class="dark"><div class="wrap" style="text-align:center">
+<section class="dark"><div class="wrap center">
 <h2>Ne manquez aucune annonce</h2>
-<p style="max-width:50ch;margin:0 auto 1.4rem">Les actualités, les événements et les nouveaux épisodes sont d’abord envoyés à la liste de diffusion.</p>
+<p class="intro">Les actualités, les événements et les nouveaux épisodes sont d’abord envoyés à la liste de diffusion.</p>
 <a class="btn btn-solid" href="index.html#subscribe">Rejoindre la liste de diffusion</a>
 </div></section>
 </main>
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Logo de Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Logo de Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -124,7 +123,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <p>Une initiative indépendante de recherche, de médias et d’éducation publique centrée sur l’Afrique, fondée par Dr Oluwakemi Damola Adejumo-Ayibiowu.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Tous droits réservés.</p>
   </div>
 </footer>
 <script src="../js/lang.js?v=3" defer></script>

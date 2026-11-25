@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,14 +63,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="الصفحة الرئيسية لـ Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="القائمة الرئيسية">
       <a href="index.html" aria-current="page">الرئيسية</a>
-      <a href="quiz.html" style="color:#E8A11C">خذ الاختبار</a>
+      <a class="nav-quiz" href="quiz.html">خذ الاختبار</a>
       <a href="watch.html">شاهد</a>
       <a href="ideas.html">أفكار</a>
       <a href="publications.html">المنشورات</a>
@@ -83,7 +84,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <!-- 1. MAIN MESSAGE + TRAILER -->
   <div class="hero">
     <div class="wrap hero-grid">
@@ -109,24 +110,22 @@
       </figure>
     </div>
   </div>
-  <hr class="horizon">
 
   <!-- QUIZ BAND: primary destination for viewers arriving from video end cards -->
   <section class="quiz-band">
     <div class="wrap"><div class="panel">
       <h2>كيف تعلّمت أن ترى أفريقيا؟</h2>
-      <p style="max-width:52ch;margin:0 auto 1.4rem">سبعة أسئلة، في نحو تسعين ثانية. اكتشف أيّ الأنماط الخمسة لبُناة مستقبل أفريقيا هو نمطك، واحصل على البيان المجاني.</p>
+      <p class="intro">سبعة أسئلة، في نحو تسعين ثانية. اكتشف أيّ الأنماط الخمسة لبُناة مستقبل أفريقيا هو نمطك، واحصل على البيان المجاني.</p>
       <a class="btn btn-navy" href="quiz.html">خذ اختبار Africa Lens</a>
-      <p class="note" style="margin-top:.8rem">مجاني. بلا أي دفع، أبدًا.</p>
+      <p class="note mt-3">مجاني. بلا أي دفع، أبدًا.</p>
     </div></div>
   </section>
-  <hr class="horizon">
 
   <!-- What the platform is + trailer (click-to-play, never autoplay) -->
   <section class="tone-cloth">
     <div class="wrap">
-      <p style="max-width:64ch;font-size:1.1rem"><strong>Rethinking Africa with Dr. Damola</strong> تجمع البحث والتجربة المعيشة والأصوات الأفريقية لدراسة الأنظمة التي تشكّل القارة، واستكشاف مسارات عملية نحو استقلالية أفريقيا وتميّزها ونهضتها.</p>
-      <div class="video-frame" style="margin-top:1.6rem">
+      <p class="measure-wide lead"><strong>Rethinking Africa with Dr. Damola</strong> تجمع البحث والتجربة المعيشة والأصوات الأفريقية لدراسة الأنظمة التي تشكّل القارة، واستكشاف مسارات عملية نحو استقلالية أفريقيا وتميّزها ونهضتها.</p>
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the trailer's 11-character YouTube video ID inside data-yt="".
              Example: for youtube.com/watch?v=AbCdEfGhIjK use data-yt="AbCdEfGhIjK".
              Click-to-play facade: the player loads only when pressed. Never autoplays. -->
@@ -144,23 +143,22 @@
       <span class="eyebrow keep">أحدث حلقة</span>
       <h2>Trained Away</h2>
       <p>لماذا يُعِدّ التعليم في أفريقيا الشباب غالبًا لمغادرة الفرص المحلية بدلًا من تطويرها، وما الذي سيفعله تعليمٌ مصمَّم انطلاقًا من الواقع الأفريقي بدلًا من ذلك.</p>
-      <div class="video-frame" style="margin-top:1.4rem">
+      <div class="video-frame mt-6">
         <!-- DEVELOPER: put the "Trained Away" episode's YouTube video ID inside data-yt="". -->
         <a class="yt-facade" data-yt="" data-title="Trained Away: Rethinking Africa with Dr. Damola" href="https://www.youtube.com/@DrDamola.Africa">
           <span class="yt-play" aria-hidden="true"></span>
           <span class="yt-label">Trained Away: اضغط للتشغيل</span>
         </a>
       </div>
-      <p style="margin-top:1.3rem"><a class="btn btn-solid" href="watch.html">شاهد الآن</a></p>
+      <p class="mt-5"><a class="btn btn-solid" href="watch.html">شاهد الآن</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 3. WHY RETHINKING AFRICA EXISTS -->
   <section>
     <div class="wrap">
       <h2>أفريقيا ليست خالية من الذكاء</h2>
-      <p style="max-width:64ch">تحدّيها أن جزءًا كبيرًا من ذكائها لم يُعترف به ولم يُصقَل ولم يُؤسَّس له ولم يُموَّل ولم يتحوّل إلى قوة جماعية بالقدر الكافي. تتجاوز هذه المنصة وصف مشكلات أفريقيا: إنها تسأل كيف نشأت، وما الذي يُبقيها، وأيّ معرفة أُهملت، وما البدائل العملية التي يمكن بناؤها. <a href="about.html">اقرأ المزيد عن الرؤية</a>.</p>
+      <p class="measure-wide">تحدّيها أن جزءًا كبيرًا من ذكائها لم يُعترف به ولم يُصقَل ولم يُؤسَّس له ولم يُموَّل ولم يتحوّل إلى قوة جماعية بالقدر الكافي. تتجاوز هذه المنصة وصف مشكلات أفريقيا: إنها تسأل كيف نشأت، وما الذي يُبقيها، وأيّ معرفة أُهملت، وما البدائل العملية التي يمكن بناؤها. <a href="about.html">اقرأ المزيد عن الرؤية</a>.</p>
     </div>
   </section>
 
@@ -169,7 +167,7 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>هذا ليس الماضي. هذا علمٌ قُطِع مساره.</h2>
-      <p style="max-width:64ch">الجرّة الفخارية ليست رمزًا للفقر؛ بل هي جهاز تبريد حراري يعمل دون كهرباء، تطوّر عبر أجيال من التجريب. وباستخدام الصور التخيّلية بالذكاء الاصطناعي، نُبيّن كيف كان يمكن أن تبدو العلوم الأفريقية اليوم لو لم يُقطَع تطوّرها بالعنف.</p>
+      <p class="measure-wide">الجرّة الفخارية ليست رمزًا للفقر؛ بل هي جهاز تبريد حراري يعمل دون كهرباء، تطوّر عبر أجيال من التجريب. وباستخدام الصور التخيّلية بالذكاء الاصطناعي، نُبيّن كيف كان يمكن أن تبدو العلوم الأفريقية اليوم لو لم يُقطَع تطوّرها بالعنف.</p>
       <div class="ba-grid">
         <figure>
           <span class="ba-label was">كيف يراها العالم</span>
@@ -182,11 +180,10 @@
           <figcaption>الديناميكا الحرارية، الحوسبة، الهندسة: أرشيف علمي ينتظر الاستعادة.</figcaption>
         </figure>
       </div>
-      <p style="font-family:var(--serif);font-size:1.2rem;font-style:italic;margin-top:1.6rem">ما قُطِع يمكن استعادته. وما أُجِّل يمكن استرداده.</p>
-      <p style="margin-top:1.2rem"><a class="btn btn-solid" href="ideas.html">اقرأ البحث</a></p>
+      <p class="quote mt-6">ما قُطِع يمكن استعادته. وما أُجِّل يمكن استرداده.</p>
+      <p class="mt-5"><a class="btn btn-solid" href="ideas.html">اقرأ البحث</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- AFRICA IN PICTURES - visual story strip -->
   <section class="tone-cloth pictures">
@@ -197,13 +194,12 @@
            unsplash.com - choose images of African work, craft, learning and city life
            that show capability and dignity, never crisis cliches. -->
       <div class="gallery">
-        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" alt="تطوّر الجرّة الفخارية: علم مواد ذاتي التبريد وخالٍ من الكربون لمدن أفريقيا المستقبلية" loading="lazy"></span><figcaption>تطوّر الجرّة الفخارية: حكمة تقليدية، وعلم حديث.</figcaption></figure>
-        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" alt="النظام الثنائي لإيفا مصوَّرًا بوصفه نواة حاسوب كمومي: 16 أودو، و256 حالة" loading="lazy"></span><figcaption>النواة الثنائية لنظام إيفا: محرّك خوارزمي عمره ألف عام.</figcaption></figure>
-        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" alt="مدينة أفريقية ذكية مستقبلية مستوحاة من هندسة البناء بالحجر الجاف في زيمبابوي العظمى" loading="lazy"></span><figcaption>من زيمبابوي العظمى إلى المدينة الذكية: بنتها أفريقيا، من أجل أفريقيا.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/claypot-evolution.webp" width="900" height="675" alt="تطوّر الجرّة الفخارية: علم مواد ذاتي التبريد وخالٍ من الكربون لمدن أفريقيا المستقبلية" loading="lazy"></span><figcaption>تطوّر الجرّة الفخارية: حكمة تقليدية، وعلم حديث.</figcaption></figure>
+        <figure><span class="frame"><img src="../assets/ifa-quantum.webp" width="900" height="675" alt="النظام الثنائي لإيفا مصوَّرًا بوصفه نواة حاسوب كمومي: 16 أودو، و256 حالة" loading="lazy"></span><figcaption>النواة الثنائية لنظام إيفا: محرّك خوارزمي عمره ألف عام.</figcaption></figure>
+        <figure class="crop-city"><span class="frame"><img src="../assets/smart-city.webp" width="900" height="675" alt="مدينة أفريقية ذكية مستقبلية مستوحاة من هندسة البناء بالحجر الجاف في زيمبابوي العظمى" loading="lazy"></span><figcaption>من زيمبابوي العظمى إلى المدينة الذكية: بنتها أفريقيا، من أجل أفريقيا.</figcaption></figure>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 4. MAJOR THEMES -->
   <section class="dark themes">
@@ -219,14 +215,13 @@
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 5. THE QUESTION AFRICA MUST ANSWER -->
   <section class="big-question">
-    <div class="wrap" style="text-align:center">
-      <h2 id="rotating-question" style="max-width:26ch;margin:0 auto 1.2rem">ما المعرفة التي امتلكها والداك ولم يرثها جيلك؟</h2>
+    <div class="wrap center">
+      <h2 id="rotating-question">ما المعرفة التي امتلكها والداك ولم يرثها جيلك؟</h2>
       <a class="btn btn-navy" href="contribute.html">أرسل إجابتك</a>
-      <p class="note" style="margin-top:.9rem">تُنشر إجابات مختارة على الموقع بإذن أصحابها.</p>
+      <p class="note mt-4">تُنشر إجابات مختارة على الموقع بإذن أصحابها.</p>
     </div>
   </section>
 
@@ -234,71 +229,69 @@
   <section class="dark tone-indigo">
     <div class="wrap">
       <h2>أصوات كثيرة، وطاولة واحدة</h2>
-      <p style="max-width:60ch">باحثون وحرفيون وطلاب ورواد أعمال وكبار سنّ وصنّاع سياسات
+      <p class="measure">باحثون وحرفيون وطلاب ورواد أعمال وكبار سنّ وصنّاع سياسات
       وأبناء الشتات. كل شهر تسلّط هذه المنصة الضوء على صوت أفريقي واحد والمعرفة التي
       يحملها. إن كنت أنت، أو شخصًا تعرفه، فأخبرنا.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-solid" href="contribute.html">رشّح صوتًا</a>
-      <a class="btn btn-ghost" href="african-voices.html" style="margin-left:.5rem">اطّلع على المجموعة</a></p>
+      <p class="mt-6"><a class="btn btn-solid" href="contribute.html">رشّح صوتًا</a>
+      <a class="btn btn-ghost" href="african-voices.html">اطّلع على المجموعة</a></p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 7. LATEST WRITING & FROM THE FIELD -->
   <section class="tone-cloth">
     <div class="wrap">
       <h2>الأعمال المكتوبة</h2>
-      <p style="max-width:62ch">مقالات وملخصات أبحاث وقوائم قراءة وموجزات قابلة للتنزيل
+      <p class="measure">مقالات وملخصات أبحاث وقوائم قراءة وموجزات قابلة للتنزيل
       ترافق الحلقات. وهذا ما يميّز المنصة عن مجرد التعليق: كل ادّعاء
       يمكن تتبّعه إلى مصدره.</p>
-      <p style="margin-top:1.4rem"><a class="btn btn-navy" href="ideas.html">اقرأ الأفكار</a>
-      <a class="btn btn-navy" href="publications.html" style="margin-left:.5rem;background:transparent;color:var(--indigo);border-color:var(--gold)">منشورات محكّمة</a></p>
+      <p class="mt-6"><a class="btn btn-navy" href="ideas.html">اقرأ الأفكار</a>
+      <a class="btn btn-ghost" href="publications.html">منشورات محكّمة</a></p>
     </div>
   </section>
 
   <!-- 8. WAYS TO CONTRIBUTE -->
   <section class="dark">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>لا يمكن لصوت واحد أن يتخيّل مستقبل أفريقيا</h2>
-      <p style="max-width:54ch;margin:0 auto 1.6rem">أحضر بحثك أو تجربتك أو سؤالك أو قصتك إلى هذا الحوار.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">أحضر بحثك أو تجربتك أو سؤالك أو قصتك إلى هذا الحوار.</p>
+      <div class="cta-row">
         <a class="btn btn-solid" href="contribute.html">اقترح حلقة</a>
         <a class="btn btn-ghost" href="contribute.html">رشّح ضيفًا</a>
         <a class="btn btn-ghost" href="contribute.html">أرسل مقالًا</a>
       </div>
-      <div class="cta-row" style="flex-wrap:wrap;margin-top:.8rem">
+      <div class="cta-row mt-3">
         <a class="btn btn-ghost" href="contribute.html">شارك ابتكارًا أفريقيًا</a>
         <a class="btn btn-ghost" href="contribute.html">تطوّع أو تعاون معنا</a>
         <a class="btn btn-ghost" href="contribute.html">ادعُ الدكتورة دامولا</a>
       </div>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 9. ABOUT DR DAMOLA -->
   <section>
     <div class="wrap">
       <h2>تعرّف على الدكتورة دامولا</h2>
-      <p style="font-family:var(--serif);font-size:1.15rem;color:var(--indigo);margin-bottom:1rem">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
+      <p class="byline">Dr Oluwakemi Damola Adejumo-Ayibiowu</p>
       <div class="portrait-row">
         <img class="portrait" src="../assets/dr-damola-portrait.webp" alt="الدكتورة أولوواكيمي دامولا أديجومو-أيبيوو، ترتدي فستانًا من قماش الأديري باللونين النيلي والذهبي" width="320" height="400" loading="lazy">
         <div>
           <p>الدكتورة دامولا خبيرة في اقتصاديات التنمية، وباحثة ذات منظور أفريقي المركز، ومتخصصة متعددة المجالات في الذكاء الاصطناعي، واستراتيجية في السياسات العامة، وفنانة في موسيقى الإنجيل، تمتلك أكثر من 25 عامًا من الخبرة في الحكومة والأوساط الأكاديمية والاستشارات الدولية. ومن خلال Rethinking Africa تُخرج المعرفة الأكاديمية من الدوائر المغلقة إلى النقاش العام.</p>
-          <p style="margin-top:1rem"><a class="btn btn-navy" href="about.html">اقرأ القصة كاملة</a></p>
+          <p class="mt-4"><a class="btn btn-navy" href="about.html">اقرأ القصة كاملة</a></p>
         </div>
       </div>
-      <p style="margin-top:1.6rem;max-width:64ch"><em>للباحثين والطلاب وصنّاع السياسات والمهنيين والمبدعين وقادة المجتمعات وأبناء الشتات، ولكل من يلتزم بنهضة أفريقيا الفكرية والتنموية.</em></p>
+      <p class="mt-6 measure-wide"><em>للباحثين والطلاب وصنّاع السياسات والمهنيين والمبدعين وقادة المجتمعات وأبناء الشتات، ولكل من يلتزم بنهضة أفريقيا الفكرية والتنموية.</em></p>
     </div>
   </section>
 
   <!-- 10. NEWSLETTER SUBSCRIPTION -->
   <section class="dark tone-indigo membership" id="subscribe">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>انضم إلى الألف المؤسّسين</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">كن من أول ألف عضو في حركة لاستعادة الذكاء الأفريقي والاستقلالية الأفريقية. اكتشف وجهات نظر تتمحور حول أفريقيا وتقوم على البحث، وشاهد حوارات مع باحثين وممارسين، واحصل على الحلقات والمقالات ودعوات الفعاليات الجديدة، بدءًا بسلسلة <strong>7 أيام لإعادة التفكير</strong> المجانية.</p>
+      <p class="intro">كن من أول ألف عضو في حركة لاستعادة الذكاء الأفريقي والاستقلالية الأفريقية. اكتشف وجهات نظر تتمحور حول أفريقيا وتقوم على البحث، وشاهد حوارات مع باحثين وممارسين، واحصل على الحلقات والمقالات ودعوات الفعاليات الجديدة، بدءًا بسلسلة <strong>7 أيام لإعادة التفكير</strong> المجانية.</p>
       <!-- DEVELOPER: wire to email provider; keep fields to exactly these four -->
       <!-- DEVELOPER: replace action with your MailerLite / ConvertKit embedded form URL.
            This is a normal HTML form post. It needs no server of our own. -->
-      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post" style="max-width:460px;margin:0 auto;text-align:left">
+      <form action="REPLACE_WITH_MAILING_LIST_ACTION" method="post">
         <div class="field"><label for="s-name">الاسم الأول</label><input id="s-name" name="fields[name]" type="text" required></div>
         <div class="field"><label for="s-email">البريد الإلكتروني</label><input id="s-email" name="fields[email]" type="email" required></div>
         <div class="field"><label for="s-wa">رقم واتساب (اختياري)</label><input id="s-wa" name="fields[whatsapp]" type="tel" placeholder="+234 800 000 0000"></div>
@@ -312,38 +305,36 @@
             <option>الثقافة والهوية والاستقلالية الأفريقية</option>
             <option>مستقبلات أفريقيا</option>
           </select></div>
-        <div style="text-align:center;margin-top:1.2rem">
+        <div>
           <button class="btn btn-solid" type="submit">اشترك</button>
-          <a class="btn btn-ghost" href="quiz.html" style="margin-left:.5rem">خذ الاختبار أولًا</a>
+          <a class="btn btn-ghost" href="quiz.html">خذ الاختبار أولًا</a>
         </div>
       </form>
-      <p class="note" style="margin-top:.9rem">لا رسائل مزعجة. يمكنك إلغاء الاشتراك في أي وقت.</p>
+      <p class="note mt-4">لا رسائل مزعجة. يمكنك إلغاء الاشتراك في أي وقت.</p>
     </div>
   </section>
-  <hr class="horizon">
 
 
   <!-- SUPPORT THE INITIATIVE -->
   <section class="dark support-band">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>ساعد هذه المبادرة على النمو</h2>
-      <p style="max-width:56ch;margin:0 auto 1.6rem">Rethinking Africa with Dr. Damola مبادرة مستقلة. دعمك يموّل البحث والإنتاج والترجمة وتوثيق المعرفة الأفريقية، ويُبقي هذه المنصة مجانية للطلاب والمجتمعات في أنحاء القارة.</p>
-      <div class="cta-row" style="flex-wrap:wrap">
+      <p class="intro">Rethinking Africa with Dr. Damola مبادرة مستقلة. دعمك يموّل البحث والإنتاج والترجمة وتوثيق المعرفة الأفريقية، ويُبقي هذه المنصة مجانية للطلاب والمجتمعات في أنحاء القارة.</p>
+      <div class="cta-row">
         <!-- DEVELOPER: connect Paystack/Flutterwave (Nigeria) and PayPal (diaspora) -->
         <a class="btn btn-solid" href="#">تبرّع مرة واحدة</a>
         <a class="btn btn-ghost" href="#">تبرّع شهريًا</a>
         <a class="btn btn-ghost" href="contact.html">ارعَ حلقة</a>
       </div>
-      <p class="note" style="margin-top:1rem;max-width:60ch;margin-left:auto;margin-right:auto">تدعم المساهمات مبادرة تعليمية مستقلة، وهي ليست تبرعات خيرية قابلة للخصم الضريبي. يُنشر ملخص سنوي لكيفية استخدام الأموال على هذا الموقع.</p>
+      <p class="note mt-4 measure mx-auto">تدعم المساهمات مبادرة تعليمية مستقلة، وهي ليست تبرعات خيرية قابلة للخصم الضريبي. يُنشر ملخص سنوي لكيفية استخدام الأموال على هذا الموقع.</p>
     </div>
   </section>
-  <hr class="horizon">
 
   <!-- 11. PARTNERS -->
   <section class="tone-cloth">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>كن شريكًا لـ Rethinking Africa</h2>
-      <p style="max-width:56ch;margin:0 auto 1.4rem">ندعو الجامعات ومراكز البحث والمؤسسات الثقافية والمؤسسات الإعلامية وهيئات التنمية إلى التعاون في مشاريع البحث والإعلام والتواصل مع الجمهور.</p>
+      <p class="intro">ندعو الجامعات ومراكز البحث والمؤسسات الثقافية والمؤسسات الإعلامية وهيئات التنمية إلى التعاون في مشاريع البحث والإعلام والتواصل مع الجمهور.</p>
       <a class="btn btn-navy" href="contact.html">ابدأ حوارًا</a>
     </div>
   </section>
@@ -351,7 +342,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="شعار Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="شعار Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -365,7 +356,7 @@
       <a href="contact.html">اتصل بنا</a>
     </div>
     <p>مبادرة مستقلة للبحث والإعلام والتثقيف العام تتمحور حول أفريقيا، أسستها الدكتورة أولوواكيمي دامولا أديجومو-أيبيوو.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 

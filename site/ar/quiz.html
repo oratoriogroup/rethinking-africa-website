@@ -11,35 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
-<style>
-  .quiz-shell{max-width:660px;margin:0 auto;padding:0 1.1rem}
-  .qcard{background:#FFFDF7;border:1px solid #E4DCC8;border-radius:6px;padding:1.5rem;margin-top:1.4rem}
-  .qnum{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep,#865B0A);margin-bottom:.5rem}
-  #q-result .qnum{color:var(--gold)}
-  .qtext{font-family:var(--serif);font-size:1.3rem;color:var(--indigo);margin-bottom:1.1rem;line-height:1.3}
-  .opt{display:block;width:100%;text-align:left;background:#F7F1E3;border:2px solid #E4DCC8;border-radius:4px;
-       padding:.9rem 1rem;margin-bottom:.7rem;font-family:var(--sans);font-size:1rem;color:var(--ink);cursor:pointer}
-  .opt:hover{border-color:var(--gold);background:#FFF9EC}
-  .qbar{height:5px;background:#E4DCC8;border-radius:3px;margin-top:1.4rem;overflow:hidden}
-  .qbar span{display:block;height:100%;background:var(--gold);width:0;transition:width .35s ease}
-  .hidden{display:none}
-
-  .insight{background:var(--indigo);border-radius:6px;padding:1.3rem;margin-top:1rem;color:#E8E3D4;animation:rise .35s ease-out both}
-  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .insight .tag{font-family:var(--sans);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem}
-  .insight .pic{width:100%;max-width:100%;display:block;margin:0 auto 1.1rem;border-radius:5px;border:1px solid rgba(232,161,28,.35)}
-  .insight p{font-size:1.02rem;line-height:1.6;margin:0 0 .8rem}
-  .insight .why{background:rgba(232,161,28,.12);border:1px solid rgba(232,161,28,.45);padding:.9rem 1.1rem;border-radius:10px;margin-top:.9rem}
-  .insight .why strong{color:var(--gold);display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
-  .insight .why p{margin:0;font-size:.98rem}
-
-  .profile-name{font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:1.15}
-  .rarity{display:inline-block;background:rgba(232,161,28,.18);border:1px solid var(--gold);color:var(--gold);
-          font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:20px;margin-bottom:1rem}
-  .sharebox{background:#F7F1E3;border:2px solid var(--gold);padding:1.1rem 1.2rem;border-radius:10px;text-align:left;color:var(--ink);margin-top:1.4rem;font-size:.95rem}
-  @media (prefers-reduced-motion:reduce){.insight{animation:none}}
-</style>
+<link rel="stylesheet" href="../css/style.css?v=8">
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/quiz.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/quiz.html">
@@ -52,14 +24,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="الصفحة الرئيسية لـ Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="القائمة الرئيسية">
       <a href="index.html">الرئيسية</a>
-      <a href="quiz.html" aria-current="page" style="color:#E8A11C">خذ الاختبار</a>
+      <a class="nav-quiz" href="quiz.html">خذ الاختبار</a>
       <a href="watch.html">شاهد</a>
       <a href="ideas.html">أفكار</a>
       <a href="publications.html">المنشورات</a>
@@ -72,24 +45,23 @@
   </div>
 </header>
 
-<main>
-  <div class="hero" style="padding:2.2rem 0">
-    <div class="wrap" style="text-align:center">
-      <h1 style="font-size:clamp(2rem,6.5vw,3.4rem);color:var(--ivory);max-width:16ch;margin:0 auto;line-height:1.05">اختبار الـ90 ثانية<br><span style="color:var(--gold)">Africa Lens</span></h1>
-      <p style="font-family:var(--serif);font-size:clamp(1.05rem,2.6vw,1.3rem);color:#D8D3C4;margin:1.1rem auto 0;max-width:30ch;font-style:italic">كيف تعلّمت أن ترى أفريقيا؟</p>
-      <p class="lede" style="margin-top:.9rem;font-size:1rem">سبعة أسئلة. بعد كل سؤال، شيء بنته أفريقيا، والسبب الذي جعلك لا تسمع عنه أبدًا.</p>
+<main id="main">
+  <div class="hero hero-compact">
+    <div class="wrap center">
+      <h1 class="quiz-title">اختبار الـ90 ثانية<br><span class="accent">Africa Lens</span></h1>
+      <p class="quiz-tagline">كيف تعلّمت أن ترى أفريقيا؟</p>
+      <p class="lede quiz-lede">سبعة أسئلة. بعد كل سؤال، شيء بنته أفريقيا، والسبب الذي جعلك لا تسمع عنه أبدًا.</p>
 </div>
   </div>
-  <hr class="horizon">
 
-  <section style="padding-top:.6rem">
+  <section class="quiz-section">
     <div class="quiz-shell">
 
-      <div id="q-intro" class="qcard" style="text-align:center">
-        <p class="qtext" style="margin-bottom:.6rem">لا توجد إجابات خاطئة هنا.</p>
-        <p style="margin-bottom:1.3rem">يستغرق نحو تسعين ثانية. ستتعلّم سبعة أشياء ربما لم تُدرَّس لك قط.</p>
+      <div id="q-intro" class="qcard center">
+        <p class="qtext mb-2">لا توجد إجابات خاطئة هنا.</p>
+        <p class="mb-5">يستغرق نحو تسعين ثانية. ستتعلّم سبعة أشياء ربما لم تُدرَّس لك قط.</p>
         <button class="btn btn-solid" onclick="startQuiz()">ابدأ</button>
-        <p class="note" style="margin-top:.9rem">مجاني. بلا أي دفع، أبدًا.</p>
+        <p class="note mt-4">مجاني. بلا أي دفع، أبدًا.</p>
       </div>
 
       <div id="q-card" class="qcard hidden">
@@ -104,45 +76,45 @@
         <div id="i-pic"></div>
         <p id="i-text"></p>
         <div class="why"><strong>فلماذا توقّف؟</strong><p id="i-why"></p></div>
-        <div style="margin-top:1.1rem"><button class="btn btn-solid" onclick="nextQuestion()" id="i-btn">متابعة</button></div>
+        <div class="mt-4"><button class="btn btn-solid" onclick="nextQuestion()" id="i-btn">متابعة</button></div>
       </div>
 
       <div id="q-gate" class="qcard hidden">
-        <p class="qnum" style="text-align:center">ملفك جاهز</p>
-        <p class="qtext" style="text-align:center">إلى أين نرسله؟</p>
-        <p style="margin-bottom:1.3rem;text-align:center">سنرسل إليك إجاباتك وملفك الكامل بالبريد الإلكتروني. وستحصل أيضًا على دليل قصير مجاني بعنوان <em>سبعة أشياء تعلّمت أفريقيا أن تنساها</em>.</p>
+        <p class="qnum center">ملفك جاهز</p>
+        <p class="qtext center">إلى أين نرسله؟</p>
+        <p class="mb-5 center">سنرسل إليك إجاباتك وملفك الكامل بالبريد الإلكتروني. وستحصل أيضًا على دليل قصير مجاني بعنوان <em>سبعة أشياء تعلّمت أفريقيا أن تنساها</em>.</p>
 
         <div class="field"><label for="g-name">اسمك</label><input id="g-name" type="text" autocomplete="name"></div>
         <div class="field"><label for="g-email">البريد الإلكتروني (إلزامي)</label><input id="g-email" type="email" required autocomplete="email" placeholder="you@gmail.com"></div>
         <div class="field"><label for="g-wa">رقم واتساب (اختياري)</label><input id="g-wa" type="tel" autocomplete="tel" placeholder="+234 800 000 0000"></div>
         <div class="field"><label for="g-country">البلد</label><input id="g-country" type="text" autocomplete="country-name"></div>
 
-        <p class="note" id="g-hint" style="margin-bottom:1rem">سيظهر ملفك هنا بمجرد إرساله إلى بريدك الإلكتروني.</p>
+        <p class="note mb-4" id="g-hint">سيظهر ملفك هنا بمجرد إرساله إلى بريدك الإلكتروني.</p>
 
-        <div style="text-align:center">
+        <div class="center">
           <button class="btn btn-solid" id="g-btn" onclick="revealResult()">أرسل ملفي إلى بريدي</button>
         </div>
-        <p class="note" style="margin-top:.8rem;text-align:center">لن نشارك بياناتك أبدًا. يمكنك المغادرة في أي وقت.</p>
+        <p class="note mt-3 center">لن نشارك بياناتك أبدًا. يمكنك المغادرة في أي وقت.</p>
       </div>
 
-      <div id="q-result" class="qcard hidden" style="text-align:center;background:var(--indigo);border-color:var(--indigo)">
+      <div id="q-result" class="qcard hidden result">
         <p class="qnum">ملفك كبانٍ لمستقبل أفريقيا</p>
         <span class="rarity" id="r-rarity"></span>
         <p class="profile-name" id="r-name"></p>
-        <p id="r-desc" style="color:#E8E3D4;margin:1rem 0 1.2rem"></p>
-        <p id="r-strength" style="color:#F7F1E3;font-family:var(--serif);font-style:italic;font-size:1.1rem;margin-bottom:1.5rem"></p>
+        <p id="r-desc"></p>
+        <p id="r-strength"></p>
 
-        <p style="color:#D8D3C4;margin-bottom:1rem">كل ما عدا ذلك موجود على القناة. تصدر حلقات جديدة بانتظام، والاشتراك هو طريقة الحصول عليها.</p>
+        <p class="result-channel">كل ما عدا ذلك موجود على القناة. تصدر حلقات جديدة بانتظام، والاشتراك هو طريقة الحصول عليها.</p>
         <a class="btn btn-solid" href="https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1">اشترك على يوتيوب</a>
-        <a class="btn btn-ghost hidden" id="r-wa" href="#" style="margin-left:.5rem">احصل عليه عبر واتساب</a>
+        <a class="btn btn-ghost hidden" id="r-wa" href="#">احصل عليه عبر واتساب</a>
 
         <div class="sharebox">
           <strong>سؤال واحد تحمله معك:</strong>
-          <p id="r-question" style="margin-top:.4rem"></p>
+          <p class="mt-2" id="r-question"></p>
         </div>
 
-        <p id="r-delivery" style="color:#A8AEC6;font-size:.85rem;margin-top:1.3rem"></p>
-        <p style="color:#A8AEC6;font-size:.85rem;margin-top:.4rem">لا ينبغي أن تُدرَس أفريقيا فحسب. يجب على أفريقيا أن تتكلّم وتفكّر وتبدع وتقرّر.</p>
+        <p class="result-fine" id="r-delivery"></p>
+        <p class="result-fine">لا ينبغي أن تُدرَس أفريقيا فحسب. يجب على أفريقيا أن تتكلّم وتفكّر وتبدع وتقرّر.</p>
       </div>
 
     </div>
@@ -151,7 +123,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="شعار Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="شعار Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -165,7 +137,7 @@
       <a href="contact.html">اتصل بنا</a>
     </div>
     <p>مبادرة مستقلة للبحث والإعلام والتثقيف العام تتمحور حول أفريقيا، أسستها الدكتورة أولوواكيمي دامولا أديجومو-أيبيوو.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 

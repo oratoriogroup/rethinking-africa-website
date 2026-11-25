@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/watch.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/watch.html">
@@ -22,14 +22,15 @@
 </head>
 <body>
 <header class="site">
+  <a class="skip-link" href="#main">Ruka hadi maudhui</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Mwanzo wa Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Menyu kuu">
       <a href="index.html">Mwanzo</a>
-      <a href="quiz.html" style="color:#E8A11C">Fanya Jaribio</a>
+      <a class="nav-quiz" href="quiz.html">Fanya Jaribio</a>
       <a href="watch.html" aria-current="page">Tazama</a>
       <a href="ideas.html">Mawazo</a>
       <a href="publications.html">Machapisho</a>
@@ -41,29 +42,28 @@
     </nav>
   </div>
 </header>
-<main>
+<main id="main">
 <div class="hero"><div class="wrap"><h1>Tazama</h1><p class="lede">Vipindi vilivyopangwa katika mfululizo ulio wazi, kuanzia uchunguzi kamili hadi swali moja lenye nguvu.</p></div></div>
-<hr class="horizon">
 <section><div class="wrap">
 <h2>Mfululizo sita wa programu</h2>
 <div class="grid">
-<div class="card"><h3>Rethinking Africa: Vipindi Vikuu</h3><p>Uchunguzi kamili unaoanzia kwenye hadithi inayoonekana hadi kwenye mfumo ulio chini yake.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
-<div class="card"><h3>Sauti za Afrika</h3><p>Mahojiano na watafiti, mafundi, wajasiriamali, wazee na vijana.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
-<div class="card"><h3>Swali Moja kwa Afrika</h3><p>Video fupi zilizojengwa kuzunguka swali moja ambalo huwezi kulisahau.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
-<div class="card"><h3>Utafiti kwa Umma</h3><p>Matokeo ya kitaaluma yaliyotafsiriwa kuwa maarifa ya umma yanayofikika.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
-<div class="card"><h3>Mustakabali wa Afrika</h3><p>Kile ambacho miji, shule, viwanda na taasisi za Afrika zingeweza kuwa.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
-<div class="card"><h3>Mazungumzo ya Makongamano</h3><p>Mijadala ya meza ya duara, midahalo na mazungumzo ya umma kutoka kwenye matukio na mikusanyiko.</p><p style="margin-top:.7rem"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Rethinking Africa: Vipindi Vikuu</h3><p>Uchunguzi kamili unaoanzia kwenye hadithi inayoonekana hadi kwenye mfumo ulio chini yake.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Sauti za Afrika</h3><p>Mahojiano na watafiti, mafundi, wajasiriamali, wazee na vijana.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Swali Moja kwa Afrika</h3><p>Video fupi zilizojengwa kuzunguka swali moja ambalo huwezi kulisahau.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Utafiti kwa Umma</h3><p>Matokeo ya kitaaluma yaliyotafsiriwa kuwa maarifa ya umma yanayofikika.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Mustakabali wa Afrika</h3><p>Kile ambacho miji, shule, viwanda na taasisi za Afrika zingeweza kuwa.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
+<div class="card"><h3>Mazungumzo ya Makongamano</h3><p>Mijadala ya meza ya duara, midahalo na mazungumzo ya umma kutoka kwenye matukio na mikusanyiko.</p><p class="mt-3"><a href="https://www.youtube.com/@DrDamola.Africa">Tazama orodha ya video</a></p></div>
 </div>
 </div></section>
-<section class="dark"><div class="wrap" style="text-align:center">
+<section class="dark"><div class="wrap center">
 <h2>Vipindi vipya kwanza</h2>
-<p style="max-width:50ch;margin:0 auto 1.4rem">Jisajili YouTube na ujiunge na orodha ya barua pepe ili ujulishwe uchunguzi mpya unapotolewa.</p>
+<p class="intro">Jisajili YouTube na ujiunge na orodha ya barua pepe ili ujulishwe uchunguzi mpya unapotolewa.</p>
 <a class="btn btn-solid" href="https://www.youtube.com/@DrDamola.Africa">Jisajili YouTube</a>
 </div></section>
 </main>
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Nembo ya Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Nembo ya Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -77,7 +77,7 @@
       <a href="contact.html">Wasiliana</a>
     </div>
     <p>Mpango huru wa utafiti, vyombo vya habari na elimu kwa umma unaoweka Afrika katikati, ulioanzishwa na Dkt. Oluwakemi Damola Adejumo-Ayibiowu.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Haki zote zimehifadhiwa.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Haki zote zimehifadhiwa.</p>
   </div>
 </footer>
 <script src="../js/lang.js?v=3" defer></script>

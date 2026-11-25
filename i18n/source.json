@@ -18,7 +18,8 @@
     "footer.rights": "All rights reserved.",
     "common.01": "aria-label=\"Main\"",
     "common.02": "alt=\"Rethinking Africa with Dr. Damola logo\"",
-    "common.03": ">Join the mailing list</a>"
+    "common.03": ">Join the mailing list</a>",
+    "layout.skip": ">Skip to content</a>"
   },
   "index.html": {
     "title": "| Reclaiming Intelligence. Reimagining the Future.</title>",
@@ -126,7 +127,7 @@
   "quiz.html": {
     "quiz.title": "<title>The 90-Second Africa Lens Quiz |",
     "quiz.meta.desc": "content=\"Seven questions. Seven things you were never told about African knowledge, and why they stopped. Find out which African future-builder you are.\"",
-    "h1": ">The 90-Second<br><span style=\"color:var(--gold)\">Africa Lens Quiz</span></h1>",
+    "h1": ">The 90-Second<br><span class=\"accent\">Africa Lens Quiz</span></h1>",
     "sub": ">How were you taught to see Africa?</p>",
     "lede": "Seven questions. After each one, something Africa built, and the reason you never heard about it.",
     "quiz.intro.q": ">There are no wrong answers here.</p>",
@@ -295,7 +296,7 @@
     "about.041": ">Not a platform where one person speaks</h2>",
     "about.042": ">Rethinking Africa is a growing community of scholars, students, professionals, artists, entrepreneurs, policymakers, artisans, elders, young people and members of the African diaspora.</p>",
     "about.043": ">You are invited to propose a story or episode, participate in an interview, contribute a research reflection, recommend a scholar or practitioner, share a community innovation, identify neglected African knowledge, suggest solutions to development challenges, or partner on research, media and public-engagement projects.</p>",
-    "about.044": "><a class=\"btn btn-solid\" href=\"contribute.html\">Contribute</a> <a class=\"btn btn-ghost\" href=\"index.html#subscribe\" style=\"margin-left:.5rem\">Join the community</a></p>",
+    "about.044": "><a class=\"btn btn-solid\" href=\"contribute.html\">Contribute</a> <a class=\"btn btn-ghost\" href=\"index.html#subscribe\">Join the community</a></p>",
     "about.049": "<title>About | Rethinking Africa with Dr. Damola</title>",
     "about.050": "content=\"What Rethinking Africa is, why it exists, what it does, its intellectual approach, and its founder Dr Damola Adejumo-Ayibiowu.\""
   },
@@ -491,7 +492,7 @@
     "contribute.034": ">Thank you. Your contribution has arrived.</h3>",
     "contribute.035": ">We read every submission. If it fits a current or planned episode, we will\nwrite back to you. That can take a little time, because each one is read properly rather than sorted\nby a machine.</p>",
     "contribute.036": ">While you wait, the quiz will tell you which kind of African future-builder\nyou are, and start the free seven-day series.</p>",
-    "contribute.037": "><a class=\"btn btn-solid\" href=\"quiz.html\">Take the quiz</a>\n<a class=\"btn btn-ghost\" href=\"https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1\" style=\"margin-left:.5rem\">Subscribe on YouTube</a></p>",
+    "contribute.037": "><a class=\"btn btn-solid\" href=\"quiz.html\">Take the quiz</a>\n<a class=\"btn btn-ghost\" href=\"https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1\">Subscribe on YouTube</a></p>",
     "contribute.js1": "'Please complete your name, email, type of contribution and message.'",
     "contribute.js2": "'This form is not connected yet. Please write to drdamolaafrica@gmail.com.'",
     "contribute.js3": "'Sending...'",

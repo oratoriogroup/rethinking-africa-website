@@ -113,7 +113,7 @@
   "footer.rights": "Tous droits réservés.",
   "quiz.title": "<title>Le quiz Africa Lens en 90 secondes |",
   "quiz.meta.desc": "content=\"Sept questions. Sept choses qu’on ne vous a jamais dites sur les savoirs africains, et pourquoi elles se sont arrêtées. Découvrez quel bâtisseur de l’avenir africain vous êtes.\"",
-  "h1": ">Le quiz en 90 secondes<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
+  "h1": ">Le quiz en 90 secondes<br><span class=\"accent\">Africa Lens</span></h1>",
   "sub": ">Comment vous a-t-on appris à voir l’Afrique ?</p>",
   "lede": "Sept questions. Après chacune, une chose que l’Afrique a construite, et la raison pour laquelle vous n’en avez jamais entendu parler.",
   "quiz.intro.q": ">Il n’y a pas de mauvaise réponse ici.</p>",
@@ -222,5 +222,6 @@
   "p.FM.rarity": "\"Environ 1 personne sur 8\"",
   "p.FM.desc": "\"Retrouver le passé ne vous suffit pas. Vous voulez construire ce qui n’a jamais existé nulle part, en partant du sol africain.\"",
   "p.FM.strength": "\"Votre force : refuser les options qu’on vous a données.\"",
-  "p.FM.q": "\"Que construiriez-vous si vous cessiez d’attendre la permission ?\""
+  "p.FM.q": "\"Que construiriez-vous si vous cessiez d’attendre la permission ?\"",
+  "layout.skip": ">Aller au contenu</a>"
 }

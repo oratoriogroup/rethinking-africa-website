@@ -113,7 +113,7 @@
   "footer.rights": "Duk haƙƙoƙi a kiyaye suke.",
   "quiz.title": "<title>Gwajin Africa Lens na Daƙiƙa 90 |",
   "quiz.meta.desc": "content=\"Tambayoyi bakwai. Abubuwa bakwai da ba a taɓa faɗa maka ba game da ilimin Afirka, da dalilin da ya sa suka tsaya. Gano wane irin mai gina makomar Afirka kake.\"",
-  "h1": ">Gwajin Daƙiƙa 90<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
+  "h1": ">Gwajin Daƙiƙa 90<br><span class=\"accent\">Africa Lens</span></h1>",
   "sub": ">Yaya aka koya maka ka kalli Afirka?</p>",
   "lede": "Tambayoyi bakwai. Bayan kowace, wani abu da Afirka ta gina, da dalilin da ya sa ba ka taɓa jin labarinsa ba.",
   "quiz.intro.q": ">Babu amsar da ba daidai ba a nan.</p>",
@@ -222,5 +222,6 @@
   "p.FM.rarity": "\"Kusan mutum 1 cikin 8\"",
   "p.FM.desc": "\"Dawo da abubuwan da suka wuce bai ishe ka ba. Kana so ka gina abubuwan da ba su taɓa wanzuwa a ko’ina ba, farawa daga ƙasar Afirka.\"",
   "p.FM.strength": "\"Ƙarfinka shi ne ƙin zaɓuɓɓukan da aka ba ka.\"",
-  "p.FM.q": "\"Me za ka gina idan ka daina jiran izini?\""
+  "p.FM.q": "\"Me za ka gina idan ka daina jiran izini?\"",
+  "layout.skip": ">Tsallaka zuwa abin ciki</a>"
 }

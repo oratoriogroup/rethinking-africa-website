@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@600;700&display=swap&text=%C9%93%C9%97%C6%99%C6%81%C6%8A%C6%98" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/policies.html">
 <link rel="alternate" hreflang="fr" href="https://rethinkingafrica.africa/fr/policies.html">
@@ -24,14 +24,15 @@
 <body>
 
 <header class="site">
+  <a class="skip-link" href="#main">Tsallaka zuwa abin ciki</a>
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Shafin farko na Rethinking Africa">
       <svg viewBox="0 0 560 470" aria-hidden="true"><rect x="10" y="111" width="60" height="7" fill="#E8A11C"/><rect x="480" y="111" width="60" height="7" fill="#E8A11C"/><circle cx="390" cy="115" r="85" fill="#E8A11C"/><g transform="translate(90,25)"><path d="M70,12 C95,2 130,-2 155,4 C170,10 175,38 195,35 C215,32 230,32 250,37 C258,38 260,40 263,45 C275,72 288,100 298,124 C303,132 310,137 317,140 C330,142 345,140 357,144 C350,162 337,182 327,198 C315,215 302,232 297,247 C300,262 300,274 296,285 C290,302 282,311 275,318 C268,335 260,362 255,374 C245,388 220,402 200,400 C190,396 182,377 173,352 C166,330 163,310 161,293 C159,275 160,257 161,242 C158,230 152,220 147,212 C148,200 149,192 148,187 C138,180 128,176 117,174 C105,177 90,180 80,180 C68,180 55,178 46,174 C40,169 36,166 34,162 C24,148 16,138 13,128 C14,120 17,114 20,110 C16,102 15,98 15,95 C22,80 28,68 35,57 C45,44 53,32 62,24 C65,20 68,15 70,12 Z" fill="#F7F1E3"/><ellipse cx="333" cy="312" rx="15" ry="36" transform="rotate(15 333 312)" fill="#F7F1E3"/></g></svg>
-      <span>Rethinking Africa<br><em style="font-weight:400;font-size:.8rem;letter-spacing:.06em;color:#E8A11C;font-style:italic">with Dr. Damola</em></span>
+      <span>Rethinking Africa<br><em>with Dr. Damola</em></span>
     </a>
     <nav class="main" aria-label="Babban menu">
       <a href="index.html">Gida</a>
-      <a href="quiz.html" style="color:#E8A11C">Yi Gwaji</a>
+      <a class="nav-quiz" href="quiz.html">Yi Gwaji</a>
       <a href="watch.html">Kalla</a>
       <a href="ideas.html">Ra’ayoyi</a>
       <a href="publications.html">Wallafe-wallafe</a>
@@ -44,9 +45,8 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 <div class="hero"><div class="wrap"><h1>Sirri, Sharuɗɗa &amp; Haƙƙin Mallaka</h1><p class="lede">Yadda wannan dandali ke kare masu ziyara, masu ba da gudunmawa da aikinsa.</p></div></div>
-<hr class="horizon">
 <section><div class="wrap">
 <h2>Bayananka</h2>
 <p>Muna karɓar abin da fom ɗin rajista da na gudunmawa suka nema kawai (suna, imel, ƙasa da fannin da kake so) kuma muna amfani da shi ne kawai don aika jarida, amsa gudunmawa da inganta shirin. Ba ma sayarwa ko raba bayanan sirri. Za ka iya fita ko neman a share bayananka a kowane lokaci ta hanyar rubutawa zuwa drdamolaafrica@gmail.com.</p>
@@ -56,17 +56,16 @@
 <h2>Amfani da wannan shafin</h2>
 <p>Ana bayar da abubuwan da ke ciki domin ilimantar da jama’a. Masu ziyara na iya rabawa da ambaton abubuwa tare da ambaton tushe da hanyar haɗi. Aika gudunmawa yana ba shirin izinin duba ta; ba a wallafa komai ba tare da izinin mai ba da gudunmawar ba.</p>
 </div></section>
-<hr class="horizon">
 <section><div class="wrap">
 <h2>Mallaka da shiga</h2>
 <p>© Rethinking Africa with Dr. Damola. Shirye-shirye, maƙaloli, zane-zane da asalin shirin suna da kariya. Baƙi da masu ba da gudunmawa suna riƙe haƙƙi a kan kalmominsu da hotunansu; ana samun izinin hira da hoto kafin wallafawa, kuma kowane mahalarci na iya neman gyara ko cire gudunmawarsa.</p>
-<p style="margin-top:1rem">Tambayoyin kafafen yaɗa labarai da hira: <a href="mailto:media@rethinkingafrica.africa">media@rethinkingafrica.africa</a>.</p>
+<p class="mt-4">Tambayoyin kafafen yaɗa labarai da hira: <a href="mailto:media@rethinkingafrica.africa">media@rethinkingafrica.africa</a>.</p>
 </div></section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <img src="../assets/logo-dark-stacked.svg" alt="Tambarin Rethinking Africa with Dr. Damola" style="width:200px;height:auto;margin:0 auto 1.4rem;display:block" loading="lazy">
+    <img class="logo" src="../assets/logo-dark-stacked.svg" width="720" height="530" alt="Tambarin Rethinking Africa with Dr. Damola" loading="lazy">
     <div class="links">
       <a href="https://www.youtube.com/@DrDamola.Africa">YouTube</a>
       <a href="https://www.instagram.com/DrDamolaAfrica">Instagram</a>
@@ -80,7 +79,7 @@
       <a href="contact.html">Tuntuɓe Mu</a>
     </div>
     <p>Shiri mai zaman kansa na bincike, kafafen yaɗa labarai da ilimantar da jama’a wanda ya ɗora Afirka a tsakiya, wanda Dakta Oluwakemi Damola Adejumo-Ayibiowu ta kafa.</p>
-    <p style="margin-top:.5rem">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Duk haƙƙoƙi a kiyaye suke.</p>
+    <p class="mt-2">drdamolaafrica@gmail.com · © 2026 Rethinking Africa with Dr. Damola. Duk haƙƙoƙi a kiyaye suke.</p>
   </div>
 </footer>
 <script src="../js/lang.js?v=3" defer></script>

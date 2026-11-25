@@ -113,7 +113,7 @@
   "footer.rights": "Haki zote zimehifadhiwa.",
   "quiz.title": "<title>Jaribio la Africa Lens la Sekunde 90 |",
   "quiz.meta.desc": "content=\"Maswali saba. Mambo saba ambayo hukuwahi kuambiwa kuhusu maarifa ya Kiafrika, na kwa nini yalikoma. Gundua wewe ni mjenzi wa aina gani wa mustakabali wa Afrika.\"",
-  "h1": ">Jaribio la Sekunde 90<br><span style=\"color:var(--gold)\">Africa Lens</span></h1>",
+  "h1": ">Jaribio la Sekunde 90<br><span class=\"accent\">Africa Lens</span></h1>",
   "sub": ">Ulifundishwa kuiona Afrika vipi?</p>",
   "lede": "Maswali saba. Baada ya kila moja, kitu ambacho Afrika ilijenga, na sababu hukuwahi kusikia habari zake.",
   "quiz.intro.q": ">Hakuna jibu baya hapa.</p>",
@@ -222,5 +222,6 @@
   "p.FM.rarity": "\"Takriban mtu 1 kati ya 8\"",
   "p.FM.desc": "\"Kurejesha yaliyopita hakukutoshi. Unataka kujenga vitu ambavyo havijawahi kuwepo popote, kuanzia ardhi ya Kiafrika.\"",
   "p.FM.strength": "\"Nguvu yako ni kukataa machaguo uliyopewa.\"",
-  "p.FM.q": "\"Ungejenga nini kama ungeacha kusubiri ruhusa?\""
+  "p.FM.q": "\"Ungejenga nini kama ungeacha kusubiri ruhusa?\"",
+  "layout.skip": ">Ruka hadi maudhui</a>"
 }
