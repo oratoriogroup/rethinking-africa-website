@@ -287,5 +287,9 @@
   "ui.pdfMaking": "\"Tunaandaa PDF yako...\"",
   "ui.pdfQuiz": "\"Jaribio la Africa Lens\"",
   "ui.pdfTranscript": "\"Majibu yako saba\"",
-  "ui.pdfFor": "\"Imeandaliwa kwa {name} · {date}\""
+  "ui.pdfFor": "\"Imeandaliwa kwa {name} · {date}\"",
+  "quiz.back": ">Rudi</button>",
+  "ui.archive": "\"Kutoka kumbukumbu · {n}\"",
+  "ui.unlocked": "\"Maarifa {n} kati ya {total} yamefunguliwa\"",
+  "ui.continueTo": "\"Endelea kwa swali la {n}\""
 }

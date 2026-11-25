@@ -287,5 +287,9 @@
   "ui.pdfMaking": "\"جارٍ تجهيز ملف PDF...\"",
   "ui.pdfQuiz": "\"اختبار Africa Lens\"",
   "ui.pdfTranscript": "\"إجاباتك السبع\"",
-  "ui.pdfFor": "\"أُعدّ من أجل {name} · {date}\""
+  "ui.pdfFor": "\"أُعدّ من أجل {name} · {date}\"",
+  "quiz.back": ">رجوع</button>",
+  "ui.archive": "\"من الأرشيف · {n}\"",
+  "ui.unlocked": "\"تم كشف {n} من {total}\"",
+  "ui.continueTo": "\"انتقل إلى السؤال {n}\""
 }

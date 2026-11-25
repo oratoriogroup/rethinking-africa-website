@@ -287,5 +287,9 @@
   "ui.pdfMaking": "\"Ana shirya PDF ɗinka...\"",
   "ui.pdfQuiz": "\"Gwajin Africa Lens\"",
   "ui.pdfTranscript": "\"Amsoshinka bakwai\"",
-  "ui.pdfFor": "\"An shirya wa {name} · {date}\""
+  "ui.pdfFor": "\"An shirya wa {name} · {date}\"",
+  "quiz.back": ">Koma baya</button>",
+  "ui.archive": "\"Bayani daga tarihi · {n}\"",
+  "ui.unlocked": "\"An buɗe bayanai {n} cikin {total}\"",
+  "ui.continueTo": "\"Ci gaba zuwa tambaya ta {n}\""
 }

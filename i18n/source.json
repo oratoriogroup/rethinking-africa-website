@@ -322,7 +322,11 @@
     "ui.pdfMaking": "\"Preparing your PDF...\"",
     "ui.pdfQuiz": "\"Africa Lens Quiz\"",
     "ui.pdfTranscript": "\"Your seven answers\"",
-    "ui.pdfFor": "\"Prepared for {name} · {date}\""
+    "ui.pdfFor": "\"Prepared for {name} · {date}\"",
+    "quiz.back": ">Back</button>",
+    "ui.archive": "\"Archive reveal · {n}\"",
+    "ui.unlocked": "\"{n} of {total} insights unlocked\"",
+    "ui.continueTo": "\"Continue to question {n}\""
   },
   "about.html": {
     "about.001": ">Meet Dr Damola</h2>",

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=23">
+<link rel="stylesheet" href="../css/style.css?v=26">
 <script src="../js/theme.js?v=3"></script>
 <!--i18n:alternates-->
 <link rel="alternate" hreflang="en" href="https://rethinkingafrica.africa/quiz.html">
@@ -97,19 +97,24 @@
         <p class="note mt-4">Bure. Hakuna malipo, kamwe.</p>
       </div>
 
-      <div id="q-card" class="qcard hidden">
-        <div class="qnum" id="q-num"></div>
-        <div class="qtext" id="q-text"></div>
-        <div id="q-opts"></div>
-        <div class="qbar"><span id="q-bar"></span></div>
+      <div id="q-card" class="qcard q-stage hidden">
+        <div class="q-head">
+          <button type="button" class="q-back" id="q-back" onclick="prevQuestion()">Rudi</button>
+          <div class="q-progress" id="q-progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <p class="q-pill" id="q-num"></p>
+        </div>
+        <h2 class="qtext" id="q-text"></h2>
+        <div id="q-opts" class="q-opts"></div>
       </div>
 
       <div id="q-insight" class="insight hidden">
-        <span class="tag">Ambacho hukuwahi kuambiwa</span>
-        <div id="i-pic"></div>
-        <p id="i-text"></p>
-        <div class="why"><strong>Basi kwa nini kilikoma?</strong><p id="i-why"></p></div>
-        <div class="mt-4"><button class="btn btn-solid" onclick="nextQuestion()" id="i-btn">Endelea</button></div>
+        <div class="i-media"><div id="i-pic"></div><span class="i-badge" id="i-badge"></span></div>
+        <div class="i-body">
+          <span class="tag">Ambacho hukuwahi kuambiwa</span>
+          <p id="i-text"></p>
+          <div class="why"><strong>Basi kwa nini kilikoma?</strong><p id="i-why"></p></div>
+          <div class="i-foot"><span class="i-count" id="i-count"></span><button class="btn btn-solid i-next" onclick="nextQuestion()" id="i-btn">Endelea</button></div>
+        </div>
       </div>
 
       <div id="q-gate" class="qcard hidden">
@@ -266,7 +271,12 @@ const UI = {
   pdfMaking:     "Tunaandaa PDF yako...",
   pdfQuiz:       "Jaribio la Africa Lens",
   pdfTranscript: "Majibu yako saba",
-  pdfFor:        "Imeandaliwa kwa {name} · {date}"
+  pdfFor:        "Imeandaliwa kwa {name} · {date}",
+
+  /* The question and insight cards */
+  archive:       "Kutoka kumbukumbu · {n}",
+  unlocked:      "Maarifa {n} kati ya {total} yamefunguliwa",
+  continueTo:    "Endelea kwa swali la {n}"
 };
 function t(key, vars){
   let s = UI[key];
@@ -413,44 +423,107 @@ function gateMessage(text, isError){
 
 function startQuiz(){
   el('q-intro').classList.add('hidden');
-  el('q-card').classList.remove('hidden');
   render();
+  enter(el('q-card'));
+  bringIntoView(el('q-card'));
+}
+
+/* Show a card with a short slide-and-fade (skipped for reduced motion via CSS). */
+function enter(card){
+  card.classList.remove('hidden', 'q-enter');
+  void card.offsetWidth;               // restart the animation
+  card.classList.add('q-enter');
+}
+function calm(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+function bringIntoView(card){
+  const r = card.getBoundingClientRect();
+  if (r.top < 90 || r.top > window.innerHeight * 0.4) card.scrollIntoView({behavior: calm() ? 'auto' : 'smooth', block: 'start'});
+}
+
+/* Load the next pictures in the background, so Continue never waits for an image. */
+const preloaded = {};
+function preload(i){
+  const item = QUESTIONS[i]; if (!item || preloaded[i]) return;
+  // \x22 is a double quote, written this way so the language build's path rewriting leaves it alone
+  const m = PIC[item.pic].match(/src=\x22([^\x22]+)\x22/);
+  if (m){ const img = new Image(); img.src = m[1]; preloaded[i] = img; }
 }
 
 function render(){
   const item = QUESTIONS[idx];
   el('q-num').textContent = t('questionOf', {n: idx+1, total: QUESTIONS.length});
   el('q-text').textContent = item.q;
+  el('q-back').classList.toggle('is-hidden', idx === 0);
+  Array.prototype.forEach.call(el('q-progress').children, function(s, i){
+    s.className = i < idx ? 'done' : (i === idx ? 'now' : '');
+  });
   const box = el('q-opts'); box.innerHTML = '';
   item.opts.forEach(function(o, oi){
     const b = document.createElement('button');
-    b.className = 'opt'; b.textContent = o[0];
-    b.onclick = function(){
-      for (const k in o[1]) scores[k] += o[1][k];
-      answers[idx] = {question: item.q, answer: o[0], i: oi};
-      showInsight(item);
-    };
+    b.type = 'button';
+    b.className = 'opt';
+    const chosen = answers[idx] && answers[idx].i === oi;
+    if (chosen) b.classList.add('is-selected');
+    b.setAttribute('aria-pressed', chosen ? 'true' : 'false');
+    b.innerHTML = '<span class="opt-key" aria-hidden="true">' + 'ABCD'[oi] + '</span><span class="opt-text"></span><span class="opt-mark" aria-hidden="true"></span>';
+    b.querySelector('.opt-text').textContent = o[0];
+    b.onclick = function(){ choose(oi, b); };
     box.appendChild(b);
   });
-  el('q-bar').style.width = (idx / QUESTIONS.length * 100) + '%';
+  preload(idx); preload(idx + 1);
+}
+
+let choosing = false;
+function choose(oi, b){
+  if (choosing) return;
+  choosing = true;
+  const item = QUESTIONS[idx];
+  answers[idx] = {question: item.q, answer: item.opts[oi][0], i: oi};
+  Array.prototype.forEach.call(el('q-opts').children, function(x){
+    x.classList.toggle('is-selected', x === b); x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+  });
+  // A short pause lets the reader see their choice land before the reveal.
+  setTimeout(function(){ choosing = false; showInsight(item); }, calm() ? 0 : 260);
+}
+
+function prevQuestion(){
+  if (idx === 0) return;
+  idx--;
+  render();
+  enter(el('q-card'));
+  bringIntoView(el('q-card'));
 }
 
 function showInsight(item){
+  const n = idx + 1, total = QUESTIONS.length, last = idx === total - 1;
   el('i-pic').innerHTML = PIC[item.pic];
+  el('i-badge').textContent = t('archive', {n: String(n).padStart(2, '0')});
   el('i-text').textContent = item.text;
   el('i-why').textContent = item.why;
-  el('i-btn').textContent = (idx === QUESTIONS.length - 1) ? t('seeProfile') : t('next');
+  el('i-count').textContent = t('unlocked', {n: n, total: total});
+  el('i-btn').textContent = last ? t('seeProfile') : t('continueTo', {n: n + 1});
   el('q-card').classList.add('hidden');
-  el('q-insight').classList.remove('hidden');
-  el('q-insight').scrollIntoView({behavior:'smooth', block:'center'});
+  enter(el('q-insight'));
+  bringIntoView(el('q-insight'));
+  el('i-btn').focus({preventScroll: true});
 }
 
 function nextQuestion(){
   el('q-insight').classList.add('hidden');
   idx++;
-  if (idx < QUESTIONS.length){ el('q-card').classList.remove('hidden'); render(); }
-  else { el('q-gate').classList.remove('hidden'); el('q-gate').scrollIntoView({behavior:'smooth', block:'center'}); }
+  if (idx < QUESTIONS.length){ render(); enter(el('q-card')); bringIntoView(el('q-card')); }
+  else { enter(el('q-gate')); bringIntoView(el('q-gate')); }
 }
+
+/* Keyboard: A–D or 1–4 answers the question on screen; Backspace goes back. */
+document.addEventListener('keydown', function(e){
+  if (el('q-card').classList.contains('hidden') || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName)) return;
+  const k = e.key.toLowerCase(), pos = 'abcd'.indexOf(k) >= 0 ? 'abcd'.indexOf(k) : '1234'.indexOf(k);
+  const opts = el('q-opts').children;
+  if (pos >= 0 && opts[pos]){ e.preventDefault(); opts[pos].click(); }
+  else if (e.key === 'Backspace' && idx > 0){ e.preventDefault(); prevQuestion(); }
+});
 
 function revealResult(){
   const name = el('g-name').value.trim();
@@ -468,6 +541,9 @@ function revealResult(){
   if (sending) return;
 
   let best='KR', max=-1;
+  // Score from the final answers (readers may have gone back and changed some).
+  scores = {KR:0,BB:0,SR:0,ST:0,FM:0};
+  answers.forEach(function(a, i){ const w = QUESTIONS[i].opts[a.i][1]; for (const k in w) scores[k] += w[k]; });
   for (const k in scores){ if (scores[k] > max){ max = scores[k]; best = k; } }
   const p = PROFILES[best];
   window.quizProfile = best;
