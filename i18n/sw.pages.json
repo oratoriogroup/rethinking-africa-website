@@ -281,5 +281,11 @@
   "ui.mailAnswers": "\"Majibu yako\"",
   "ui.mailChannel": "\"Vipindi vipya hutoka mara kwa mara kwenye chaneli. Kujisajili ndiyo njia ya kuvipata.\"",
   "ui.mailSubscribe": "\"Jisajili YouTube\"",
-  "ui.mailMotto": "\"Afrika haipaswi kusomwa tu. Afrika lazima izungumze, ifikiri, ibuni na iamue.\""
+  "ui.mailMotto": "\"Afrika haipaswi kusomwa tu. Afrika lazima izungumze, ifikiri, ibuni na iamue.\"",
+  "ui.mailPdf": "\"Majibu yako saba na nakala ya wasifu wako inayoweza kuchapishwa iko tayari kama PDF.\"",
+  "ui.pdfBtn": "\"Pakua wasifu wako kwa PDF\"",
+  "ui.pdfMaking": "\"Tunaandaa PDF yako...\"",
+  "ui.pdfQuiz": "\"Jaribio la Africa Lens\"",
+  "ui.pdfTranscript": "\"Majibu yako saba\"",
+  "ui.pdfFor": "\"Imeandaliwa kwa {name} · {date}\""
 }

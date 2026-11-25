@@ -313,7 +313,13 @@
     "ui.mailAnswers": "\"Your answers\"",
     "ui.mailChannel": "\"New episodes come out regularly on the channel. Subscribing is how you get them.\"",
     "ui.mailSubscribe": "\"Subscribe on YouTube\"",
-    "ui.mailMotto": "\"Africa must not only be studied. Africa must speak, think, create and determine.\""
+    "ui.mailMotto": "\"Africa must not only be studied. Africa must speak, think, create and determine.\"",
+    "ui.mailPdf": "\"Your seven answers and a printable copy of your profile are ready as a PDF.\"",
+    "ui.pdfBtn": "\"Download your PDF profile\"",
+    "ui.pdfMaking": "\"Preparing your PDF...\"",
+    "ui.pdfQuiz": "\"Africa Lens Quiz\"",
+    "ui.pdfTranscript": "\"Your seven answers\"",
+    "ui.pdfFor": "\"Prepared for {name} · {date}\""
   },
   "about.html": {
     "about.001": ">Meet Dr Damola</h2>",

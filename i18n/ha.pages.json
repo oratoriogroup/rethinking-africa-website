@@ -281,5 +281,11 @@
   "ui.mailAnswers": "\"Amsoshinka\"",
   "ui.mailChannel": "\"Ana fitar da sababbin shirye-shirye akai-akai a tasharmu. Yin rajista ne hanyar samunsu.\"",
   "ui.mailSubscribe": "\"Yi rajista a YouTube\"",
-  "ui.mailMotto": "\"Ba wai kawai a yi nazarin Afirka ba. Dole Afirka ta yi magana, ta yi tunani, ta ƙirƙira kuma ta yanke shawara.\""
+  "ui.mailMotto": "\"Ba wai kawai a yi nazarin Afirka ba. Dole Afirka ta yi magana, ta yi tunani, ta ƙirƙira kuma ta yanke shawara.\"",
+  "ui.mailPdf": "\"Amsoshinka bakwai da kwafin bayaninka da za a iya bugawa suna nan a PDF.\"",
+  "ui.pdfBtn": "\"Sauke bayaninka a PDF\"",
+  "ui.pdfMaking": "\"Ana shirya PDF ɗinka...\"",
+  "ui.pdfQuiz": "\"Gwajin Africa Lens\"",
+  "ui.pdfTranscript": "\"Amsoshinka bakwai\"",
+  "ui.pdfFor": "\"An shirya wa {name} · {date}\""
 }

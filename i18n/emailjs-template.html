@@ -1,24 +1,85 @@
-<div dir="{{dir}}" style="font-family: Georgia, 'Times New Roman', serif; background-color: #F7F1E3; padding: 24px 12px; color: #1F2433; text-align: {{align}};">
-  <div style="max-width: 600px; margin: auto; background-color: #FFFDF7;">
-    <!-- The header is a picture so phone dark modes cannot recolour it (they recolour text and backgrounds, never images). -->
-    <div dir="ltr" style="background-color: #1D2A57; line-height: 0; font-size: 0;"><img src="https://rethinking-africa-with-dr-damola.vercel.app/assets/email-header.png" width="600" alt="Rethinking Africa with Dr. Damola" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0; color: #F7F1E3; font-family: Georgia, serif; font-size: 18px; line-height: 1.4;"></div>
-    <div style="padding: 24px; font-size: 16px; line-height: 1.7;">
-      <p>{{greeting}}</p>
-      <p>{{thanks}}</p>
-      <p style="font-size: 14px; font-weight: bold; color: #9A6A0E; margin-bottom: 4px;">{{label_profile}}</p>
-      <p style="font-size: 26px; font-weight: bold; color: #1D2A57; margin-top: 0; margin-bottom: 4px;">{{profile_name}}</p>
-      <p style="font-size: 13px; color: #555; margin-top: 0;">{{profile_rarity}}</p>
-      <p>{{profile_desc}}</p>
-      <p style="font-style: italic;">{{profile_strength}}</p>
-      <div style="background-color: #F7F1E3; border-inline-start: 4px solid #E8A11C; padding: 12px 16px; margin: 20px 0;">
-        <strong>{{label_question}}</strong><br>{{profile_question}}
-      </div>
-      <p style="font-size: 14px; font-weight: bold; color: #9A6A0E; margin-bottom: 4px;">{{label_answers}}</p>
-      <div style="white-space: pre-line; font-size: 15px; background-color: #FAF6EC; border: 1px solid #E4DCC8; padding: 14px 16px;">{{quiz_answers}}</div>
-      <p style="margin-top: 24px;">{{channel_text}}</p>
-      <p><a href="https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1" style="display: inline-block; background-color: #1D2A57; color: #F7F1E3; text-decoration: none; padding: 10px 18px; border-radius: 4px;">{{subscribe_label}}</a></p>
-      <p style="font-style: italic; color: #1D2A57;">{{motto}}</p>
-      <p dir="ltr">Rethinking Africa with Dr. Damola<br><a href="https://rethinkingafrica.africa" style="color: #1D2A57;">rethinkingafrica.africa</a></p>
-    </div>
-  </div>
+<!-- Africa Lens Quiz results email. EmailJS template "Africa Lens Quiz results" (template_ao9pisu):
+     paste this whole file into the template's Content, using the code (<>) editor.
+     Subject: {{subject}}    To email: {{to_email}}
+     Every sentence arrives from the quiz page in the reader's language; the template holds layout only.
+     Built with tables and inline styles so it renders in Gmail, Outlook, Apple Mail and phone apps.
+     The header is a picture so phone dark modes cannot recolour it. -->
+<div style="margin:0;padding:0;background-color:#F7F1E3;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F1E3" style="background-color:#F7F1E3;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:600px;background-color:#FFFFFF;border:1px solid #E6DFD1;border-radius:16px;overflow:hidden;">
+
+        <!-- Header: indigo, emblem, gold rule (one image) -->
+        <tr>
+          <td bgcolor="#1D2A57" style="background-color:#1D2A57;line-height:0;font-size:0;">
+            <img src="https://rethinking-africa-with-dr-damola.vercel.app/assets/email-header.png" width="600" alt="Rethinking Africa with Dr. Damola" style="display:block;width:100%;max-width:600px;height:auto;border:0;color:#F7F1E3;font-family:Georgia,serif;font-size:18px;line-height:1.4;">
+          </td>
+        </tr>
+
+        <tr>
+          <td dir="{{dir}}" style="padding:32px 32px 8px;font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.65;color:#2A3350;text-align:{{align}};">
+
+            <p style="margin:0 0 4px;">{{greeting}}</p>
+            <p style="margin:0 0 24px;">{{thanks}}</p>
+
+            <!-- Profile spotlight -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F1E3" style="background-color:#F7F1E3;border-radius:12px;border-{{align}}:4px solid #E8A11C;">
+              <tr>
+                <td style="padding:22px 24px;text-align:{{align}};">
+                  <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;text-transform:uppercase;color:#865B0A;">{{label_profile}}</p>
+                  <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:1.2;font-weight:bold;color:#1D2A57;">{{profile_name}}</p>
+                  <p style="margin:0 0 16px;"><span style="display:inline-block;padding:4px 12px;border:1px solid #E8A11C;border-radius:999px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#865B0A;">{{profile_rarity}}</span></p>
+                  <p style="margin:0 0 16px;color:#2A3350;">{{profile_desc}}</p>
+                  <p style="margin:0;padding-top:14px;border-top:1px solid #E6DFD1;font-style:italic;font-size:18px;color:#1D2A57;">{{profile_strength}}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- The question to carry -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;border:1px solid #E6DFD1;border-radius:12px;">
+              <tr>
+                <td style="padding:20px 24px;text-align:{{align}};">
+                  <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#865B0A;">{{label_question}}</p>
+                  <p style="margin:0;font-size:19px;line-height:1.45;font-weight:bold;color:#1D2A57;">{{profile_question}}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- The PDF profile -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1D2A57" style="margin-top:20px;background-color:#1D2A57;border-radius:12px;">
+              <tr>
+                <td style="padding:22px 24px;text-align:{{align}};">
+                  <p style="margin:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#F7F1E3;"><span style="display:inline-block;margin-inline-end:8px;padding:2px 8px;border-radius:6px;background-color:#E8A11C;color:#141D3D;font-size:11px;font-weight:bold;">PDF</span>{{label_pdf}}</p>
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="{{align}}">
+                    <tr>
+                      <td bgcolor="#E8A11C" style="background-color:#E8A11C;border-radius:10px;">
+                        <a href="{{dossier_url}}" style="display:inline-block;padding:13px 22px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#141D3D;text-decoration:none;">{{pdf_button}}</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- The channel -->
+            <p style="margin:26px 0 12px;">{{channel_text}}</p>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="{{align}}">
+              <tr>
+                <td style="border:2px solid #1D2A57;border-radius:10px;">
+                  <a href="https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1" style="display:inline-block;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#1D2A57;text-decoration:none;">{{subscribe_label}}</a>
+                </td>
+              </tr>
+            </table>
+            <div style="clear:both;line-height:0;font-size:0;">&nbsp;</div>
+
+            <!-- Sign-off -->
+            <p style="margin:28px 0 6px;padding-top:20px;border-top:1px solid #E6DFD1;font-style:italic;font-size:17px;color:#1D2A57;">{{motto}}</p>
+            <p dir="ltr" style="margin:0 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#5A6280;text-align:{{align}};"><a href="https://rethinking-africa-with-dr-damola.vercel.app" style="color:#1D2A57;font-weight:bold;text-decoration:none;">Rethinking Africa with Dr. Damola</a></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 </div>

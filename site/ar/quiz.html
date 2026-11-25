@@ -141,6 +141,7 @@
         <p class="result-channel">كل ما عدا ذلك موجود على القناة. تصدر حلقات جديدة بانتظام، والاشتراك هو طريقة الحصول عليها.</p>
         <a class="btn btn-solid" href="https://www.youtube.com/@DrDamola.Africa?sub_confirmation=1">اشترك على يوتيوب</a>
         <a class="btn btn-ghost hidden" id="r-wa" href="#">احصل عليه عبر واتساب</a>
+        <p class="mt-4"><button class="btn btn-ghost" id="r-pdf" type="button"></button></p>
 
         <div class="sharebox">
           <strong>سؤال واحد تحمله معك:</strong>
@@ -252,7 +253,15 @@ const UI = {
   mailAnswers:   "إجاباتك",
   mailChannel:   "تصدر حلقات جديدة بانتظام على القناة، والاشتراك هو طريقة الحصول عليها.",
   mailSubscribe: "اشترك على يوتيوب",
-  mailMotto:     "لا ينبغي أن تُدرَس أفريقيا فحسب. يجب على أفريقيا أن تتكلّم وتفكّر وتبدع وتقرّر."
+  mailMotto:     "لا ينبغي أن تُدرَس أفريقيا فحسب. يجب على أفريقيا أن تتكلّم وتفكّر وتبدع وتقرّر.",
+  mailPdf:       "إجاباتك السبع ونسخة قابلة للطباعة من ملفك جاهزة بصيغة PDF.",
+
+  /* The PDF profile (js/dossier.js) */
+  pdfBtn:        "حمّل ملفك بصيغة PDF",
+  pdfMaking:     "جارٍ تجهيز ملف PDF...",
+  pdfQuiz:       "اختبار Africa Lens",
+  pdfTranscript: "إجاباتك السبع",
+  pdfFor:        "أُعدّ من أجل {name} · {date}"
 };
 function t(key, vars){
   let s = UI[key];
@@ -356,6 +365,42 @@ function answersText(){
   }).join('\n\n');
 }
 
+/* ---- The PDF profile ----
+   The email links back to this page with everything needed to rebuild the
+   profile in the hash (#d=BB.0123012.20261125.Name): profile, the seven chosen
+   options, the date and the name. Nothing is stored on a server. */
+let readerName = '', profileDate = '';
+function dateText(d){
+  try { return d.toLocaleDateString(document.documentElement.lang || 'en', {day:'numeric', month:'long', year:'numeric'}); }
+  catch(e){ return d.toISOString().slice(0, 10); }
+}
+function dossierUrl(key){
+  const d = new Date();
+  const ymd = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+  return location.origin + location.pathname + '#d=' + key + '.' + answers.map(function(a){ return a.i; }).join('') +
+         '.' + ymd + '.' + encodeURIComponent(readerName);
+}
+function dossierData(key){
+  const p = PROFILES[key], who = readerName || t('friend');
+  return {
+    key: key, name: who, date: profileDate, dir: document.documentElement.dir || 'ltr',
+    profile: {name: p.name, rarity: p.rarity, desc: p.desc, strength: p.strength, q: p.q},
+    answers: answers.map(function(a){ return {q: a.question, a: a.answer}; }),
+    labels: {
+      quiz: t('pdfQuiz'), profile: t('mailProfile'), question: t('mailQuestion'), transcript: t('pdfTranscript'),
+      questionOf: UI.questionOf, yourAnswer: t('yourAnswer'), motto: t('mailMotto'),
+      preparedFor: t('pdfFor', {name: who, date: profileDate})
+    }
+  };
+}
+function downloadPdf(){
+  const b = el('r-pdf');
+  if (!window.RADossier || b.disabled) return;
+  b.disabled = true; b.textContent = t('pdfMaking');
+  window.RADossier.download(dossierData(window.quizProfile)).catch(function(e){ console.error(e); })
+    .finally(function(){ b.disabled = false; b.textContent = t('pdfBtn'); });
+}
+
 function gateMessage(text, isError){
   el('g-hint').textContent = text;
   el('g-hint').style.color = isError ? '#B03A2E' : '';
@@ -372,12 +417,12 @@ function render(){
   el('q-num').textContent = t('questionOf', {n: idx+1, total: QUESTIONS.length});
   el('q-text').textContent = item.q;
   const box = el('q-opts'); box.innerHTML = '';
-  item.opts.forEach(function(o){
+  item.opts.forEach(function(o, oi){
     const b = document.createElement('button');
     b.className = 'opt'; b.textContent = o[0];
     b.onclick = function(){
       for (const k in o[1]) scores[k] += o[1][k];
-      answers[idx] = {question: item.q, answer: o[0]};
+      answers[idx] = {question: item.q, answer: o[0], i: oi};
       showInsight(item);
     };
     box.appendChild(b);
@@ -421,6 +466,8 @@ function revealResult(){
   for (const k in scores){ if (scores[k] > max){ max = scores[k]; best = k; } }
   const p = PROFILES[best];
   window.quizProfile = best;
+  readerName = name;
+  profileDate = dateText(new Date());
 
   /* ---- SEND THE ANSWERS AND PROFILE FIRST (works on static hosting) ---- */
   const answerText = answersText();
@@ -469,6 +516,9 @@ function revealResult(){
           profile_desc:     p.desc,
           profile_strength: p.strength,
           profile_question: p.q,
+          label_pdf:        t('mailPdf'),
+          pdf_button:       t('pdfBtn'),
+          dossier_url:      dossierUrl(best),
           quiz_answers:     answerText
         }
       })
@@ -544,13 +594,35 @@ function showResult(p, email, wa, hasWa){
     waBtn.classList.remove('hidden');
   }
 
-  el('r-delivery').textContent = t('delivered', {email: email});
+  el('r-delivery').textContent = email ? t('delivered', {email: email}) : '';
+
+  el('r-pdf').textContent = t('pdfBtn');
+  el('r-pdf').onclick = downloadPdf;
 
   el('q-gate').classList.add('hidden');
   el('q-result').classList.remove('hidden');
   el('q-result').scrollIntoView({behavior:'smooth', block:'start'});
 }
+
+/* Opened from the link in the results email: show that reader's profile again,
+   with the PDF download as the main button. */
+(function(){
+  const m = location.hash.match(/^#d=([A-Z]{2})\.(\d{7})\.(\d{8})\.?(.*)$/);
+  if (!m || !PROFILES[m[1]]) return;
+  const picks = m[2].split('').map(Number);
+  if (picks.some(function(o, i){ return !QUESTIONS[i] || !QUESTIONS[i].opts[o]; })) return;
+  answers = picks.map(function(o, i){ return {question: QUESTIONS[i].q, answer: QUESTIONS[i].opts[o][0], i: o}; });
+  window.quizProfile = m[1];
+  try { readerName = decodeURIComponent(m[4] || ''); } catch(e){ readerName = ''; }
+  const y = m[3];
+  profileDate = dateText(new Date(+y.slice(0, 4), +y.slice(4, 6) - 1, +y.slice(6, 8)));
+  el('q-intro').classList.add('hidden');
+  showResult(PROFILES[m[1]], '', '', false);
+  el('r-pdf').classList.remove('btn-ghost');
+  el('r-pdf').classList.add('btn-solid');
+})();
 </script>
+<script src="../js/dossier.js?v=1" defer></script>
 <script src="../js/textfx.js?v=4" defer></script>
 <script src="../js/lang.js?v=5" defer></script>
 <script src="../js/nav.js?v=2" defer></script>

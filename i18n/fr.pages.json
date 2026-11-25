@@ -281,5 +281,11 @@
   "ui.mailAnswers": "\"Vos réponses\"",
   "ui.mailChannel": "\"De nouveaux épisodes sortent régulièrement sur la chaîne. L’abonnement vous permet de les recevoir.\"",
   "ui.mailSubscribe": "\"S’abonner sur YouTube\"",
-  "ui.mailMotto": "\"L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.\""
+  "ui.mailMotto": "\"L’Afrique ne doit pas seulement être étudiée. L’Afrique doit parler, penser, créer et décider.\"",
+  "ui.mailPdf": "\"Vos sept réponses et une version imprimable de votre profil vous attendent en PDF.\"",
+  "ui.pdfBtn": "\"Télécharger votre profil en PDF\"",
+  "ui.pdfMaking": "\"Préparation de votre PDF...\"",
+  "ui.pdfQuiz": "\"Quiz Africa Lens\"",
+  "ui.pdfTranscript": "\"Vos sept réponses\"",
+  "ui.pdfFor": "\"Préparé pour {name} · {date}\""
 }
