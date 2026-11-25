@@ -105,6 +105,20 @@
     });
   }
 
+  /* ----- Links still waiting for their file or URL (href="#"): say so instead of a dead click.
+   * Give the link a real href and this stops applying to it automatically. ----- */
+  var SOON = { en: "Coming soon", fr: "Bientôt disponible", ha: "Nan ba da jimawa ba", ar: "قريبًا", sw: "Inakuja hivi karibuni" };
+  var lang = (document.documentElement.lang || "en").slice(0, 2);
+  Array.prototype.forEach.call(document.querySelectorAll('main a[href="#"]:not([id])'), function (a) {
+    a.classList.add("is-soon");
+    a.setAttribute("aria-disabled", "true");
+    var tag = document.createElement("span");
+    tag.className = "soon-tag";
+    tag.textContent = SOON[lang] || SOON.en;
+    a.appendChild(tag);
+    a.addEventListener("click", function (e) { e.preventDefault(); });
+  });
+
   // Growing past tablet width: put the drawer away and reset the dropdowns.
   var onWide = function () { fit(); if (wide.matches && header.classList.contains("nav-open")) { setOpen(false); closeGroups(); } };
   if (mq.addEventListener) mq.addEventListener("change", onWide); else if (mq.addListener) mq.addListener(onWide);
