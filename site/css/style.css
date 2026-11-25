@@ -151,7 +151,7 @@ body{
 h1,h2,h3{font-family:var(--serif);color:var(--heading);line-height:1.2;font-weight:700;overflow-wrap:break-word}
 h1,h2{text-wrap:balance;letter-spacing:-.01em}
 h1{font-size:var(--step-3);line-height:1.05}
-h2{font-size:var(--step-2);line-height:1.08;margin-bottom:1.1rem}
+h2{font-size:var(--step-2);line-height:1.08;margin-bottom:.75rem}
 h3{font-size:var(--step-1)}
 p{max-width:65ch}
 p+p{margin-top:.9rem}
@@ -193,7 +193,8 @@ input,textarea{caret-color:var(--heading)}
 .wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
 @media (min-width:640px){:root{--gutter:2rem}}
 @media (min-width:1024px){:root{--gutter:3rem}}
-section{padding:var(--s-9) 0}
+section{padding:3rem 0}                       /* 48px on phones, 64px from tablets up */
+@media (min-width:640px){section{padding:4rem 0}}
 section+section{border-top:1px solid transparent}
 [id]{scroll-margin-top:130px}               /* anchor links land below the sticky header */
 .grid{display:grid;grid-template-columns:1fr;gap:var(--gutter);margin-top:1.6rem}
@@ -207,7 +208,6 @@ section+section{border-top:1px solid transparent}
   .portrait-row{grid-template-columns:320px 1fr}
 }
 @media (min-width:960px){
-  section{padding:var(--s-10) 0}
   .grid.cols3{grid-template-columns:1fr 1fr 1fr}
 }
 
@@ -947,6 +947,30 @@ p.qs-line{margin-top:.15rem;font-size:var(--fs-sm);color:var(--text-soft)}
 .theme-card:hover{transform:translateY(-4px)}
 
 
+/* The written work + the question: one band, two cards side by side */
+.pair-grid{display:grid;gap:1.5rem}
+@media (min-width:1024px){.pair-grid{grid-template-columns:1fr 1fr;gap:2.5rem;align-items:stretch}}
+.pair-card{display:flex;flex-direction:column;padding:1.75rem;border-radius:24px;transition:border-color var(--t-base)}
+@media (min-width:640px){.pair-card{padding:2.25rem}}
+.pair-card h2{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.3rem);margin-bottom:.75rem}
+.pair-written{background:var(--veil);border:1px solid var(--gold-edge)}
+.pair-written:hover{border-color:var(--gold-edge-strong)}
+.pair-question{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--indigo-light),var(--indigo-night));
+  border:1px solid var(--gold-edge-strong);box-shadow:var(--shadow-deep);
+}
+.pair-question h2{font-style:italic;font-weight:600;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.2rem);line-height:1.25}
+.pair-foot{margin-top:auto;padding-top:1.5rem}
+.pair-question .pair-foot{margin-top:auto;padding-top:1.25rem;border-top:1px solid rgba(var(--ivory-rgb),.1)}
+.pair-question h2{margin-bottom:1.75rem}
+
+/* A pull quote beside a short text, so no text sits alone on half the screen */
+.quote-card{position:relative;margin:0;padding:2.5rem 2rem 2rem;border-radius:24px;background:var(--surface);border:1px solid var(--gold-edge-strong);box-shadow:var(--shadow)}
+.quote-card::before{content:"\201C";position:absolute;top:.4rem;inset-inline-start:1.25rem;font-family:var(--serif);font-size:4.5rem;line-height:1;color:var(--gold)}
+.quote-card .quote{margin:0;font-size:clamp(1.35rem,1.1rem + .9vw,1.85rem);line-height:1.35;color:var(--heading)}
+
+
 /* ===== 11c. About page (about.html) ===== */
 .hero.about-hero{padding:3.5rem 0 3rem}
 @media (min-width:640px){.hero.about-hero{padding:5rem 0 4.25rem}}
@@ -1129,8 +1153,9 @@ p.qs-line{margin-top:.15rem;font-size:var(--fs-sm);color:var(--text-soft)}
 .insight .why p{margin:0;font-size:var(--fs-md);color:var(--on-dark-soft)}
 .i-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s-4);margin-top:auto;padding-top:var(--s-4);border-top:1px solid rgba(var(--ivory-rgb),.1)}
 .i-count{font-size:var(--fs-xs);color:var(--on-dark-muted)}
-.i-next::before{content:"";order:2;display:inline-block;width:7px;height:7px;margin-inline-start:.6rem;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:translateY(-1px) rotate(45deg)}
-[dir="rtl"] .i-next::before{transform:translateY(-1px) rotate(-135deg)}
+.btn-arrow{display:inline-flex;align-items:center}
+.i-next::before,.btn-arrow::before{content:"";order:2;display:inline-block;width:7px;height:7px;margin-inline-start:.6rem;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:translateY(-1px) rotate(45deg)}
+[dir="rtl"] .i-next::before,[dir="rtl"] .btn-arrow::before{transform:translateY(-1px) rotate(-135deg)}
 .i-next{display:inline-flex;align-items:center}
 .i-next:active{transform:scale(.97)}
 
