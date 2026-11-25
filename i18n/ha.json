@@ -223,5 +223,7 @@
   "p.FM.desc": "\"Dawo da abubuwan da suka wuce bai ishe ka ba. Kana so ka gina abubuwan da ba su taɓa wanzuwa a ko’ina ba, farawa daga ƙasar Afirka.\"",
   "p.FM.strength": "\"Ƙarfinka shi ne ƙin zaɓuɓɓukan da aka ba ka.\"",
   "p.FM.q": "\"Me za ka gina idan ka daina jiran izini?\"",
-  "layout.skip": ">Tsallaka zuwa abin ciki</a>"
+  "layout.skip": ">Tsallaka zuwa abin ciki</a>",
+  "layout.theme.label": "aria-label=\"Yanayin duhu\"",
+  "layout.theme.title": "title=\"Yanayin duhu\""
 }

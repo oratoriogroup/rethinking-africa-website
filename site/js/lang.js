@@ -121,7 +121,10 @@
     btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.8 3 2.8 16 0 19M12 2.5c-2.8 3-2.8 16 0 19" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>' + current.toUpperCase() + "</span>";
     btn.addEventListener("click", open);
     var nav = header.querySelector("nav.main");
-    header.insertBefore(btn, nav);
+    // Sits in the header's button group, before the light/dark switch.
+    var tools = header.querySelector(".header-tools");
+    if (tools) tools.insertBefore(btn, tools.firstChild);
+    else header.insertBefore(btn, nav);
 
     // If logo, menu and button do not fit on one line, use the two-row layout.
     var site = header.parentNode, brand = header.querySelector(".brand");

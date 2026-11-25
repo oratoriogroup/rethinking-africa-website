@@ -19,7 +19,9 @@
     "common.01": "aria-label=\"Main\"",
     "common.02": "alt=\"Rethinking Africa with Dr. Damola logo\"",
     "common.03": ">Join the mailing list</a>",
-    "layout.skip": ">Skip to content</a>"
+    "layout.skip": ">Skip to content</a>",
+    "layout.theme.label": "aria-label=\"Dark mode\"",
+    "layout.theme.title": "title=\"Dark mode\""
   },
   "index.html": {
     "title": "| Reclaiming Intelligence. Reimagining the Future.</title>",

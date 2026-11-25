@@ -223,5 +223,7 @@
   "p.FM.desc": "\"Kurejesha yaliyopita hakukutoshi. Unataka kujenga vitu ambavyo havijawahi kuwepo popote, kuanzia ardhi ya Kiafrika.\"",
   "p.FM.strength": "\"Nguvu yako ni kukataa machaguo uliyopewa.\"",
   "p.FM.q": "\"Ungejenga nini kama ungeacha kusubiri ruhusa?\"",
-  "layout.skip": ">Ruka hadi maudhui</a>"
+  "layout.skip": ">Ruka hadi maudhui</a>",
+  "layout.theme.label": "aria-label=\"Hali ya giza\"",
+  "layout.theme.title": "title=\"Hali ya giza\""
 }

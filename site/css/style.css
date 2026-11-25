@@ -7,8 +7,12 @@
 
    Order: 1 tokens · 2 base · 3 layout · 4 header · 5 buttons · 6 surfaces
    7 hero · 8 cards and panels · 9 media · 10 forms · 11 footer · 12 quiz
-   13 publications · 14 language chooser · 15 languages (Hausa, Arabic)
-   16 utilities · 17 reduced motion.
+   13 publications · 14 header controls · 15 languages (Hausa, Arabic)
+   15b dark mode · 16 utilities · 17 reduced motion.
+
+   Light and dark: light-coloured areas use the theme roles (--bg, --surface,
+   --text, --heading, --border ...), never the brand colours directly, so dark
+   mode only has to swap those values.
 
    Rules:
    - Colours, radii, shadows, spacing and timing come from the tokens below.
@@ -110,6 +114,25 @@
   --t-base:.2s;
   --t-slow:.3s;
 
+  /* Theme roles: what light-coloured areas use. Dark mode swaps these values only
+     (see "Dark mode" below); dyed indigo areas look the same in both themes. */
+  --bg:var(--ivory);
+  --surface:var(--cloth);
+  --surface-raised:var(--paper);
+  --text:var(--ink);
+  --text-soft:var(--ink-soft);
+  --heading:var(--indigo);
+  --link:var(--indigo);
+  --border:var(--line);
+  --border-strong:var(--line-strong);
+  --gold-text:var(--gold-deep);
+  --wash:var(--gold-wash);
+  --panel-edge:var(--indigo);
+  --panel-stitch:var(--indigo-edge);
+  --scroll-thumb:var(--indigo);
+  --select-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231D2A57' stroke-width='2'/%3E%3C/svg%3E");
+  color-scheme:light;
+
   /* The adire resist pattern */
   --adire:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23F7F1E3' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='30' cy='30' r='17'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3Ccircle cx='90' cy='90' r='17'/%3E%3Ccircle cx='90' cy='90' r='10'/%3E%3Cpath d='M0 60 Q15 52 30 60 T60 60 T90 60 T120 60' stroke-dasharray='2 6'/%3E%3Cpath d='M60 0 V24 M60 96 V120 M72 30 H108 M12 90 H48' stroke-dasharray='1 5'/%3E%3C/g%3E%3Cg fill='%23F7F1E3'%3E%3Ccircle cx='30' cy='30' r='2.6'/%3E%3Ccircle cx='90' cy='90' r='2.6'/%3E%3Ccircle cx='90' cy='30' r='3.4'/%3E%3Ccircle cx='30' cy='90' r='3.4'/%3E%3Ccircle cx='76' cy='16' r='1.6'/%3E%3Ccircle cx='104' cy='16' r='1.6'/%3E%3Ccircle cx='76' cy='44' r='1.6'/%3E%3Ccircle cx='104' cy='44' r='1.6'/%3E%3Ccircle cx='16' cy='76' r='1.6'/%3E%3Ccircle cx='44' cy='76' r='1.6'/%3E%3Ccircle cx='16' cy='104' r='1.6'/%3E%3Ccircle cx='44' cy='104' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -119,13 +142,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{
   scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;
-  scrollbar-color:var(--indigo) var(--ivory);accent-color:var(--indigo);
+  scrollbar-color:var(--scroll-thumb) var(--bg);accent-color:var(--indigo);
 }
 body{
   font-family:var(--sans);font-size:var(--step-0);line-height:1.65;
-  color:var(--ink);background:var(--ivory);overflow-x:hidden;
+  color:var(--text);background:var(--bg);overflow-x:hidden;
 }
-h1,h2,h3{font-family:var(--serif);color:var(--indigo);line-height:1.2;font-weight:700;overflow-wrap:break-word}
+h1,h2,h3{font-family:var(--serif);color:var(--heading);line-height:1.2;font-weight:700;overflow-wrap:break-word}
 h1,h2{text-wrap:balance;letter-spacing:-.01em}
 h1{font-size:var(--step-3);line-height:1.05}
 h2{font-size:var(--step-2);line-height:1.08;margin-bottom:1.1rem}
@@ -134,14 +157,14 @@ p{max-width:65ch}
 p+p{margin-top:.9rem}
 :where(section) p,:where(.wrap)>p{max-width:68ch}   /* :where keeps this weak, so .intro/.measure win */
 a{
-  color:var(--indigo);
+  color:var(--link);
   text-decoration-thickness:1.5px;text-underline-offset:.22em;text-decoration-color:var(--link-line);
 }
 a:hover{text-decoration-color:currentColor}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 img,svg{max-width:100%;height:auto}
 ::selection{background:rgba(var(--gold-rgb),.35);color:var(--indigo-night)}
-input,textarea{caret-color:var(--indigo)}
+input,textarea{caret-color:var(--heading)}
 
 /* Skip link: hidden until a keyboard user tabs to it */
 .skip-link{
@@ -258,7 +281,7 @@ nav.main a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold
 .btn-navy{background:var(--indigo);color:var(--ivory);border-color:var(--indigo)}
 .btn-navy:hover{background:var(--indigo-night);border-color:var(--indigo-night);transform:translateY(-2px)}
 /* On ivory, ghost buttons take indigo text */
-section:not(.dark):not(.hero) .btn-ghost{color:var(--indigo)}
+section:not(.dark):not(.hero) .btn-ghost{color:var(--heading)}
 /* Two buttons side by side (rows with their own gap reset this) */
 .btn+.btn{margin-inline-start:var(--s-2)}
 .cta-row .btn+.btn{margin-inline-start:0}
@@ -282,8 +305,8 @@ section:not(.dark):not(.hero) .btn-ghost{color:var(--indigo)}
 .dark .btn-ghost,.hero .btn-ghost,.dark .btn-navy{color:var(--ivory)}
 .support-band{background:var(--indigo)}
 /* Undyed cloth: alternating tones replace divider lines */
-.tone-cloth{background:var(--cloth)}
-.tone-cloth+section:not(.dark),section:not(.dark):not(.tone-cloth)+.tone-cloth{border-top-color:var(--line)}
+.tone-cloth{background:var(--surface)}
+.tone-cloth+section:not(.dark),section:not(.dark):not(.tone-cloth)+.tone-cloth{border-top-color:var(--border)}
 
 
 /* ===== 7. Hero ===== */
@@ -338,12 +361,12 @@ section:not(.dark):not(.hero) .btn-ghost{color:var(--indigo)}
 
 /* ===== 8. Cards and panels ===== */
 .card{
-  background:var(--cloth);border:1px solid var(--line);border-radius:var(--r-md);padding:1.4rem;box-shadow:var(--shadow);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:1.4rem;box-shadow:var(--shadow);
   transition:transform var(--t-base),box-shadow var(--t-base);
 }
 .card:hover{transform:translateY(-3px)}
 .card h3{margin-bottom:.4rem}
-.card p{font-size:var(--fs-md);color:var(--ink-soft)}
+.card p{font-size:var(--fs-md);color:var(--text-soft)}
 .card-img{width:100%;border-radius:var(--r-sm);margin-bottom:var(--s-4)}
 .dark .card{background:var(--veil);border-color:var(--gold-edge);box-shadow:none}
 .dark .card:hover{background:var(--veil-strong);border-color:var(--gold-edge-strong)}
@@ -351,19 +374,19 @@ section:not(.dark):not(.hero) .btn-ghost{color:var(--indigo)}
 
 /* Principles: a full tinted border */
 .terr{border:1px solid var(--gold-edge);border-radius:var(--r-md);padding:1.2rem 1.3rem;background:rgba(var(--ivory-rgb),.04)}
-section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
+section:not(.dark) .terr{border-color:var(--border);background:var(--surface)}
 
 /* News */
-.post{border-bottom:1px solid var(--line);padding:1.3rem 0}
+.post{border-bottom:1px solid var(--border);padding:1.3rem 0}
 .post:last-child{border-bottom:0}
 .post h3{margin-bottom:.35rem}
-.post p{font-size:var(--fs-md);color:var(--ink-soft)}
+.post p{font-size:var(--fs-md);color:var(--text-soft)}
 .post .meta,.announce .meta{
   font-family:var(--sans);font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;
-  color:var(--gold-deep);margin-bottom:.35rem;
+  color:var(--gold-text);margin-bottom:.35rem;
 }
 .announce{
-  background:var(--cloth);border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);
   padding:1.2rem 1.3rem;margin-top:var(--s-4);box-shadow:var(--shadow);
 }
 
@@ -388,14 +411,14 @@ section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
 @media (min-width:960px){.themes .grid.cols3{grid-template-columns:repeat(3,1fr)}}
 
 /* The quiz invitation: a framed panel with a stitched inner edge */
-.quiz-band{background:var(--ivory);padding:3rem 0}
+.quiz-band{background:var(--bg);padding:3rem 0}
 .quiz-band .panel{
   position:relative;max-width:760px;margin:0 auto;text-align:center;
-  background:var(--cloth);border:2px solid var(--indigo);border-radius:var(--r-lg);
+  background:var(--surface);border:2px solid var(--panel-edge);border-radius:var(--r-lg);
   padding:2.2rem 1.3rem 2rem;box-shadow:var(--shadow);
 }
 .quiz-band .panel::before{
-  content:"";position:absolute;inset:8px;border:1px dashed var(--indigo-edge);border-radius:var(--r-sm);pointer-events:none;
+  content:"";position:absolute;inset:8px;border:1px dashed var(--panel-stitch);border-radius:var(--r-sm);pointer-events:none;
 }
 .quiz-band h2{max-width:20ch;margin-left:auto;margin-right:auto}
 .quiz-band p{margin-left:auto;margin-right:auto}
@@ -408,11 +431,11 @@ section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
 /* "Join the Founding 1,000": a membership card */
 .membership form{
   max-width:460px;margin:0 auto;text-align:start;
-  background:var(--cloth);color:var(--ink);border-radius:var(--r-lg);padding:1.6rem 1.3rem 1.4rem;
+  background:var(--surface);color:var(--text);border-radius:var(--r-lg);padding:1.6rem 1.3rem 1.4rem;
   border:1px solid var(--gold-edge-strong);box-shadow:0 30px 60px -30px rgba(0,0,0,.65),0 0 0 6px rgba(var(--gold-rgb),.08);
 }
-.membership form label{color:var(--indigo)}
-.membership form .btn-ghost{color:var(--indigo);border-color:var(--indigo)}
+.membership form label{color:var(--heading)}
+.membership form .btn-ghost{color:var(--heading);border-color:var(--heading)}
 .membership form .btn-ghost:hover{background:var(--indigo-wash)}
 .membership form>div:last-child{display:flex;flex-direction:column;gap:.7rem;text-align:center;margin-top:1.2rem}
 .membership form>div:last-child .btn{width:100%;margin:0}
@@ -462,7 +485,7 @@ section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
 .ba-grid{display:grid;grid-template-columns:1fr;gap:var(--s-4);margin-top:1.6rem;align-items:stretch}
 .gallery figure,.ba-grid figure{
   display:flex;flex-direction:column;margin:0;border-radius:var(--r-lg);overflow:hidden;
-  background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
+  background:var(--surface-raised);border:1px solid var(--border);box-shadow:var(--shadow);
   transition:transform var(--t-slow) var(--ease),box-shadow var(--t-slow),border-color var(--t-slow);
 }
 .gallery figure:hover,.ba-grid figure:hover{
@@ -475,7 +498,7 @@ section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
 /* The smart-city artwork has text sliced off inside the file itself; frame only its clean city scene */
 .gallery .crop-city .frame img{width:157.9%;height:auto;max-width:none;margin:-16.7% 0 0 -57.9%}
 .ba-grid img{display:block;width:100%}
-.gallery figcaption,.ba-grid figcaption{padding:.9rem 1.1rem 1.1rem;font-size:var(--fs-md);line-height:1.5;color:var(--ink)}
+.gallery figcaption,.ba-grid figcaption{padding:.9rem 1.1rem 1.1rem;font-size:var(--fs-md);line-height:1.5;color:var(--text)}
 .dark .gallery figcaption{color:var(--on-dark-muted)}
 .dark .ba-grid figcaption{color:var(--on-dark-soft)}
 /* Before / after labels */
@@ -493,27 +516,27 @@ section:not(.dark) .terr{border-color:var(--line);background:var(--cloth)}
 form .field{margin-bottom:var(--s-4)}
 label{
   display:block;margin-bottom:.4rem;
-  font-family:var(--sans);font-size:var(--fs-md);font-weight:700;letter-spacing:.03em;color:var(--indigo);
+  font-family:var(--sans);font-size:var(--fs-md);font-weight:700;letter-spacing:.03em;color:var(--heading);
 }
 .dark label,.hero label{color:var(--ivory)}
 input,select,textarea{
   width:100%;min-height:48px;padding:.8rem .9rem;   /* 16px text also stops iPhones zooming in on tap */
-  font-family:var(--sans);font-size:var(--fs-base);color:var(--ink);
-  background:var(--paper);border:1px solid var(--line-strong);border-radius:var(--r-sm);
+  font-family:var(--sans);font-size:var(--fs-base);color:var(--text);
+  background:var(--surface-raised);border:1px solid var(--border-strong);border-radius:var(--r-sm);
   transition:border-color var(--t-fast),box-shadow var(--t-fast);
 }
-input::placeholder,textarea::placeholder{color:var(--ink-soft)}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px var(--gold-ring)}
+input::placeholder,textarea::placeholder{color:var(--text-soft)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--heading);box-shadow:0 0 0 3px var(--gold-ring)}
 textarea{min-height:130px}
 button{font-family:var(--sans)}
 select{
   appearance:none;-webkit-appearance:none;padding-inline-end:2.6rem;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231D2A57' stroke-width='2'/%3E%3C/svg%3E");
+  background-image:var(--select-arrow);
   background-repeat:no-repeat;background-position:right 1rem center;
 }
 [dir="rtl"] select{background-position:left 1rem center}
 .signup-inline{display:flex;flex-direction:column;gap:.7rem;max-width:460px;margin:0 auto}
-.note{font-size:var(--fs-sm);color:var(--ink-soft)}
+.note{font-size:var(--fs-sm);color:var(--text-soft)}
 .hero .note{color:var(--on-hero-soft)}
 .dark .note{color:var(--on-dark-muted)}
 @media (min-width:640px){.signup-inline{flex-direction:row}}
@@ -544,16 +567,16 @@ footer.site p+p{margin-top:var(--s-2)}
 .hero p.quiz-lede{margin-top:.9rem;font-size:var(--fs-base)}
 .quiz-section{padding-top:.6rem}
 .quiz-shell{max-width:660px;margin:0 auto;padding:0 var(--gutter)}
-.qcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s-6);margin-top:1.4rem}
-.qnum{font-family:var(--sans);font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:var(--s-2)}
-.qtext{font-family:var(--serif);font-size:var(--step-1);color:var(--indigo);margin-bottom:1.1rem;line-height:1.3}
+.qcard{background:var(--surface-raised);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s-6);margin-top:1.4rem}
+.qnum{font-family:var(--sans);font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-text);margin-bottom:var(--s-2)}
+.qtext{font-family:var(--serif);font-size:var(--step-1);color:var(--heading);margin-bottom:1.1rem;line-height:1.3}
 .opt{
   display:block;width:100%;text-align:start;margin-bottom:.7rem;padding:.9rem 1rem;cursor:pointer;
-  font-family:var(--sans);font-size:var(--fs-base);color:var(--ink);
-  background:var(--ivory);border:2px solid var(--line);border-radius:var(--r-sm);
+  font-family:var(--sans);font-size:var(--fs-base);color:var(--text);
+  background:var(--bg);border:2px solid var(--border);border-radius:var(--r-sm);
 }
-.opt:hover{border-color:var(--gold);background:var(--gold-wash)}
-.qbar{height:5px;margin-top:1.4rem;overflow:hidden;background:var(--line);border-radius:var(--r-pill)}
+.opt:hover{border-color:var(--gold);background:var(--wash)}
+.qbar{height:5px;margin-top:1.4rem;overflow:hidden;background:var(--border);border-radius:var(--r-pill)}
 .qbar span{display:block;width:0;height:100%;background:var(--gold);transition:width var(--t-slow) ease}
 .hidden{display:none}
 .insight{
@@ -581,35 +604,42 @@ footer.site p+p{margin-top:var(--s-2)}
 .result-fine{color:var(--on-dark-muted);font-size:.85rem;margin-top:.4rem}
 #r-delivery{margin-top:1.3rem}
 .sharebox{
-  margin-top:1.4rem;padding:1.1rem 1.2rem;text-align:start;color:var(--ink);font-size:var(--fs-md);
-  background:var(--ivory);border:2px solid var(--gold);border-radius:var(--r-md);
+  margin-top:1.4rem;padding:1.1rem 1.2rem;text-align:start;color:var(--text);font-size:var(--fs-md);
+  background:var(--bg);border:2px solid var(--gold);border-radius:var(--r-md);
 }
 
 
 /* ===== 13. Publications (publications.html) ===== */
-.pub{border-bottom:1px solid var(--line);padding:1.1rem 0}
+.pub{border-bottom:1px solid var(--border);padding:1.1rem 0}
 .pub:last-child{border-bottom:0}
-.pub .yr{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;color:var(--gold-deep)}
-.pub .ti{font-family:var(--serif);font-size:1.08rem;color:var(--indigo);margin:.3rem 0;line-height:1.35}
-.pub .src{font-size:var(--fs-md);color:var(--ink-soft)}
+.pub .yr{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;color:var(--gold-text)}
+.pub .ti{font-family:var(--serif);font-size:1.08rem;color:var(--heading);margin:.3rem 0;line-height:1.35}
+.pub .src{font-size:var(--fs-md);color:var(--text-soft)}
 .pub .doi{display:inline-block;margin-top:.4rem;font-family:var(--sans);font-size:var(--fs-xs);word-break:break-all}
 .dark .pub{border-color:var(--gold-edge)}
 .dark .pub .yr{color:var(--gold)}
 .dark .pub .ti{color:var(--ivory)}
 .dark .pub .src{color:var(--on-dark-soft)}
-.idbox{background:var(--cloth);border:1px solid var(--line);border-radius:var(--r-md);padding:1.1rem 1.3rem;margin-top:1.2rem}
-.affil{margin-top:var(--s-2);font-size:var(--fs-sm);color:var(--ink-soft)}
+.idbox{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:1.1rem 1.3rem;margin-top:1.2rem}
+.affil{margin-top:var(--s-2);font-size:var(--fs-sm);color:var(--text-soft)}
 
 
-/* ===== 14. Language chooser (js/lang.js) ===== */
-.lang-btn{
-  display:inline-flex;align-items:center;gap:.35rem;margin-inline-start:auto;
+/* ===== 14. Header controls: language chooser (js/lang.js) and theme switch (js/theme.js) ===== */
+.header-tools{display:flex;align-items:center;gap:var(--s-2);margin-inline-start:auto}
+.lang-btn,.theme-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.35rem;
   min-height:40px;padding:.45rem .8rem;cursor:pointer;
   font-family:var(--sans);font-weight:700;font-size:.85rem;letter-spacing:.06em;
   background:transparent;color:var(--ivory);border:1px solid var(--ivory-edge);border-radius:var(--r-pill);
+  transition:color var(--t-fast),border-color var(--t-fast);
 }
-.lang-btn svg{width:18px;height:18px}
-.lang-btn:hover,.lang-btn:focus-visible{border-color:var(--gold);color:var(--gold)}
+.lang-btn svg,.theme-btn svg{width:18px;height:18px}
+.lang-btn:hover,.lang-btn:focus-visible,.theme-btn:hover,.theme-btn:focus-visible{border-color:var(--gold);color:var(--gold)}
+/* The theme switch is a round icon button. It only appears once js/theme.js has run. */
+.theme-btn{display:none;width:40px;padding:0}
+html[data-theme] .theme-btn{display:inline-flex}
+.theme-btn .i-sun,html[data-theme="dark"] .theme-btn .i-moon{display:none}
+html[data-theme="dark"] .theme-btn .i-sun{display:block}
 /* A full-screen dimmed layer that centres the card; works in every browser */
 .lang-overlay{
   position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;
@@ -620,28 +650,28 @@ footer.site p+p{margin-top:var(--s-2)}
 html.lang-open,html.lang-open body{overflow:hidden}
 .lang-dialog{
   position:relative;margin:auto;width:100%;max-width:380px;padding:1.4rem 1.1rem 1.1rem;
-  background:var(--ivory);color:var(--ink);text-align:center;
+  background:var(--bg);color:var(--text);text-align:center;
   border:2px solid var(--gold);border-radius:var(--r-md);box-shadow:0 18px 50px rgba(0,0,0,.35);
 }
 .lang-title{
-  font-family:var(--serif);font-size:1.55rem;line-height:1.2;font-weight:700;color:var(--indigo);
+  font-family:var(--serif);font-size:1.55rem;line-height:1.2;font-weight:700;color:var(--heading);
   margin:0 2.5rem .9rem;   /* room for the close button on both sides */
 }
 .lang-list{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
 .lang-option{
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.1rem;
   width:100%;min-height:54px;padding:.45rem .8rem;cursor:pointer;-webkit-tap-highlight-color:transparent;
-  font-family:var(--sans);color:var(--indigo);background:var(--paper);border:2px solid var(--line);border-radius:var(--r-sm);
+  font-family:var(--sans);color:var(--heading);background:var(--surface-raised);border:2px solid var(--border);border-radius:var(--r-sm);
 }
 .lang-name{font-size:var(--fs-lede);font-weight:700;line-height:1.2}
-.lang-hint{font-size:var(--fs-xs);font-weight:400;color:var(--ink-soft);line-height:1.3}
+.lang-hint{font-size:var(--fs-xs);font-weight:400;color:var(--text-soft);line-height:1.3}
 .lang-option[lang="ar"]{font-family:'Noto Sans Arabic','Segoe UI',Tahoma,sans-serif}
 .lang-option[lang="ar"] .lang-name{font-size:var(--fs-quote)}
-.lang-option:hover,.lang-option:focus-visible{border-color:var(--gold);background:var(--gold-wash);outline:none}
-.lang-option.is-current{border-color:var(--gold);background:var(--gold-wash)}
+.lang-option:hover,.lang-option:focus-visible{border-color:var(--gold);background:var(--wash);outline:none}
+.lang-option.is-current{border-color:var(--gold);background:var(--wash)}
 .lang-close{
   position:absolute;top:.35rem;inset-inline-end:.35rem;width:44px;height:44px;border:0;background:transparent;
-  font-size:1.9rem;line-height:1;color:var(--ink-soft);cursor:pointer;
+  font-size:1.9rem;line-height:1;color:var(--text-soft);cursor:pointer;
 }
 /* Short screens (small phones turned sideways): two columns so it fits without scrolling */
 @media (max-height:520px){
@@ -651,10 +681,10 @@ html.lang-open,html.lang-open body{overflow:hidden}
   .lang-option{min-height:46px}
 }
 @media (min-width:1320px){
-  .lang-btn{order:3;margin-inline-start:var(--s-4)}
+  .header-tools{order:3;margin-inline-start:var(--s-4)}
   /* js/lang.js adds .stacked when the menu is too long for one line (e.g. Hausa):
-     logo and language button on top, the menu as a full row underneath */
-  header.site.stacked .lang-btn{order:2;margin-inline-start:auto}
+     logo and header buttons on top, the menu as a full row underneath */
+  header.site.stacked .header-tools{order:2;margin-inline-start:auto}
   header.site.stacked nav.main{order:3;width:100%;margin:0}
 }
 
@@ -671,7 +701,7 @@ html[lang="ar"]{
   --sans:'Noto Sans Arabic','Lato','Segoe UI',Tahoma,sans-serif;
 }
 html[lang="ar"] body{line-height:1.8}
-html[lang="ar"] *{letter-spacing:0 !important}  /* the one !important: it must beat every component */
+html[lang="ar"] *{letter-spacing:0 !important}  /* !important: it must beat every component */
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.45}
 [dir="rtl"] nav.main{
   -webkit-mask-image:linear-gradient(to left,#000 85%,transparent);
@@ -679,6 +709,44 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.45}
 }
 [dir="rtl"] form{text-align:right}
 @media (min-width:760px){[dir="rtl"] nav.main{-webkit-mask-image:none;mask-image:none}}
+
+
+/* ===== 15b. Dark mode =====
+   js/theme.js sets <html data-theme="dark"> from the reader's choice, or from the
+   phone's own setting until they choose. Only the theme roles change: the ivory
+   cloth turns to deep indigo, text turns light, gold stays the accent. */
+html[data-theme="dark"]{
+  --bg:#0E1530;
+  --surface:#141D3D;
+  --surface-raised:#1A2550;
+  --text:#E8E3D4;
+  --text-soft:#B9BED2;
+  --heading:#F7F1E3;
+  --link:var(--gold);
+  --link-line:var(--gold-edge-strong);
+  --border:#2B355E;
+  --border-strong:#3D4877;
+  --gold-text:var(--gold);
+  --wash:rgba(var(--gold-rgb),.12);
+  --panel-edge:var(--gold-edge-strong);
+  --panel-stitch:rgba(var(--ivory-rgb),.2);
+  --scroll-thumb:var(--indigo-light);
+  --shadow:0 10px 28px -14px rgba(0,0,0,.7),0 2px 6px -2px rgba(0,0,0,.4);
+  --shadow-lift:0 18px 40px -18px rgba(0,0,0,.8);
+  --select-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23E8E3D4' stroke-width='2'/%3E%3C/svg%3E");
+  color-scheme:dark;
+  accent-color:var(--gold);
+}
+/* Navy buttons would vanish into the dark page: lift them to the lighter indigo */
+html[data-theme="dark"] .btn-navy{background:var(--indigo-light);border-color:var(--gold-edge-strong)}
+html[data-theme="dark"] .btn-navy:hover{background:var(--indigo);border-color:var(--gold)}
+/* Dark sections sit one step lighter than the page, so the rhythm of tones stays */
+html[data-theme="dark"] .dark{background:var(--indigo-night)}
+html[data-theme="dark"] .dark.tone-indigo{background:var(--indigo)}
+/* Photographs and artwork: a touch softer on a dark page */
+html[data-theme="dark"] .gallery img,html[data-theme="dark"] .ba-grid img,html[data-theme="dark"] .card-img{filter:brightness(.92)}
+/* Changing theme fades colours instead of snapping */
+html.theme-changing,html.theme-changing *{transition:background-color var(--t-slow),color var(--t-slow),border-color var(--t-slow) !important}
 
 
 /* ===== 16. Utilities (spacing on the token scale) ===== */
@@ -690,7 +758,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.45}
 .lead{font-size:var(--fs-lede)}
 .caps{letter-spacing:.1em;text-transform:uppercase}
 .quote{font-family:var(--serif);font-size:var(--fs-quote);font-style:italic}
-.byline{font-family:var(--serif);font-size:var(--fs-quote);color:var(--indigo);margin-bottom:var(--s-4)}
+.byline{font-family:var(--serif);font-size:var(--fs-quote);color:var(--heading);margin-bottom:var(--s-4)}
 .mt-1{margin-top:var(--s-1)}
 .mt-2{margin-top:var(--s-2)}
 .mt-3{margin-top:var(--s-3)}

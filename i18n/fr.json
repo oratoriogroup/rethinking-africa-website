@@ -223,5 +223,7 @@
   "p.FM.desc": "\"Retrouver le passé ne vous suffit pas. Vous voulez construire ce qui n’a jamais existé nulle part, en partant du sol africain.\"",
   "p.FM.strength": "\"Votre force : refuser les options qu’on vous a données.\"",
   "p.FM.q": "\"Que construiriez-vous si vous cessiez d’attendre la permission ?\"",
-  "layout.skip": ">Aller au contenu</a>"
+  "layout.skip": ">Aller au contenu</a>",
+  "layout.theme.label": "aria-label=\"Mode sombre\"",
+  "layout.theme.title": "title=\"Mode sombre\""
 }
