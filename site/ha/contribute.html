@@ -94,8 +94,8 @@
 <h2>Raba labarinka</h2>
 <p class="mb-6">Yi amfani da wannan fom maimakon saƙonni marasa tsari; yana taimaka wa ƙungiyar edita ta amsa kowace gudunmawa yadda ya kamata.</p>
 <!-- ===================================================================
-     DEVELOPER: set FORM_ENDPOINT below to the Formspree / Web3Forms URL.
-     Nothing else on this page needs to change.
+     Submissions are emailed to drdamolaafrica@gmail.com through EmailJS
+     (settings in the script at the bottom of this page).
      =================================================================== -->
 <form id="contribForm" novalidate>
 <div class="field"><label for="c-name">Sunanka</label><input id="c-name" name="name" type="text" required></div>
@@ -127,9 +127,11 @@
 </div>
 
 <script>
-/* DEVELOPER: paste the form endpoint URL here. Formspree or Web3Forms both work. */
-const FORM_ENDPOINT = "";          // Formspree / Web3Forms URL: stores every submission
-const CONTRIB_LIST_ACTION = "";    // MailerLite "Contributors" form action: sends the acknowledgement
+/* Where submissions go. EmailJS emails each one to drdamolaafrica@gmail.com
+   (template "Contribute submissions"; Reply answers the contributor). */
+const EMAILJS = { service: "service_h3w4sen", template: "template_5ie4z1n", key: "4JtkVqohEBEOOKXVX" };
+const FORM_ENDPOINT = "";          // optional extra copy: Formspree / Web3Forms URL
+const CONTRIB_LIST_ACTION = "";    // optional: MailerLite "Contributors" form action (acknowledgement email)
 
 /* Links from the menu and homepage (contribute.html?type=episode#share) choose the
    matching "Type of contribution" in advance. Numbers are positions in the list. */
@@ -158,7 +160,7 @@ document.getElementById('contribForm').addEventListener('submit', function(e){
     status.textContent = 'Don Allah ka cika sunanka, imel, irin gudunmawa da saƙonka.';
     return;
   }
-  if(!FORM_ENDPOINT){
+  if(!EMAILJS.template && !FORM_ENDPOINT){
     status.style.color = '#F0B345';
     status.textContent = 'Ba a haɗa wannan fom ba tukuna. Don Allah ka tuntuɓe mu ta shafin Tuntuɓa.';
     return;
@@ -183,12 +185,29 @@ document.getElementById('contribForm').addEventListener('submit', function(e){
     document.body.appendChild(sink); document.body.appendChild(f); f.submit();
   }
 
-  fetch(FORM_ENDPOINT, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify(data)
-  }).then(function(r){
-    if(!r.ok) throw new Error('failed');
+  const jobs = [];
+  if (EMAILJS.template){
+    jobs.push(fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        service_id: EMAILJS.service, template_id: EMAILJS.template, user_id: EMAILJS.key,
+        template_params: {
+          name: data.name, email: data.email, whatsapp: data.whatsapp || '-', country: data.country || '-',
+          type: data.type, message: data.message, language: document.documentElement.lang || 'en'
+        }
+      })
+    }).then(function(r){ if(!r.ok) throw new Error('EmailJS ' + r.status); }));
+  }
+  if (FORM_ENDPOINT){
+    jobs.push(fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ if(!r.ok) throw new Error('failed'); }));
+  }
+
+  Promise.all(jobs).then(function(){
     document.getElementById('contribForm').style.display = 'none';
     document.getElementById('c-thanks').hidden = false;
     document.getElementById('c-thanks').scrollIntoView({behavior:'smooth', block:'center'});
